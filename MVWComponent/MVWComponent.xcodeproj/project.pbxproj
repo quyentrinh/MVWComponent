@@ -7,29 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EF2B21C520BD0C3300031DA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2B21C420BD0C3300031DA4 /* AppDelegate.m */; };
-		EF2B21C820BD0C3300031DA4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2B21C720BD0C3300031DA4 /* ViewController.m */; };
-		EF2B21CB20BD0C3300031DA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2B21C920BD0C3300031DA4 /* Main.storyboard */; };
-		EF2B21CD20BD0C3400031DA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B21CC20BD0C3400031DA4 /* Assets.xcassets */; };
-		EF2B21D020BD0C3400031DA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2B21CE20BD0C3400031DA4 /* LaunchScreen.storyboard */; };
-		EF2B21D320BD0C3400031DA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2B21D220BD0C3400031DA4 /* main.m */; };
+		EF2B21EB20BD2B4A00031DA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B21EA20BD2B4A00031DA4 /* AppDelegate.swift */; };
+		EF2B21ED20BD2B4A00031DA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B21EC20BD2B4A00031DA4 /* ViewController.swift */; };
+		EF2B21F020BD2B4A00031DA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2B21EE20BD2B4A00031DA4 /* Main.storyboard */; };
+		EF2B21F220BD2B4B00031DA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B21F120BD2B4B00031DA4 /* Assets.xcassets */; };
+		EF2B21F520BD2B4B00031DA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2B21F320BD2B4B00031DA4 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EF2B21C020BD0C3300031DA4 /* MVWComponent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVWComponent.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF2B21C320BD0C3300031DA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		EF2B21C420BD0C3300031DA4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EF2B21C620BD0C3300031DA4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EF2B21C720BD0C3300031DA4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		EF2B21CA20BD0C3300031DA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EF2B21CC20BD0C3400031DA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EF2B21CF20BD0C3400031DA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EF2B21D120BD0C3400031DA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EF2B21D220BD0C3400031DA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EF2B21E720BD2B4A00031DA4 /* MVWComponent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVWComponent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF2B21EA20BD2B4A00031DA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EF2B21EC20BD2B4A00031DA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF2B21EF20BD2B4A00031DA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EF2B21F120BD2B4B00031DA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF2B21F420BD2B4B00031DA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF2B21F620BD2B4B00031DA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EF2B21BD20BD0C3300031DA4 /* Frameworks */ = {
+		EF2B21E420BD2B4A00031DA4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,34 +35,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EF2B21B720BD0C3300031DA4 = {
+		EF2B21DE20BD2B4A00031DA4 = {
 			isa = PBXGroup;
 			children = (
-				EF2B21C220BD0C3300031DA4 /* MVWComponent */,
-				EF2B21C120BD0C3300031DA4 /* Products */,
+				EF2B21E920BD2B4A00031DA4 /* MVWComponent */,
+				EF2B21E820BD2B4A00031DA4 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		EF2B21C120BD0C3300031DA4 /* Products */ = {
+		EF2B21E820BD2B4A00031DA4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EF2B21C020BD0C3300031DA4 /* MVWComponent.app */,
+				EF2B21E720BD2B4A00031DA4 /* MVWComponent.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EF2B21C220BD0C3300031DA4 /* MVWComponent */ = {
+		EF2B21E920BD2B4A00031DA4 /* MVWComponent */ = {
 			isa = PBXGroup;
 			children = (
-				EF2B21C320BD0C3300031DA4 /* AppDelegate.h */,
-				EF2B21C420BD0C3300031DA4 /* AppDelegate.m */,
-				EF2B21C620BD0C3300031DA4 /* ViewController.h */,
-				EF2B21C720BD0C3300031DA4 /* ViewController.m */,
-				EF2B21C920BD0C3300031DA4 /* Main.storyboard */,
-				EF2B21CC20BD0C3400031DA4 /* Assets.xcassets */,
-				EF2B21CE20BD0C3400031DA4 /* LaunchScreen.storyboard */,
-				EF2B21D120BD0C3400031DA4 /* Info.plist */,
-				EF2B21D220BD0C3400031DA4 /* main.m */,
+				EF2B21EA20BD2B4A00031DA4 /* AppDelegate.swift */,
+				EF2B21EC20BD2B4A00031DA4 /* ViewController.swift */,
+				EF2B21EE20BD2B4A00031DA4 /* Main.storyboard */,
+				EF2B21F120BD2B4B00031DA4 /* Assets.xcassets */,
+				EF2B21F320BD2B4B00031DA4 /* LaunchScreen.storyboard */,
+				EF2B21F620BD2B4B00031DA4 /* Info.plist */,
 			);
 			path = MVWComponent;
 			sourceTree = "<group>";
@@ -74,13 +67,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EF2B21BF20BD0C3300031DA4 /* MVWComponent */ = {
+		EF2B21E620BD2B4A00031DA4 /* MVWComponent */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EF2B21D620BD0C3400031DA4 /* Build configuration list for PBXNativeTarget "MVWComponent" */;
+			buildConfigurationList = EF2B21F920BD2B4B00031DA4 /* Build configuration list for PBXNativeTarget "MVWComponent" */;
 			buildPhases = (
-				EF2B21BC20BD0C3300031DA4 /* Sources */,
-				EF2B21BD20BD0C3300031DA4 /* Frameworks */,
-				EF2B21BE20BD0C3300031DA4 /* Resources */,
+				EF2B21E320BD2B4A00031DA4 /* Sources */,
+				EF2B21E420BD2B4A00031DA4 /* Frameworks */,
+				EF2B21E520BD2B4A00031DA4 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -88,24 +81,25 @@
 			);
 			name = MVWComponent;
 			productName = MVWComponent;
-			productReference = EF2B21C020BD0C3300031DA4 /* MVWComponent.app */;
+			productReference = EF2B21E720BD2B4A00031DA4 /* MVWComponent.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		EF2B21B820BD0C3300031DA4 /* Project object */ = {
+		EF2B21DF20BD2B4A00031DA4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Quyen Trinh";
 				TargetAttributes = {
-					EF2B21BF20BD0C3300031DA4 = {
+					EF2B21E620BD2B4A00031DA4 = {
 						CreatedOnToolsVersion = 9.3.1;
 					};
 				};
 			};
-			buildConfigurationList = EF2B21BB20BD0C3300031DA4 /* Build configuration list for PBXProject "MVWComponent" */;
+			buildConfigurationList = EF2B21E220BD2B4A00031DA4 /* Build configuration list for PBXProject "MVWComponent" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,55 +107,54 @@
 				en,
 				Base,
 			);
-			mainGroup = EF2B21B720BD0C3300031DA4;
-			productRefGroup = EF2B21C120BD0C3300031DA4 /* Products */;
+			mainGroup = EF2B21DE20BD2B4A00031DA4;
+			productRefGroup = EF2B21E820BD2B4A00031DA4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EF2B21BF20BD0C3300031DA4 /* MVWComponent */,
+				EF2B21E620BD2B4A00031DA4 /* MVWComponent */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		EF2B21BE20BD0C3300031DA4 /* Resources */ = {
+		EF2B21E520BD2B4A00031DA4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF2B21D020BD0C3400031DA4 /* LaunchScreen.storyboard in Resources */,
-				EF2B21CD20BD0C3400031DA4 /* Assets.xcassets in Resources */,
-				EF2B21CB20BD0C3300031DA4 /* Main.storyboard in Resources */,
+				EF2B21F520BD2B4B00031DA4 /* LaunchScreen.storyboard in Resources */,
+				EF2B21F220BD2B4B00031DA4 /* Assets.xcassets in Resources */,
+				EF2B21F020BD2B4A00031DA4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		EF2B21BC20BD0C3300031DA4 /* Sources */ = {
+		EF2B21E320BD2B4A00031DA4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF2B21C820BD0C3300031DA4 /* ViewController.m in Sources */,
-				EF2B21D320BD0C3400031DA4 /* main.m in Sources */,
-				EF2B21C520BD0C3300031DA4 /* AppDelegate.m in Sources */,
+				EF2B21ED20BD2B4A00031DA4 /* ViewController.swift in Sources */,
+				EF2B21EB20BD2B4A00031DA4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EF2B21C920BD0C3300031DA4 /* Main.storyboard */ = {
+		EF2B21EE20BD2B4A00031DA4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EF2B21CA20BD0C3300031DA4 /* Base */,
+				EF2B21EF20BD2B4A00031DA4 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		EF2B21CE20BD0C3400031DA4 /* LaunchScreen.storyboard */ = {
+		EF2B21F320BD2B4B00031DA4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EF2B21CF20BD0C3400031DA4 /* Base */,
+				EF2B21F420BD2B4B00031DA4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -169,7 +162,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		EF2B21D420BD0C3400031DA4 /* Debug */ = {
+		EF2B21F720BD2B4B00031DA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -224,10 +217,12 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		EF2B21D520BD0C3400031DA4 /* Release */ = {
+		EF2B21F820BD2B4B00031DA4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -275,11 +270,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		EF2B21D720BD0C3400031DA4 /* Debug */ = {
+		EF2B21FA20BD2B4B00031DA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -291,11 +288,12 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.quyentrinh.MVWComponent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		EF2B21D820BD0C3400031DA4 /* Release */ = {
+		EF2B21FB20BD2B4B00031DA4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -307,6 +305,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.quyentrinh.MVWComponent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -314,25 +313,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EF2B21BB20BD0C3300031DA4 /* Build configuration list for PBXProject "MVWComponent" */ = {
+		EF2B21E220BD2B4A00031DA4 /* Build configuration list for PBXProject "MVWComponent" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EF2B21D420BD0C3400031DA4 /* Debug */,
-				EF2B21D520BD0C3400031DA4 /* Release */,
+				EF2B21F720BD2B4B00031DA4 /* Debug */,
+				EF2B21F820BD2B4B00031DA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EF2B21D620BD0C3400031DA4 /* Build configuration list for PBXNativeTarget "MVWComponent" */ = {
+		EF2B21F920BD2B4B00031DA4 /* Build configuration list for PBXNativeTarget "MVWComponent" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EF2B21D720BD0C3400031DA4 /* Debug */,
-				EF2B21D820BD0C3400031DA4 /* Release */,
+				EF2B21FA20BD2B4B00031DA4 /* Debug */,
+				EF2B21FB20BD2B4B00031DA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = EF2B21B820BD0C3300031DA4 /* Project object */;
+	rootObject = EF2B21DF20BD2B4A00031DA4 /* Project object */;
 }
