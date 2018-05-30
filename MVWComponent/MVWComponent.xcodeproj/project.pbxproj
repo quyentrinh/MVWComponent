@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF26EB9E20BE451B0064C3A7 /* PullUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF26EB9D20BE451B0064C3A7 /* PullUpViewController.swift */; };
+		EF26EBA020BE45520064C3A7 /* PullUpDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF26EB9F20BE45520064C3A7 /* PullUpDemoVC.swift */; };
 		EF2B21EB20BD2B4A00031DA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B21EA20BD2B4A00031DA4 /* AppDelegate.swift */; };
-		EF2B21ED20BD2B4A00031DA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B21EC20BD2B4A00031DA4 /* ViewController.swift */; };
 		EF2B21F020BD2B4A00031DA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2B21EE20BD2B4A00031DA4 /* Main.storyboard */; };
 		EF2B21F220BD2B4B00031DA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B21F120BD2B4B00031DA4 /* Assets.xcassets */; };
 		EF2B21F520BD2B4B00031DA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2B21F320BD2B4B00031DA4 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF26EB9D20BE451B0064C3A7 /* PullUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUpViewController.swift; sourceTree = "<group>"; };
+		EF26EB9F20BE45520064C3A7 /* PullUpDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUpDemoVC.swift; sourceTree = "<group>"; };
 		EF2B21E720BD2B4A00031DA4 /* MVWComponent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVWComponent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2B21EA20BD2B4A00031DA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EF2B21EC20BD2B4A00031DA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EF2B21EF20BD2B4A00031DA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF2B21F120BD2B4B00031DA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF2B21F420BD2B4B00031DA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,14 +56,39 @@
 		EF2B21E920BD2B4A00031DA4 /* MVWComponent */ = {
 			isa = PBXGroup;
 			children = (
+				EF2B21FC20BD2C7500031DA4 /* Component */,
 				EF2B21EA20BD2B4A00031DA4 /* AppDelegate.swift */,
-				EF2B21EC20BD2B4A00031DA4 /* ViewController.swift */,
+				EF2B220020BD2DC100031DA4 /* ViewControllers */,
 				EF2B21EE20BD2B4A00031DA4 /* Main.storyboard */,
 				EF2B21F120BD2B4B00031DA4 /* Assets.xcassets */,
 				EF2B21F320BD2B4B00031DA4 /* LaunchScreen.storyboard */,
 				EF2B21F620BD2B4B00031DA4 /* Info.plist */,
 			);
 			path = MVWComponent;
+			sourceTree = "<group>";
+		};
+		EF2B21FC20BD2C7500031DA4 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				EF2B21FD20BD2C8900031DA4 /* pull-up */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		EF2B21FD20BD2C8900031DA4 /* pull-up */ = {
+			isa = PBXGroup;
+			children = (
+				EF26EB9D20BE451B0064C3A7 /* PullUpViewController.swift */,
+			);
+			path = "pull-up";
+			sourceTree = "<group>";
+		};
+		EF2B220020BD2DC100031DA4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EF26EB9F20BE45520064C3A7 /* PullUpDemoVC.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +162,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF2B21ED20BD2B4A00031DA4 /* ViewController.swift in Sources */,
+				EF26EBA020BE45520064C3A7 /* PullUpDemoVC.swift in Sources */,
+				EF26EB9E20BE451B0064C3A7 /* PullUpViewController.swift in Sources */,
 				EF2B21EB20BD2B4A00031DA4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
