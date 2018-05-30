@@ -343,6 +343,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="W1Z-mG-Dlk" kind="show" id="Wb7-8r-Nw2"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Zh1-8s-IEN" detailTextLabel="ggY-Qc-xIh" style="IBUITableViewCellStyleSubtitle" id="xaS-gv-mTl">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
@@ -827,7 +830,22 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IpP-Yt-Ffn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1899" y="133"/>
+            <point key="canvasLocation" x="2084" y="133"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Xce-M8-PaW">
+            <objects>
+                <viewController id="W1Z-mG-Dlk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IZA-IN-Mbr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zPt-er-T7E"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cHK-p4-opp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2836" y="133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Etq-Cu-X9n">

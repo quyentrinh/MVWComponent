@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF06126020BE876100C24CB9 /* PullUpHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF06125F20BE876100C24CB9 /* PullUpHeader.xib */; };
 		EF26EB9E20BE451B0064C3A7 /* PullUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF26EB9D20BE451B0064C3A7 /* PullUpViewController.swift */; };
 		EF26EBA020BE45520064C3A7 /* PullUpDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF26EB9F20BE45520064C3A7 /* PullUpDemoVC.swift */; };
 		EF2B21EB20BD2B4A00031DA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B21EA20BD2B4A00031DA4 /* AppDelegate.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF06125F20BE876100C24CB9 /* PullUpHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PullUpHeader.xib; sourceTree = "<group>"; };
 		EF26EB9D20BE451B0064C3A7 /* PullUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUpViewController.swift; sourceTree = "<group>"; };
 		EF26EB9F20BE45520064C3A7 /* PullUpDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUpDemoVC.swift; sourceTree = "<group>"; };
 		EF2B21E720BD2B4A00031DA4 /* MVWComponent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVWComponent.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,9 +88,18 @@
 		EF2B220020BD2DC100031DA4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				EF26EB9F20BE45520064C3A7 /* PullUpDemoVC.swift */,
+				EF56F18A20BE913800724712 /* PullUpDemo */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EF56F18A20BE913800724712 /* PullUpDemo */ = {
+			isa = PBXGroup;
+			children = (
+				EF26EB9F20BE45520064C3A7 /* PullUpDemoVC.swift */,
+				EF06125F20BE876100C24CB9 /* PullUpHeader.xib */,
+			);
+			path = PullUpDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF06126020BE876100C24CB9 /* PullUpHeader.xib in Resources */,
 				EF2B21F520BD2B4B00031DA4 /* LaunchScreen.storyboard in Resources */,
 				EF2B21F220BD2B4B00031DA4 /* Assets.xcassets in Resources */,
 				EF2B21F020BD2B4A00031DA4 /* Main.storyboard in Resources */,

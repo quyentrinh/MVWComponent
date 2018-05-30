@@ -8,12 +8,26 @@
 
 import UIKit
 
+protocol PullUpDataSource: class {
+    func headerViewForPullUp() -> UIView?
+    func imageForCloseButton() -> UIImage?
+}
+
+protocol PullUpDataDelegate: class {
+    func pullUpViewControllerDidDisappear()
+}
+
 class PullUpViewController: UIViewController {
     
     var topMargin : CGFloat = 60.0
     var cornerRadius : CGFloat = 10.0
+    var headerHeight : CGFloat = 60.0
     
     private let buttonsize : CGFloat = 20.0
+    private let padding : CGFloat = 10.0
+    
+    weak var datasource : PullUpDataSource?
+    weak var delegate : PullUpDataDelegate?
     
     private var wrapView: UIView!
     private var headerView: UIView!
@@ -21,9 +35,9 @@ class PullUpViewController: UIViewController {
     private var dismisButton: UIButton!
     private var viewController: UIViewController!
     
-    init( _viewController : UIViewController?) {
+    init(content : UIViewController?) {
         super.init(nibName: nil, bundle: nil)
-        viewController = _viewController
+        viewController = content
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,6 +47,10 @@ class PullUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadContentView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     
     override func loadView() {
@@ -48,20 +66,16 @@ class PullUpViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-
         wrapView.frame = wrapViewHidenFrame()
+        headerView.frame = CGRect(x: 0, y: padding, width: wrapView.xwidth() - padding*2 - buttonsize, height: headerHeight)
+        dismisButton.frame = CGRect(x: headerView.xwidth() + padding, y: padding, width: buttonsize, height: buttonsize)
+        contentView.frame = CGRect(x: 0, y: headerView.yy() + headerView.xheight(), width: wrapView.xwidth(), height: wrapView.xheight() - headerView.yy() - headerView.xheight())
+        
         UIView.animate(withDuration: 0.3, animations: {
             self.wrapView.frame = self.wrapViewVisibleFrame()
+        }) { _ in
             self.view.layoutIfNeeded()
-        }) { finish in
-
-            self.headerView.frame = CGRect(x: 0, y: 10, width: self.wrapView.xwidth() - 10*2 - self.buttonsize, height: 60.0)
-            self.dismisButton.frame = CGRect(x: self.headerView.xwidth() + 10, y: 10, width: self.buttonsize, height: self.buttonsize)
-            self.contentView.frame = CGRect(x: 0, y: self.headerView.yy() + self.headerView.xheight(), width: self.wrapView.xwidth(), height: self.wrapView.xheight() - self.headerView.yy() - self.headerView.xheight())
         }
-    }
-    
-    override func viewDidLayoutSubviews() {
     }
     
     //MARK: - UI
@@ -81,20 +95,18 @@ class PullUpViewController: UIViewController {
 
         //header view
         let _headerView = UIView()
-        _headerView.backgroundColor = .yellow
+        _headerView.clipsToBounds = true
+        _headerView.autoresizesSubviews = true
         _wrapView.addSubview(_headerView)
         headerView = _headerView
         
         //content view
         let _contentView = UIView()
-        _contentView.backgroundColor = .white
         _wrapView.addSubview(_contentView)
         contentView = _contentView
         
         //dismis button
         let _button = UIButton()
-        _button.backgroundColor = #colorLiteral(red: 0.7803921569, green: 0.8549019608, blue: 0.9019607843, alpha: 1)
-        _button.setTitle("x", for: .normal)
         _button.addTarget(self, action: #selector(dismissButtonPress), for: .touchUpInside)
         _wrapView.addSubview(_button)
         dismisButton = _button
@@ -111,7 +123,26 @@ class PullUpViewController: UIViewController {
     
     //MARK: - ACTION
     
+    @objc func dismissButtonPress() {
+        guard let completion = delegate?.pullUpViewControllerDidDisappear else {return dismissPullViewController()}
+        dismissPullViewController(completion: completion)
+    }
+    
+}
+
+extension PullUpViewController {
+    
     func loadContentView() {
+        
+        if let _headerview = datasource?.headerViewForPullUp() {
+            _headerview.frame = headerView.bounds
+            headerView.addSubview(_headerview)
+        }
+        
+        if let image = datasource?.imageForCloseButton() {
+            dismisButton.setImage(image, for: .normal)
+        }
+        
         addChildViewController(viewController)
         let frame = contentView.bounds
         viewController.view.frame = frame
@@ -119,21 +150,17 @@ class PullUpViewController: UIViewController {
         viewController.didMove(toParentViewController: self)
     }
     
-    func dismissPullViewController() {
+    func dismissPullViewController(completion: (() -> Swift.Void)? = nil) {
         UIView.animate(withDuration: 0.3, animations: {
             self.wrapView.frame.origin.y = self.view.bounds.height
             self.view.backgroundColor = UIColor.black.withAlphaComponent(0.0)
         }, completion: { _ in
-            self.dismiss(animated: false, completion: nil)
+            self.dismiss(animated: false, completion: completion)
         })
         
     }
-    
-    @objc func dismissButtonPress() {
-        dismissPullViewController()
-    }
-    
 }
+
 
 extension UIViewController {
     

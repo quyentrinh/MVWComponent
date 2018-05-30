@@ -24,9 +24,29 @@ class PullUpDemoVC: UIViewController {
 
     @IBAction func showMeButtonTapped(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "DEMO")
-        let pullupVC = PullUpViewController(_viewController: vc)
+        let navigation = UINavigationController(rootViewController: vc!)
+        let pullupVC = PullUpViewController(content: navigation)
+        pullupVC.datasource = self
+        pullupVC.delegate = self
         pullupVC.topMargin = 60
+        pullupVC.headerHeight = 40
         addPullUpController(pullupVC)
     }
+}
 
+extension PullUpDemoVC : PullUpDataSource, PullUpDataDelegate {
+    
+    func imageForCloseButton() -> UIImage? {
+        return UIImage(named: "ic_dismiss")
+    }
+    
+
+    func headerViewForPullUp() -> UIView? {
+        let vview = Bundle.main.loadNibNamed("PullUpHeader", owner: nil, options: nil)![0] as! UIView
+        return vview
+    }
+    
+    func pullUpViewControllerDidDisappear() {
+        print("Dismiss")
+    }
 }
