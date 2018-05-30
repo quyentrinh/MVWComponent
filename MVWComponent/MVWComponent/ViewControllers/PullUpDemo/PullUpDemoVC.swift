@@ -41,7 +41,7 @@ extension PullUpDemoVC : PullUpDataSource, PullUpDataDelegate {
     }
     
 
-    func headerViewForPullUp() -> UIView? {
+    func viewForHeaderBar() -> UIView? {
         let vview = Bundle.main.loadNibNamed("PullUpHeader", owner: nil, options: nil)![0] as! UIView
         return vview
     }

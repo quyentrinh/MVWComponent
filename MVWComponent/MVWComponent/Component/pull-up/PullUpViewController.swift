@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PullUpDataSource: class {
-    func headerViewForPullUp() -> UIView?
+    func viewForHeaderBar() -> UIView?
     func imageForCloseButton() -> UIImage?
 }
 
@@ -25,6 +25,7 @@ class PullUpViewController: UIViewController {
     
     private let buttonsize : CGFloat = 20.0
     private let padding : CGFloat = 10.0
+    private var currentY : CGFloat = 0
     
     weak var datasource : PullUpDataSource?
     weak var delegate : PullUpDataDelegate?
@@ -33,6 +34,7 @@ class PullUpViewController: UIViewController {
     private var headerView: UIView!
     private var contentView: UIView!
     private var dismisButton: UIButton!
+    private var panGestureRecognizer: UIPanGestureRecognizer?
     private var viewController: UIViewController!
     
     init(content : UIViewController?) {
@@ -47,6 +49,7 @@ class PullUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadContentView()
+        setupPanGestureRecognizer()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -80,7 +83,7 @@ class PullUpViewController: UIViewController {
     
     //MARK: - UI
     
-    func setupUI() {
+    private func setupUI() {
         view = UIView()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         
@@ -113,28 +116,83 @@ class PullUpViewController: UIViewController {
         
     }
     
-    func wrapViewVisibleFrame() -> CGRect {
+    fileprivate func setupPanGestureRecognizer() {
+        let _panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureRecognizer(_:)))
+        _panGestureRecognizer.minimumNumberOfTouches = 1
+        _panGestureRecognizer.maximumNumberOfTouches = 1
+        wrapView.addGestureRecognizer(_panGestureRecognizer)
+        panGestureRecognizer = _panGestureRecognizer
+    }
+    
+    private func wrapViewVisibleFrame() -> CGRect {
         return CGRect(x: 0, y: topMargin, width: view.bounds.width, height: view.bounds.height - topMargin)
     }
     
-    func wrapViewHidenFrame() -> CGRect {
+    private func wrapViewHidenFrame() -> CGRect {
         return CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: view.bounds.height - topMargin)
     }
     
     //MARK: - ACTION
     
-    @objc func dismissButtonPress() {
+    @objc private func dismissButtonPress() {
         guard let completion = delegate?.pullUpViewControllerDidDisappear else {return dismissPullViewController()}
         dismissPullViewController(completion: completion)
     }
     
+    @objc private func handlePanGestureRecognizer(_ gestureRecognizer: UIPanGestureRecognizer) {
+        view.bringSubview(toFront: gestureRecognizer.view!)
+        var translatePoint = gestureRecognizer.translation(in: gestureRecognizer.view?.superview)
+
+        let firstX = wrapView.center.x
+        var firstY = wrapView.center.y
+        if gestureRecognizer.state == .began {
+            firstY = (gestureRecognizer.view?.center.y)!
+            currentY = firstY
+        }
+        
+        translatePoint = CGPoint(x: firstX, y: currentY + translatePoint.y)
+        
+        if translatePoint.y < (view.frame.size.height + topMargin)*0.5 {
+            translatePoint.y = (view.frame.size.height + topMargin)*0.5
+        }
+        
+        gestureRecognizer.view?.center = translatePoint
+        if gestureRecognizer.state == .ended {
+
+            let velocityY = 0.2*gestureRecognizer.velocity(in: view).y
+
+            let finalX = translatePoint.x
+            var finalY = translatePoint.y + velocityY
+            
+            let stopPoint1 = (view.frame.size.height + topMargin)*0.5
+            let stopPoint2 = view.frame.size.height
+            
+            if finalY < stopPoint2 || finalY < stopPoint1 {
+                finalY = stopPoint1
+            } else if (finalY > stopPoint2) {
+                finalY = stopPoint2
+            }
+            
+
+            let animationDuration = abs(velocityY*0.0002) + 0.3
+
+            UIView.beginAnimations("", context: nil)
+            UIView.setAnimationDuration(TimeInterval(animationDuration))
+            UIView.setAnimationCurve(.easeOut)
+            gestureRecognizer.view?.center = CGPoint(x: finalX, y: finalY)
+            UIView.commitAnimations()
+
+        }
+
+    }
+    
 }
 
-extension PullUpViewController {
+private extension PullUpViewController {
     
     func loadContentView() {
         
-        if let _headerview = datasource?.headerViewForPullUp() {
+        if let _headerview = datasource?.viewForHeaderBar() {
             _headerview.frame = headerView.bounds
             headerView.addSubview(_headerview)
         }
@@ -160,6 +218,7 @@ extension PullUpViewController {
         
     }
 }
+
 
 
 extension UIViewController {
