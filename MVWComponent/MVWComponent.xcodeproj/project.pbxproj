@@ -18,6 +18,7 @@
 		EF2B21F020BD2B4A00031DA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2B21EE20BD2B4A00031DA4 /* Main.storyboard */; };
 		EF2B21F220BD2B4B00031DA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B21F120BD2B4B00031DA4 /* Assets.xcassets */; };
 		EF2B21F520BD2B4B00031DA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2B21F320BD2B4B00031DA4 /* LaunchScreen.storyboard */; };
+		EF6BEF0520BFFB88007991D7 /* SegmentBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BEF0420BFFB88007991D7 /* SegmentBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		EF2B21F120BD2B4B00031DA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF2B21F420BD2B4B00031DA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF2B21F620BD2B4B00031DA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF6BEF0420BFFB88007991D7 /* SegmentBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		EF2B21FC20BD2C7500031DA4 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				EF6BEF0320BFFB33007991D7 /* SegmentBar */,
 				EF0FE18620BF9D12007B2FE8 /* Common */,
 				EF0FE17F20BF8CB6007B2FE8 /* Menu */,
 				EF2B21FD20BD2C8900031DA4 /* PullUp */,
@@ -136,6 +139,14 @@
 				EF06125F20BE876100C24CB9 /* PullUpHeader.xib */,
 			);
 			path = PullUpDemo;
+			sourceTree = "<group>";
+		};
+		EF6BEF0320BFFB33007991D7 /* SegmentBar */ = {
+			isa = PBXGroup;
+			children = (
+				EF6BEF0420BFFB88007991D7 /* SegmentBarView.swift */,
+			);
+			path = SegmentBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 			files = (
 				EF26EBA020BE45520064C3A7 /* PullUpDemoVC.swift in Sources */,
 				EF0FE18B20BFCD45007B2FE8 /* BaseSideViewController.swift in Sources */,
+				EF6BEF0520BFFB88007991D7 /* SegmentBarView.swift in Sources */,
 				EF0FE18120BF8CDE007B2FE8 /* MenuViewController.swift in Sources */,
 				EF0FE17E20BF8C60007B2FE8 /* LeftPanelDemoVC.swift in Sources */,
 				EF0FE18820BF9D20007B2FE8 /* Extension.swift in Sources */,
