@@ -23,6 +23,7 @@ class PullUpViewController: UIViewController {
     var cornerRadius : CGFloat = 10.0
     var headerHeight : CGFloat = 60.0
     
+    private let extraHeight : CGFloat = 20.0
     private let buttonsize : CGFloat = 20.0
     private let padding : CGFloat = 10.0
     private var currentY : CGFloat = 0
@@ -72,7 +73,7 @@ class PullUpViewController: UIViewController {
         wrapView.frame = wrapViewHidenFrame()
         headerView.frame = CGRect(x: 0, y: padding, width: wrapView.xwidth() - padding*2 - buttonsize, height: headerHeight)
         dismisButton.frame = CGRect(x: headerView.xwidth() + padding, y: padding, width: buttonsize, height: buttonsize)
-        contentView.frame = CGRect(x: 0, y: headerView.yy() + headerView.xheight(), width: wrapView.xwidth(), height: wrapView.xheight() - headerView.yy() - headerView.xheight())
+        contentView.frame = CGRect(x: 0, y: headerView.yy() + headerView.xheight(), width: wrapView.xwidth(), height: wrapView.xheight() - headerView.yy() - headerView.xheight() - extraHeight)
         
         UIView.animate(withDuration: 0.3, animations: {
             self.wrapView.frame = self.wrapViewVisibleFrame()
@@ -126,11 +127,11 @@ class PullUpViewController: UIViewController {
     }
     
     private func wrapViewVisibleFrame() -> CGRect {
-        return CGRect(x: 0, y: topMargin, width: view.bounds.width, height: view.bounds.height - topMargin)
+        return CGRect(x: 0, y: topMargin, width: view.bounds.width, height: view.bounds.height - topMargin + extraHeight)
     }
     
     private func wrapViewHidenFrame() -> CGRect {
-        return CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: view.bounds.height - topMargin)
+        return CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: view.bounds.height - topMargin + extraHeight)
     }
     
     //MARK: - SELECTOR
@@ -152,8 +153,8 @@ class PullUpViewController: UIViewController {
         
         translatePoint = CGPoint(x: staticX!, y: currentY + translatePoint.y)
         
-        if translatePoint.y < (view.frame.size.height + topMargin)*0.5 {
-            translatePoint.y = (view.frame.size.height + topMargin)*0.5
+        if translatePoint.y < (view.frame.size.height + topMargin)*0.5 - extraHeight*0.5 {
+            translatePoint.y = (view.frame.size.height + topMargin)*0.5 - extraHeight*0.5
         }
         
         gestureRecognizer.view?.center = translatePoint
