@@ -17,6 +17,12 @@ extension UIViewController {
         present(pullUpController, animated: true, completion: nil)
     }
     
+    open func showMenu(_ pullUpController: UIViewController) {
+        pullUpController.modalTransitionStyle = .crossDissolve
+        pullUpController.modalPresentationStyle = .overFullScreen
+        present(pullUpController, animated: true, completion: nil)
+    }
+    
 }
 
 extension UIView {

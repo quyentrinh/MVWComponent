@@ -252,11 +252,11 @@
                                         <rect key="frame" x="0.0" y="572" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nES-nK-G5z" id="fBP-F6-7Y2">
-                                            <rect key="frame" x="0.0" y="0.0" width="349" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9O7-Qr-iYv">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -299,8 +299,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="XwE-QT-940" firstAttribute="centerX" secondItem="c3R-dQ-rOH" secondAttribute="centerX" id="9Jo-xG-dAt"/>
-                            <constraint firstItem="XwE-QT-940" firstAttribute="centerY" secondItem="c3R-dQ-rOH" secondAttribute="centerY" id="GJq-FS-zcA"/>
+                            <constraint firstItem="XwE-QT-940" firstAttribute="centerX" secondItem="c3R-dQ-rOH" secondAttribute="centerX" id="SQB-3E-mM6"/>
+                            <constraint firstItem="XwE-QT-940" firstAttribute="centerY" secondItem="c3R-dQ-rOH" secondAttribute="centerY" id="VeR-t7-AOZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0gE-9l-rLX"/>
                     </view>
@@ -882,11 +882,14 @@
         <scene sceneID="Etq-Cu-X9n">
             <objects>
                 <navigationController id="6yd-l9-vlb" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="QgE-x0-VdJ">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QgE-x0-VdJ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.08235294118" green="0.39607843139999999" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.08235294118" green="0.39607843139999999" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="NuR-mi-1Nr" kind="relationship" relationship="rootViewController" id="ajD-mW-Eew"/>

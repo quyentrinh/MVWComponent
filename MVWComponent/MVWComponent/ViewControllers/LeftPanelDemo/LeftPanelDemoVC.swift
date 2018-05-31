@@ -20,11 +20,11 @@ class LeftPanelDemoVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
     @IBAction func showButtonTapped(_ sender: Any) {
         let vc = MenuViewController()
-        addPullUpController(vc)
+        showMenu(vc)
     }
     
-
 }

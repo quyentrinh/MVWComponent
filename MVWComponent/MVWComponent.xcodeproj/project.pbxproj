@@ -11,6 +11,7 @@
 		EF0FE17E20BF8C60007B2FE8 /* LeftPanelDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE17D20BF8C60007B2FE8 /* LeftPanelDemoVC.swift */; };
 		EF0FE18120BF8CDE007B2FE8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE18020BF8CDE007B2FE8 /* MenuViewController.swift */; };
 		EF0FE18820BF9D20007B2FE8 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE18720BF9D20007B2FE8 /* Extension.swift */; };
+		EF0FE18B20BFCD45007B2FE8 /* BaseSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE18A20BFCD45007B2FE8 /* BaseSideViewController.swift */; };
 		EF26EB9E20BE451B0064C3A7 /* PullUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF26EB9D20BE451B0064C3A7 /* PullUpViewController.swift */; };
 		EF26EBA020BE45520064C3A7 /* PullUpDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF26EB9F20BE45520064C3A7 /* PullUpDemoVC.swift */; };
 		EF2B21EB20BD2B4A00031DA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B21EA20BD2B4A00031DA4 /* AppDelegate.swift */; };
@@ -24,6 +25,7 @@
 		EF0FE17D20BF8C60007B2FE8 /* LeftPanelDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftPanelDemoVC.swift; sourceTree = "<group>"; };
 		EF0FE18020BF8CDE007B2FE8 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		EF0FE18720BF9D20007B2FE8 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		EF0FE18A20BFCD45007B2FE8 /* BaseSideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSideViewController.swift; sourceTree = "<group>"; };
 		EF26EB9D20BE451B0064C3A7 /* PullUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUpViewController.swift; sourceTree = "<group>"; };
 		EF26EB9F20BE45520064C3A7 /* PullUpDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUpDemoVC.swift; sourceTree = "<group>"; };
 		EF2B21E720BD2B4A00031DA4 /* MVWComponent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVWComponent.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				EF0FE18020BF8CDE007B2FE8 /* MenuViewController.swift */,
+				EF0FE18A20BFCD45007B2FE8 /* BaseSideViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF26EBA020BE45520064C3A7 /* PullUpDemoVC.swift in Sources */,
+				EF0FE18B20BFCD45007B2FE8 /* BaseSideViewController.swift in Sources */,
 				EF0FE18120BF8CDE007B2FE8 /* MenuViewController.swift in Sources */,
 				EF0FE17E20BF8C60007B2FE8 /* LeftPanelDemoVC.swift in Sources */,
 				EF0FE18820BF9D20007B2FE8 /* Extension.swift in Sources */,

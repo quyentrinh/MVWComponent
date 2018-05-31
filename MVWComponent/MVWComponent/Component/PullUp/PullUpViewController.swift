@@ -116,6 +116,7 @@ class PullUpViewController: UIViewController {
         
     }
     
+    
     private func setupPanGestureRecognizer() {
         let _panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureRecognizer(_:)))
         _panGestureRecognizer.minimumNumberOfTouches = 1

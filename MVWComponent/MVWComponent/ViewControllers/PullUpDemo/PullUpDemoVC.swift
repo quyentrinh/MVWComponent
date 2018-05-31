@@ -20,7 +20,6 @@ class PullUpDemoVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     @IBAction func showMeButtonTapped(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "DEMO")
