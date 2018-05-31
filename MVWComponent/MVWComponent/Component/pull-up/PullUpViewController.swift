@@ -116,7 +116,7 @@ class PullUpViewController: UIViewController {
         
     }
     
-    fileprivate func setupPanGestureRecognizer() {
+    private func setupPanGestureRecognizer() {
         let _panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureRecognizer(_:)))
         _panGestureRecognizer.minimumNumberOfTouches = 1
         _panGestureRecognizer.maximumNumberOfTouches = 1
@@ -132,7 +132,7 @@ class PullUpViewController: UIViewController {
         return CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: view.bounds.height - topMargin)
     }
     
-    //MARK: - ACTION
+    //MARK: - SELECTOR
     
     @objc private func dismissButtonPress() {
         guard let completion = delegate?.pullUpViewControllerDidDisappear else {return dismissPullViewController()}
@@ -183,12 +183,9 @@ class PullUpViewController: UIViewController {
             UIView.commitAnimations()
 
         }
-
     }
     
-}
-
-private extension PullUpViewController {
+    //MARK: - ACTION
     
     func loadContentView() {
         
@@ -217,9 +214,8 @@ private extension PullUpViewController {
         })
         
     }
+    
 }
-
-
 
 extension UIViewController {
     
