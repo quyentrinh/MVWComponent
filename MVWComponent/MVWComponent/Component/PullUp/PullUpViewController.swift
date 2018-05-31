@@ -143,14 +143,13 @@ class PullUpViewController: UIViewController {
         view.bringSubview(toFront: gestureRecognizer.view!)
         var translatePoint = gestureRecognizer.translation(in: gestureRecognizer.view?.superview)
 
-        let firstX = wrapView.center.x
-        var firstY = wrapView.center.y
+        let staticX = gestureRecognizer.view?.center.x
+        
         if gestureRecognizer.state == .began {
-            firstY = (gestureRecognizer.view?.center.y)!
-            currentY = firstY
+            currentY = (gestureRecognizer.view?.center.y)!
         }
         
-        translatePoint = CGPoint(x: firstX, y: currentY + translatePoint.y)
+        translatePoint = CGPoint(x: staticX!, y: currentY + translatePoint.y)
         
         if translatePoint.y < (view.frame.size.height + topMargin)*0.5 {
             translatePoint.y = (view.frame.size.height + topMargin)*0.5
@@ -160,8 +159,7 @@ class PullUpViewController: UIViewController {
         if gestureRecognizer.state == .ended {
 
             let velocityY = 0.2*gestureRecognizer.velocity(in: view).y
-
-            let finalX = translatePoint.x
+            
             var finalY = translatePoint.y + velocityY
             
             let stopPoint1 = (view.frame.size.height + topMargin)*0.5
@@ -179,7 +177,7 @@ class PullUpViewController: UIViewController {
             UIView.beginAnimations("", context: nil)
             UIView.setAnimationDuration(TimeInterval(animationDuration))
             UIView.setAnimationCurve(.easeOut)
-            gestureRecognizer.view?.center = CGPoint(x: finalX, y: finalY)
+            gestureRecognizer.view?.center = CGPoint(x: staticX!, y: finalY)
             UIView.commitAnimations()
 
         }
@@ -215,32 +213,4 @@ class PullUpViewController: UIViewController {
         
     }
     
-}
-
-extension UIViewController {
-    
-    open func addPullUpController(_ pullUpController: UIViewController) {
-        pullUpController.modalTransitionStyle = .crossDissolve
-        pullUpController.modalPresentationStyle = .overCurrentContext
-        present(pullUpController, animated: true, completion: nil)
-    }
-    
-}
-
-private extension UIView {
-    func xwidth() -> CGFloat {
-        return frame.size.width
-    }
-    
-    func xheight() -> CGFloat {
-        return frame.size.height
-    }
-    
-    func xx() -> CGFloat {
-        return frame.origin.x
-    }
-    
-    func yy() -> CGFloat {
-        return frame.origin.y
-    }
 }
