@@ -293,23 +293,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8W4-ow-wAN" customClass="RatingView" customModule="MVWComponent" customModuleProvider="target">
-                                <rect key="frame" x="93" y="294" width="196" height="97"/>
+                                <rect key="frame" x="89.5" y="164" width="196" height="97"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="196" id="cqp-Z8-rxx"/>
+                                    <constraint firstAttribute="height" constant="97" id="uXH-42-UCq"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hasSlider" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="darkStar" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9uY-CX-Qw1" customClass="RatingView" customModule="MVWComponent" customModuleProvider="target">
+                                <rect key="frame" x="89" y="387" width="196" height="97"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasSlider" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="darkStar" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isj-Ic-hYw" customClass="RatingView" customModule="MVWComponent" customModuleProvider="target">
+                                <rect key="frame" x="89.5" y="275" width="196" height="97"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasSlider" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="darkStar" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8W4-ow-wAN" firstAttribute="top" secondItem="yae-tR-ktj" secondAttribute="top" constant="230" id="EsL-rI-a3J"/>
-                            <constraint firstItem="8W4-ow-wAN" firstAttribute="leading" secondItem="yae-tR-ktj" secondAttribute="leading" constant="93" id="Kcb-nM-TGF"/>
-                            <constraint firstItem="yae-tR-ktj" firstAttribute="bottom" secondItem="8W4-ow-wAN" secondAttribute="bottom" constant="276" id="YSt-N4-Gqt"/>
-                            <constraint firstItem="yae-tR-ktj" firstAttribute="trailing" secondItem="8W4-ow-wAN" secondAttribute="trailing" constant="86" id="e7s-ml-r56"/>
+                            <constraint firstItem="9uY-CX-Qw1" firstAttribute="top" secondItem="isj-Ic-hYw" secondAttribute="bottom" constant="15" id="EJH-Z3-yY2"/>
+                            <constraint firstItem="8W4-ow-wAN" firstAttribute="centerX" secondItem="yae-tR-ktj" secondAttribute="centerX" id="Fqg-oM-qQa"/>
+                            <constraint firstItem="9uY-CX-Qw1" firstAttribute="centerX" secondItem="yae-tR-ktj" secondAttribute="centerX" id="Mb3-BE-pFm"/>
+                            <constraint firstItem="9uY-CX-Qw1" firstAttribute="width" secondItem="8W4-ow-wAN" secondAttribute="width" id="TTD-Cd-STR"/>
+                            <constraint firstItem="8W4-ow-wAN" firstAttribute="top" secondItem="yae-tR-ktj" secondAttribute="top" constant="100" id="X6A-Bf-deH"/>
+                            <constraint firstItem="isj-Ic-hYw" firstAttribute="top" secondItem="8W4-ow-wAN" secondAttribute="bottom" constant="14" id="XtR-kc-sWs"/>
+                            <constraint firstItem="isj-Ic-hYw" firstAttribute="height" secondItem="8W4-ow-wAN" secondAttribute="height" id="f8o-my-3Fe"/>
+                            <constraint firstItem="isj-Ic-hYw" firstAttribute="width" secondItem="8W4-ow-wAN" secondAttribute="width" id="kTQ-e7-L9R"/>
+                            <constraint firstItem="9uY-CX-Qw1" firstAttribute="height" secondItem="8W4-ow-wAN" secondAttribute="height" id="nVi-Ku-veb"/>
+                            <constraint firstItem="isj-Ic-hYw" firstAttribute="centerX" secondItem="yae-tR-ktj" secondAttribute="centerX" id="taR-PH-HSd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yae-tR-ktj"/>
                     </view>
+                    <connections>
+                        <outlet property="ratingView" destination="8W4-ow-wAN" id="iyn-HN-6Nh"/>
+                        <outlet property="ratingViewWithoutSlideer" destination="isj-Ic-hYw" id="K5E-P7-3Jk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHp-Mz-K8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

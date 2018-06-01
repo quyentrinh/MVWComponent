@@ -10,6 +10,11 @@ import UIKit
 
 class CustomViewDemoVC: UIViewController {
 
+    
+    @IBOutlet weak var ratingView: RatingView!
+    @IBOutlet weak var ratingViewWithoutSlideer: RatingView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,12 +22,17 @@ class CustomViewDemoVC: UIViewController {
         segment.delegate = self
         segment.datasource = self
         view.addSubview(segment)
+        
+        ratingViewWithoutSlideer.ratingValue = 4.7
+        print("rating : \(ratingView.ratingValue)")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    
 }
 
 extension CustomViewDemoVC : SegmentBarViewDelegate, SegmentBarViewDatasource {
