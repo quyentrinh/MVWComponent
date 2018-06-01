@@ -291,13 +291,25 @@
                     <view key="view" contentMode="scaleToFill" id="fYn-kd-SUr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8W4-ow-wAN" customClass="RatingView" customModule="MVWComponent" customModuleProvider="target">
+                                <rect key="frame" x="93" y="294" width="196" height="97"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8W4-ow-wAN" firstAttribute="top" secondItem="yae-tR-ktj" secondAttribute="top" constant="230" id="EsL-rI-a3J"/>
+                            <constraint firstItem="8W4-ow-wAN" firstAttribute="leading" secondItem="yae-tR-ktj" secondAttribute="leading" constant="93" id="Kcb-nM-TGF"/>
+                            <constraint firstItem="yae-tR-ktj" firstAttribute="bottom" secondItem="8W4-ow-wAN" secondAttribute="bottom" constant="276" id="YSt-N4-Gqt"/>
+                            <constraint firstItem="yae-tR-ktj" firstAttribute="trailing" secondItem="8W4-ow-wAN" secondAttribute="trailing" constant="86" id="e7s-ml-r56"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yae-tR-ktj"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHp-Mz-K8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="521" y="922"/>
+            <point key="canvasLocation" x="520.79999999999995" y="921.58920539730138"/>
         </scene>
         <!--Left Panel DemoVC-->
         <scene sceneID="ATR-W7-bTV">

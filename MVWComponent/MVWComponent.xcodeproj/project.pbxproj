@@ -19,6 +19,11 @@
 		EF2B21F220BD2B4B00031DA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B21F120BD2B4B00031DA4 /* Assets.xcassets */; };
 		EF2B21F520BD2B4B00031DA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2B21F320BD2B4B00031DA4 /* LaunchScreen.storyboard */; };
 		EF6BEF0520BFFB88007991D7 /* SegmentBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BEF0420BFFB88007991D7 /* SegmentBarView.swift */; };
+		EF73E4D520C0FB68001EB1E9 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73E4D420C0FB68001EB1E9 /* FloatRatingView.swift */; };
+		EF73E4D920C10197001EB1E9 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73E4D820C10197001EB1E9 /* RatingView.swift */; };
+		EF73E4DD20C1030C001EB1E9 /* RatingSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73E4DC20C1030C001EB1E9 /* RatingSlider.swift */; };
+		EF73E4DF20C11B47001EB1E9 /* RatingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF73E4DE20C11B47001EB1E9 /* RatingView.xib */; };
+		EF73E4E120C11B79001EB1E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF73E4E020C11B79001EB1E9 /* Images.xcassets */; };
 		EFD84F3420C0E2040040FA15 /* CustomViewDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD84F3320C0E2040040FA15 /* CustomViewDemoVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +42,11 @@
 		EF2B21F420BD2B4B00031DA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF2B21F620BD2B4B00031DA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF6BEF0420BFFB88007991D7 /* SegmentBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentBarView.swift; sourceTree = "<group>"; };
+		EF73E4D420C0FB68001EB1E9 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
+		EF73E4D820C10197001EB1E9 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		EF73E4DC20C1030C001EB1E9 /* RatingSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingSlider.swift; sourceTree = "<group>"; };
+		EF73E4DE20C11B47001EB1E9 /* RatingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingView.xib; sourceTree = "<group>"; };
+		EF73E4E020C11B79001EB1E9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EFD84F3320C0E2040040FA15 /* CustomViewDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewDemoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,8 +119,9 @@
 		EF2B21FC20BD2C7500031DA4 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				EF6BEF0320BFFB33007991D7 /* SegmentBar */,
+				EF73E4D120C0F914001EB1E9 /* RatingView */,
 				EF0FE18620BF9D12007B2FE8 /* Common */,
+				EF6BEF0320BFFB33007991D7 /* SegmentBar */,
 				EF0FE17F20BF8CB6007B2FE8 /* Menu */,
 				EF2B21FD20BD2C8900031DA4 /* PullUp */,
 			);
@@ -150,6 +161,18 @@
 				EF6BEF0420BFFB88007991D7 /* SegmentBarView.swift */,
 			);
 			path = SegmentBar;
+			sourceTree = "<group>";
+		};
+		EF73E4D120C0F914001EB1E9 /* RatingView */ = {
+			isa = PBXGroup;
+			children = (
+				EF73E4E020C11B79001EB1E9 /* Images.xcassets */,
+				EF73E4D420C0FB68001EB1E9 /* FloatRatingView.swift */,
+				EF73E4DC20C1030C001EB1E9 /* RatingSlider.swift */,
+				EF73E4D820C10197001EB1E9 /* RatingView.swift */,
+				EF73E4DE20C11B47001EB1E9 /* RatingView.xib */,
+			);
+			path = RatingView;
 			sourceTree = "<group>";
 		};
 		EFD84F3220C0E1EB0040FA15 /* CustomView */ = {
@@ -219,7 +242,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF06126020BE876100C24CB9 /* PullUpHeader.xib in Resources */,
+				EF73E4DF20C11B47001EB1E9 /* RatingView.xib in Resources */,
 				EF2B21F520BD2B4B00031DA4 /* LaunchScreen.storyboard in Resources */,
+				EF73E4E120C11B79001EB1E9 /* Images.xcassets in Resources */,
 				EF2B21F220BD2B4B00031DA4 /* Assets.xcassets in Resources */,
 				EF2B21F020BD2B4A00031DA4 /* Main.storyboard in Resources */,
 			);
@@ -232,13 +257,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF73E4D920C10197001EB1E9 /* RatingView.swift in Sources */,
 				EF26EBA020BE45520064C3A7 /* PullUpDemoVC.swift in Sources */,
 				EF0FE18B20BFCD45007B2FE8 /* BaseSideViewController.swift in Sources */,
 				EF6BEF0520BFFB88007991D7 /* SegmentBarView.swift in Sources */,
 				EF0FE18120BF8CDE007B2FE8 /* MenuViewController.swift in Sources */,
 				EF0FE17E20BF8C60007B2FE8 /* LeftPanelDemoVC.swift in Sources */,
 				EFD84F3420C0E2040040FA15 /* CustomViewDemoVC.swift in Sources */,
+				EF73E4D520C0FB68001EB1E9 /* FloatRatingView.swift in Sources */,
 				EF0FE18820BF9D20007B2FE8 /* Extension.swift in Sources */,
+				EF73E4DD20C1030C001EB1E9 /* RatingSlider.swift in Sources */,
 				EF26EB9E20BE451B0064C3A7 /* PullUpViewController.swift in Sources */,
 				EF2B21EB20BD2B4A00031DA4 /* AppDelegate.swift in Sources */,
 			);

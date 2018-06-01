@@ -33,6 +33,19 @@ class SegmentBarView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupUI()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func updateConstraints() {
+        collectionView.frame = self.bounds
+        super.updateConstraints()
+    }
+    
+    func setupUI() {
         backgroundColor = .white
         
         let layout = UICollectionViewFlowLayout()
@@ -46,20 +59,10 @@ class SegmentBarView: UIView {
         _collectionView.register(SegmentBarCell.self, forCellWithReuseIdentifier: SegmentBarView.reuseIdentify)
         addSubview(_collectionView)
         collectionView = _collectionView
+        
         updateConstraintsIfNeeded()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func updateConstraints() {
-        if shouldSetupConstraints {
-            collectionView.frame = self.bounds
-            shouldSetupConstraints = false
-        }
-        super.updateConstraints()
-    }
 }
 
 extension SegmentBarView : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
