@@ -31,7 +31,6 @@
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="StarEmpty"/>
-                        <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="StarFull"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="minRating">
                             <integer key="value" value="0"/>
                         </userDefinedRuntimeAttribute>
@@ -82,6 +81,5 @@
     </objects>
     <resources>
         <image name="StarEmpty" width="64" height="64"/>
-        <image name="StarFull" width="64" height="64"/>
     </resources>
 </document>

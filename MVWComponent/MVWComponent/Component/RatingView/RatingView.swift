@@ -15,6 +15,15 @@ class RatingView: UIView {
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var valueSlider: RatingSlider!
     
+    @IBInspectable open var hasSlider: Bool = false {
+        didSet {
+            valueSlider.isHidden = !hasSlider
+            xibSetup()
+        }
+    }
+    
+    @IBInspectable open var darkStar: Bool = false
+    
     let nibName = "RatingView"
     var contentView : UIView?
     
@@ -32,11 +41,14 @@ class RatingView: UIView {
         super.awakeFromNib()
         rating.type = .floatRatings
         rating.editable = false
+        let imageName = darkStar ? "StarFull_Gray" : "StarFull_Blue"
+        rating.fullImage = UIImage(named: imageName)
     }
     
     
     
     func xibSetup() {
+        
         contentView = loadViewFromNib()
 
         contentView!.frame = bounds
@@ -44,6 +56,7 @@ class RatingView: UIView {
         contentView!.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     
         addSubview(contentView!)
+        
     }
     
     func loadViewFromNib() -> UIView! {

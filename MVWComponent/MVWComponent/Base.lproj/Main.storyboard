@@ -295,6 +295,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8W4-ow-wAN" customClass="RatingView" customModule="MVWComponent" customModuleProvider="target">
                                 <rect key="frame" x="93" y="294" width="196" height="97"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasSlider" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="darkStar" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
