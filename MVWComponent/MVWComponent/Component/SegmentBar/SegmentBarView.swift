@@ -46,7 +46,7 @@ class SegmentBarView: UIView {
         _collectionView.register(SegmentBarCell.self, forCellWithReuseIdentifier: SegmentBarView.reuseIdentify)
         addSubview(_collectionView)
         collectionView = _collectionView
-        
+        updateConstraintsIfNeeded()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -87,7 +87,7 @@ extension SegmentBarView : UICollectionViewDelegate, UICollectionViewDataSource,
         return cell
     }
     
-    //MARK: - Delgate
+    //MARK: - Delgete
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! SegmentBarCell
