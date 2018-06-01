@@ -66,14 +66,15 @@ class RatingView: UIView {
     
     
     func xibSetup() {
-        
-        contentView = loadViewFromNib()
-
-        contentView!.frame = bounds
-
-        contentView!.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    
-        addSubview(contentView!)
+        if contentView == nil {
+            contentView = loadViewFromNib()
+            
+            contentView!.frame = bounds
+            
+            contentView!.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            
+            addSubview(contentView!)
+        }
         
         updateUI()
         
