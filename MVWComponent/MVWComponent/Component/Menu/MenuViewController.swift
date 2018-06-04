@@ -10,7 +10,22 @@ import UIKit
 
 class MenuViewController: BaseSideViewController {
     
-    private var tableView: UITableView!
+    private lazy var tableView: UITableView = {
+        let _tableView = UITableView()
+        _tableView.separatorStyle = .none
+        _tableView.delegate = self
+        _tableView.dataSource = self
+        _tableView.register(UINib(nibName: "MenuTextCell", bundle: nil), forCellReuseIdentifier: "menutextcell")
+        _tableView.register(UINib(nibName: "MenuImageCell", bundle: nil), forCellReuseIdentifier: "menuimagecell")
+        _tableView.register(UINib(nibName: "MenuTitleIconCell", bundle: nil), forCellReuseIdentifier: "menutitleiconcell")
+        return _tableView
+    }()
+
+    var viewModel : MenuViewModel! {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +34,7 @@ class MenuViewController: BaseSideViewController {
     
     //MARK: - SETUP UI
     func setupUI() {
-        let _tableView = UITableView()
-        _tableView.delegate = self
-        _tableView.dataSource = self
-        updateContentView(_tableView)
-        tableView = _tableView
+        updateContentView(tableView)
     }
     
 }
@@ -31,20 +42,23 @@ class MenuViewController: BaseSideViewController {
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return nil
+        return viewModel.numberOfSection()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.numberOfRowIn(section: section)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return viewModel.viewForHeaderIn(section: section)
     }
 
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return viewModel.heightForHeaderIn(section: section);
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell.init(style: .default, reuseIdentifier: "cell")
-        return cell
+        return viewModel.setupCell(tableView:tableView, forRowAt:indexPath)
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

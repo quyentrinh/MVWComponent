@@ -184,6 +184,7 @@ extension BaseSideViewController {
     
     func updateContentView(_ content : UIView) {
         content.frame = contentView.bounds
+        content.frame.origin.y -= 20            //height of status bar
         content.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         contentView.insertSubview(content, belowSubview: dismisButton)
     }
