@@ -8,8 +8,24 @@
 
 import UIKit
 
+protocol MenuImageCellDelegate: class {
+    func imageCell(cell: MenuImageCell, didTapImageAt index: Int)
+}
+
 class MenuImageCell: UITableViewCell {
 
+    private let imageSize: CGFloat = 30.0
+    private let padding: CGFloat = 15.0
+    private let tagOffset: Int = 100
+    
+    weak var delegate: MenuImageCellDelegate?
+    
+    var images : [String]! {
+        didSet {
+            updateLayout()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,7 +34,31 @@ class MenuImageCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+    }
+    
+    func updateLayout() {
+        if let _images = images {
+            for i in 0..<_images.count {
+                let positionX = (imageSize + padding)*CGFloat(i) + padding
+                let imageView = UIImageView(frame: CGRect(x: positionX, y: (contentView.frame.height - imageSize)/2, width: imageSize, height: imageSize))
+                imageView.backgroundColor = .groupTableViewBackground
+                imageView.tag = i + tagOffset
+                imageView.image = UIImage(named: _images[i])
+                imageView.isUserInteractionEnabled = true
+                let recognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapRecognizer(recognizer:)))
+                imageView.addGestureRecognizer(recognizer)
+                
+                contentView.addSubview(imageView)
+            }
+        }
+    }
+    
+    @objc func imageTapRecognizer(recognizer: UITapGestureRecognizer) {
+        let image = recognizer.view as! UIImageView
+        let index = image.tag - tagOffset
+        if let action = delegate?.imageCell(cell: self, didTapImageAt: index) {
+            action
+        }
     }
     
 }

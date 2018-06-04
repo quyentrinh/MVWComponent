@@ -12,9 +12,9 @@ class MenuViewController: BaseSideViewController {
     
     private lazy var tableView: UITableView = {
         let _tableView = UITableView()
-        _tableView.separatorStyle = .none
         _tableView.delegate = self
         _tableView.dataSource = self
+        _tableView.separatorStyle = .none
         _tableView.register(UINib(nibName: "MenuTextCell", bundle: nil), forCellReuseIdentifier: "menutextcell")
         _tableView.register(UINib(nibName: "MenuImageCell", bundle: nil), forCellReuseIdentifier: "menuimagecell")
         _tableView.register(UINib(nibName: "MenuTitleIconCell", bundle: nil), forCellReuseIdentifier: "menutitleiconcell")
@@ -41,6 +41,7 @@ class MenuViewController: BaseSideViewController {
 
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSection()
     }
@@ -65,4 +66,6 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
 
     }
 }
+
+
 

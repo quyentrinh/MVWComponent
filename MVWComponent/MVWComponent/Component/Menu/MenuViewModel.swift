@@ -44,9 +44,9 @@ class MenuViewModel {
     
     func heightForHeaderIn(section: Int) -> CGFloat {
         if section == 0 {
-            return 120
+            return 80
         }
-        return 50
+        return 30
     }
     
     func setupCell(tableView: UITableView, forRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,6 +64,8 @@ class MenuViewModel {
             }
         case .image: do {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellModel.type.identifier) as! MenuImageCell
+            cell.delegate = self
+            cell.images = cellModel.images
             return cell
             }
         case .both: do {
@@ -76,6 +78,10 @@ class MenuViewModel {
     
     //MARK:- Private method
     
-    
-    
+}
+
+extension MenuViewModel: MenuImageCellDelegate {
+    func imageCell(cell: MenuImageCell, didTapImageAt index: Int) {
+        print("Row \(index) Tapped")
+    }
 }

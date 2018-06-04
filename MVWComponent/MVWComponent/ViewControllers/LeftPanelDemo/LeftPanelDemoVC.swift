@@ -23,17 +23,21 @@ class LeftPanelDemoVC: UIViewController {
         
         var cellModels = Array<[MenuCellModel]>()
         
-        let cell11 = MenuCellModel(text: "Quyen Trinh Van")
-        let cell12 = MenuCellModel(images: [])
-        let cell13 = MenuCellModel(icon: "", text: "Gintoki san")
-        let section1 = [cell11, cell12, cell13]
+        let cell11 = MenuCellModel(icon: "", text: "Gintoki Yoruzaki")
+        let cell12 = MenuCellModel(icon: "", text: "Otiku Sogou")
+        let cell13 = MenuCellModel(icon: "", text: "Kamui Otutsu")
+        let cell14 = MenuCellModel(icon: "", text: "Itachi Uchiha")
+        let cell15 = MenuCellModel(icon: "", text: "Naruto Uzumaki")
+        let cell16 = MenuCellModel(icon: "", text: "Saitama")
+        let cell17 = MenuCellModel(icon: "", text: "Monkey.D.Luffy")
+        let section1 = [cell11, cell12, cell13, cell14, cell15, cell16, cell17]
         
-        let cell22 = MenuCellModel(images: [])
+        let cell22 = MenuCellModel(images: ["123", "43", "asd", "41"])
         let cell23 = MenuCellModel(icon: "", text: "Tasumaki")
         let section2 = [cell22, cell23]
         
         
-        let cell31 = MenuCellModel(images: [])
+        let cell31 = MenuCellModel(images: ["123","41"])
         let cell32 = MenuCellModel(text: "Log out")
         let section3 = [cell31, cell32]
         

@@ -18,44 +18,6 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="329" height="47.5"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9h-y3-D1l">
-                        <rect key="frame" x="15" y="11" width="40" height="26"/>
-                        <color key="backgroundColor" red="0.08235294118" green="0.39607843139999999" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="26" id="HQs-ZQ-wDb"/>
-                            <constraint firstAttribute="width" constant="40" id="W20-z5-0gj"/>
-                        </constraints>
-                    </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BSk-0A-DaB">
-                        <rect key="frame" x="75" y="11" width="40" height="26"/>
-                        <color key="backgroundColor" red="0.94901960780000005" green="0.1450980392" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJm-QA-1ZX">
-                        <rect key="frame" x="135" y="11" width="40" height="26"/>
-                        <color key="backgroundColor" red="1" green="0.4941176471" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoR-tM-Odu">
-                        <rect key="frame" x="195" y="11" width="40" height="26"/>
-                        <color key="backgroundColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </subviews>
-                <constraints>
-                    <constraint firstItem="BSk-0A-DaB" firstAttribute="width" secondItem="Z9h-y3-D1l" secondAttribute="width" id="3Ak-BQ-i0w"/>
-                    <constraint firstItem="Z9h-y3-D1l" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="6Xc-PO-2Gd"/>
-                    <constraint firstItem="VJm-QA-1ZX" firstAttribute="centerY" secondItem="Z9h-y3-D1l" secondAttribute="centerY" id="94A-ct-tZp"/>
-                    <constraint firstItem="BSk-0A-DaB" firstAttribute="height" secondItem="Z9h-y3-D1l" secondAttribute="height" id="Cce-IO-rzn"/>
-                    <constraint firstItem="VJm-QA-1ZX" firstAttribute="height" secondItem="Z9h-y3-D1l" secondAttribute="height" id="DGi-ux-noh"/>
-                    <constraint firstItem="BSk-0A-DaB" firstAttribute="centerY" secondItem="Z9h-y3-D1l" secondAttribute="centerY" id="Eic-9U-3jZ"/>
-                    <constraint firstItem="VJm-QA-1ZX" firstAttribute="leading" secondItem="BSk-0A-DaB" secondAttribute="trailing" constant="20" id="Ul8-gk-UMW"/>
-                    <constraint firstItem="VJm-QA-1ZX" firstAttribute="width" secondItem="Z9h-y3-D1l" secondAttribute="width" id="f8U-UC-qnY"/>
-                    <constraint firstItem="BSk-0A-DaB" firstAttribute="leading" secondItem="Z9h-y3-D1l" secondAttribute="trailing" constant="20" id="l4B-Us-KVp"/>
-                    <constraint firstItem="Z9h-y3-D1l" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="m2K-0F-Ixq"/>
-                    <constraint firstItem="eoR-tM-Odu" firstAttribute="width" secondItem="Z9h-y3-D1l" secondAttribute="width" id="rjj-1L-5ys"/>
-                    <constraint firstItem="eoR-tM-Odu" firstAttribute="leading" secondItem="VJm-QA-1ZX" secondAttribute="trailing" constant="20" id="rnl-5Z-Sf3"/>
-                    <constraint firstItem="eoR-tM-Odu" firstAttribute="height" secondItem="Z9h-y3-D1l" secondAttribute="height" id="uU5-ge-464"/>
-                    <constraint firstItem="eoR-tM-Odu" firstAttribute="centerY" secondItem="Z9h-y3-D1l" secondAttribute="centerY" id="xF2-pn-oGU"/>
-                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <point key="canvasLocation" x="20.5" y="58"/>
