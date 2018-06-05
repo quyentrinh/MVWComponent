@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6yd-l9-vlb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6yd-l9-vlb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--MVW Component-->
         <scene sceneID="nLf-wZ-pFP">
             <objects>
-                <tableViewController id="NuR-mi-1Nr" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="NuR-mi-1Nr" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pK1-Dd-1Li">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -305,16 +305,22 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9uY-CX-Qw1" customClass="RatingView" customModule="MVWComponent" customModuleProvider="target">
-                                <rect key="frame" x="89" y="387" width="196" height="97"/>
+                                <rect key="frame" x="89" y="313" width="196" height="37"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="OaA-Yr-nxM"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hasSlider" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="darkStar" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isj-Ic-hYw" customClass="RatingView" customModule="MVWComponent" customModuleProvider="target">
-                                <rect key="frame" x="89.5" y="275" width="196" height="97"/>
+                                <rect key="frame" x="89.5" y="275" width="196" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="VET-cF-w1D"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hasSlider" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="darkStar" value="YES"/>
@@ -323,15 +329,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="9uY-CX-Qw1" firstAttribute="top" secondItem="isj-Ic-hYw" secondAttribute="bottom" constant="15" id="EJH-Z3-yY2"/>
+                            <constraint firstItem="9uY-CX-Qw1" firstAttribute="top" secondItem="isj-Ic-hYw" secondAttribute="bottom" constant="8" id="EJH-Z3-yY2"/>
                             <constraint firstItem="8W4-ow-wAN" firstAttribute="centerX" secondItem="yae-tR-ktj" secondAttribute="centerX" id="Fqg-oM-qQa"/>
                             <constraint firstItem="9uY-CX-Qw1" firstAttribute="centerX" secondItem="yae-tR-ktj" secondAttribute="centerX" id="Mb3-BE-pFm"/>
                             <constraint firstItem="9uY-CX-Qw1" firstAttribute="width" secondItem="8W4-ow-wAN" secondAttribute="width" id="TTD-Cd-STR"/>
                             <constraint firstItem="8W4-ow-wAN" firstAttribute="top" secondItem="yae-tR-ktj" secondAttribute="top" constant="100" id="X6A-Bf-deH"/>
                             <constraint firstItem="isj-Ic-hYw" firstAttribute="top" secondItem="8W4-ow-wAN" secondAttribute="bottom" constant="14" id="XtR-kc-sWs"/>
-                            <constraint firstItem="isj-Ic-hYw" firstAttribute="height" secondItem="8W4-ow-wAN" secondAttribute="height" id="f8o-my-3Fe"/>
                             <constraint firstItem="isj-Ic-hYw" firstAttribute="width" secondItem="8W4-ow-wAN" secondAttribute="width" id="kTQ-e7-L9R"/>
-                            <constraint firstItem="9uY-CX-Qw1" firstAttribute="height" secondItem="8W4-ow-wAN" secondAttribute="height" id="nVi-Ku-veb"/>
                             <constraint firstItem="isj-Ic-hYw" firstAttribute="centerX" secondItem="yae-tR-ktj" secondAttribute="centerX" id="taR-PH-HSd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yae-tR-ktj"/>
@@ -404,7 +408,7 @@
         <!--Table View Controller-->
         <scene sceneID="fkn-3x-Umx">
             <objects>
-                <tableViewController storyboardIdentifier="DEMO" id="nO0-1b-5E6" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DEMO" automaticallyAdjustsScrollViewInsets="NO" id="nO0-1b-5E6" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7R0-55-row">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

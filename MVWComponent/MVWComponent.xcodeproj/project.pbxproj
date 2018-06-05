@@ -12,6 +12,7 @@
 		EF0FE18120BF8CDE007B2FE8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE18020BF8CDE007B2FE8 /* MenuViewController.swift */; };
 		EF0FE18820BF9D20007B2FE8 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE18720BF9D20007B2FE8 /* Extension.swift */; };
 		EF0FE18B20BFCD45007B2FE8 /* BaseSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE18A20BFCD45007B2FE8 /* BaseSideViewController.swift */; };
+		EF25EF2920C63BE1003B927A /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF25EF2820C63BE1003B927A /* TagView.swift */; };
 		EF26EB9E20BE451B0064C3A7 /* PullUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF26EB9D20BE451B0064C3A7 /* PullUpViewController.swift */; };
 		EF26EBA020BE45520064C3A7 /* PullUpDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF26EB9F20BE45520064C3A7 /* PullUpDemoVC.swift */; };
 		EF2B21EB20BD2B4A00031DA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B21EA20BD2B4A00031DA4 /* AppDelegate.swift */; };
@@ -45,6 +46,7 @@
 		EF0FE18020BF8CDE007B2FE8 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		EF0FE18720BF9D20007B2FE8 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		EF0FE18A20BFCD45007B2FE8 /* BaseSideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSideViewController.swift; sourceTree = "<group>"; };
+		EF25EF2820C63BE1003B927A /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		EF26EB9D20BE451B0064C3A7 /* PullUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUpViewController.swift; sourceTree = "<group>"; };
 		EF26EB9F20BE45520064C3A7 /* PullUpDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUpDemoVC.swift; sourceTree = "<group>"; };
 		EF2B21E720BD2B4A00031DA4 /* MVWComponent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVWComponent.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		EF25EF2720C63BBA003B927A /* TagView */ = {
+			isa = PBXGroup;
+			children = (
+				EF25EF2820C63BE1003B927A /* TagView.swift */,
+			);
+			path = TagView;
+			sourceTree = "<group>";
+		};
 		EF2B21DE20BD2B4A00031DA4 = {
 			isa = PBXGroup;
 			children = (
@@ -147,8 +157,9 @@
 		EF2B21FC20BD2C7500031DA4 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				EF73E4D120C0F914001EB1E9 /* RatingView */,
+				EF25EF2720C63BBA003B927A /* TagView */,
 				EF0FE18620BF9D12007B2FE8 /* Common */,
+				EF73E4D120C0F914001EB1E9 /* RatingView */,
 				EF6BEF0320BFFB33007991D7 /* SegmentBar */,
 				EF0FE17F20BF8CB6007B2FE8 /* Menu */,
 				EF2B21FD20BD2C8900031DA4 /* PullUp */,
@@ -333,6 +344,7 @@
 				EF3E5F9F20C14FF100F6A118 /* MenuViewModel.swift in Sources */,
 				EF26EB9E20BE451B0064C3A7 /* PullUpViewController.swift in Sources */,
 				EF2B21EB20BD2B4A00031DA4 /* AppDelegate.swift in Sources */,
+				EF25EF2920C63BE1003B927A /* TagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,6 +25,19 @@ class CustomViewDemoVC: UIViewController {
         
         ratingViewWithoutSlideer.ratingValue = 4.7
         print("rating : \(ratingView.ratingValue)")
+        
+        let tagviewConfig = TagConfiguration(backgroundColor: .groupTableViewBackground,
+                                             selectedBackgroundColor: .lightGray,
+                                             borderColor: .brown, borderWidth: 0.8,
+                                             cornerRadius: 5.0,
+                                             padding: 5.0,
+                                             textColor: .darkGray,
+                                             font: .systemFont(ofSize: 13)
+        )
+
+        let tagview = TagView(configrution: tagviewConfig, frame: CGRect(x: 20, y: 380, width: view.frame.width - 40, height: 60))
+        tagview.tagsData = ["Gintoki", "Yiru", "Okita", "Katsura", "Messi", "Cristiano"]
+        view.addSubview(tagview)
     }
 
     override func didReceiveMemoryWarning() {
