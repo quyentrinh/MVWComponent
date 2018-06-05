@@ -21,7 +21,7 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MRN-LL-rr2">
                         <rect key="frame" x="15" y="11" width="20" height="20"/>
-                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.81334333808928583" green="0.81334333808928583" blue="0.81334333808928583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="KXI-fb-2ke"/>
                             <constraint firstAttribute="width" constant="20" id="XsO-qW-JLs"/>

@@ -9,7 +9,6 @@
 import UIKit
 
 class BaseSideViewController: UIViewController {
-
     
     var rightOffSet: CGFloat = 80.0
 
@@ -17,8 +16,8 @@ class BaseSideViewController: UIViewController {
     private let padding : CGFloat = 5.0
     private var currentX : CGFloat = 0
     
-    private var contentView: UIView!
-    private var dismisButton: UIButton!
+    var contentView: UIView!
+    var dismisButton: UIButton!
     private var panGestureRecognizer: UIPanGestureRecognizer?
     
     override func viewDidLoad() {
@@ -107,9 +106,8 @@ class BaseSideViewController: UIViewController {
     
     //MARK: - SELECTOR
     
-    @objc private func dismissButtonPress() {
-        //        guard let completion = delegate?.pullUpViewControllerDidDisappear else {return dismissPullViewController()}
-        dismiss()
+    @objc func dismissButtonPress() {
+        //overrited
     }
     
     @objc private func handlePanGestureRecognizer(_ gestureRecognizer: UIPanGestureRecognizer) {
@@ -168,26 +166,20 @@ class BaseSideViewController: UIViewController {
     
     //MARK: - ACTION
     
-    func dismiss()  {
+    func dismiss(completion: (() -> Swift.Void)? = nil)  {
         UIView.animate(withDuration: 0.3, animations: {
             self.contentView.frame.origin.x = self.rightOffSet - self.view.bounds.width
             UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelNormal               //bring back status bar
             self.view.backgroundColor = UIColor.black.withAlphaComponent(0.0)
         }, completion: { _ in
-            self.dismiss(animated: false, completion: nil)
+            self.dismiss(animated: false, completion: completion)
         })
     }
     
 }
 
 extension BaseSideViewController {
-    
-    func updateContentView(_ content : UIView) {
-        content.frame = contentView.bounds
-        content.frame.origin.y -= 20            //height of status bar
-        content.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        contentView.insertSubview(content, belowSubview: dismisButton)
-    }
+
 }
 
 

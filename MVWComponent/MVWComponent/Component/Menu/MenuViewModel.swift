@@ -8,8 +8,11 @@
 
 import UIKit
 
+
+
 class MenuViewModel {
-    var model : MenuModel!
+    
+    private var model : MenuModel!
     
     init(model _model: MenuModel) {
         model = _model
@@ -49,39 +52,16 @@ class MenuViewModel {
         return 30
     }
     
-    func setupCell(tableView: UITableView, forRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cellModel = model.data[indexPath.section]![indexPath.row] else {
-            let cell = UITableViewCell.init(style: .default, reuseIdentifier: "cell")
-            return cell
+    func cellModelFor(indexPath : IndexPath) -> MenuCellModel? {
+        guard let model = model.data[indexPath.section]![indexPath.row] else {
+            return nil
         }
-        
-        switch cellModel.type {
-        case .text: do {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellModel.type.identifier) as! MenuTextCell
-            cell.titleLabel.text = cellModel.text
-            return cell
-            }
-        case .image: do {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellModel.type.identifier) as! MenuImageCell
-            cell.delegate = self
-            cell.images = cellModel.images
-            return cell
-            }
-        case .both: do {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellModel.type.identifier) as! MenuTitleIconCell
-            cell.titleLabel.text = cellModel.text
-            return cell
-            }
-        }
+        return model
     }
+    
+
     
     //MARK:- Private method
     
 }
 
-extension MenuViewModel: MenuImageCellDelegate {
-    func imageCell(cell: MenuImageCell, didTapImageAt index: Int) {
-        print("Row \(index) Tapped")
-    }
-}

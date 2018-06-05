@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MenuImageCellDelegate: class {
-    func imageCell(cell: MenuImageCell, didTapImageAt index: Int)
+    func imageCell(_ cell: MenuImageCell, didTapImageIn section: Int, At index: Int)
 }
 
 class MenuImageCell: UITableViewCell {
@@ -18,6 +18,7 @@ class MenuImageCell: UITableViewCell {
     private let padding: CGFloat = 15.0
     private let tagOffset: Int = 100
     
+    var section: Int!
     weak var delegate: MenuImageCellDelegate?
     
     var images : [String]! {
@@ -56,7 +57,7 @@ class MenuImageCell: UITableViewCell {
     @objc func imageTapRecognizer(recognizer: UITapGestureRecognizer) {
         let image = recognizer.view as! UIImageView
         let index = image.tag - tagOffset
-        if let action = delegate?.imageCell(cell: self, didTapImageAt: index) {
+        if let action = delegate?.imageCell(self, didTapImageIn: section, At: index) {
             action
         }
     }

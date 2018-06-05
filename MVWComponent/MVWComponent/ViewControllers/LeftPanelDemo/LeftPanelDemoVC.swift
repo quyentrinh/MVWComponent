@@ -52,10 +52,39 @@ class LeftPanelDemoVC: UIViewController {
         let viewModel = MenuViewModel(model: model)
         
         let vc = MenuViewController()
+        vc.delegate = self
         vc.viewModel = viewModel
         showMenu(vc)
     }
-
-    
     
 }
+
+extension LeftPanelDemoVC: MenuViewControllerDelegate {
+    func menuViewDidDisappear() {
+        print("Menu dismissed")
+    }
+    
+    func menuView(_ menu: MenuViewController, didTapRowAt Index: Int) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "DEMO")
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
+    }
+    
+    func menuView(_ menu: MenuViewController, didTapIconIn section: Int, At index: Int) {
+        print("Image \(section)-\(index) Tapped")
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
