@@ -14,8 +14,8 @@ class ReviewBarItem: UIView {
     @IBInspectable open var normalImage: UIImage? {
         didSet {
             if normalImage != oldValue {
+                normalImageView.backgroundColor = .clear
                 normalImageView.image = normalImage
-                refreshLayout()
             }
         }
     }
@@ -23,8 +23,8 @@ class ReviewBarItem: UIView {
     @IBInspectable open var highlightImage: UIImage? {
         didSet {
             if highlightImage != oldValue {
+                highlightImageView.backgroundColor = .clear
                 highlightImageView.image = highlightImage
-                refreshLayout()
             }
         }
     }
@@ -37,11 +37,10 @@ class ReviewBarItem: UIView {
         }
     }
     
-    @IBInspectable open var text: String? {
+    @IBInspectable open var text: String = "Label" {
         didSet {
             if text != oldValue {
                 updateTextDisplay()
-                refreshLayout()
             }
         }
     }
@@ -50,7 +49,6 @@ class ReviewBarItem: UIView {
         didSet {
             if normalTextColor != oldValue {
                 updateTextDisplay()
-                refreshLayout()
             }
         }
     }
@@ -59,7 +57,6 @@ class ReviewBarItem: UIView {
         didSet {
             if highlightTextColor != oldValue {
                 updateTextDisplay()
-                refreshLayout()
             }
         }
     }
@@ -68,7 +65,6 @@ class ReviewBarItem: UIView {
         didSet {
             if systemFontSize != oldValue {
                 textLabel.font = .systemFont(ofSize: systemFontSize, weight: .light)
-                refreshLayout()
             }
         }
     }
@@ -79,7 +75,6 @@ class ReviewBarItem: UIView {
                 normalImageView.isHidden = highLight
                 highlightImageView.isHidden = !highLight
                 updateTextDisplay()
-                refreshLayout()
             }
         }
     }
@@ -118,11 +113,13 @@ class ReviewBarItem: UIView {
     
     func setupUI() {
         let _normalImageView = UIImageView()
+        _normalImageView.backgroundColor = .groupTableViewBackground
         _normalImageView.contentMode = imageContentMode
         addSubview(_normalImageView)
         normalImageView = _normalImageView
         
         let _highlightImageView = UIImageView()
+        _highlightImageView.backgroundColor = .groupTableViewBackground
         _highlightImageView.contentMode = imageContentMode
         _highlightImageView.isHidden = true
         addSubview(_highlightImageView)
@@ -136,22 +133,30 @@ class ReviewBarItem: UIView {
     }
     
     func refreshLayout() {
-        //refresh layout if needed
+        if let normalImg = normalImage {
+            normalImageView.image = normalImg
+        }
+        if let highlightImg = highlightImage {
+            highlightImageView.image = highlightImg
+        }
+        textLabel.font = .systemFont(ofSize: systemFontSize, weight: .light)
+        normalImageView.isHidden = highLight
+        highlightImageView.isHidden = !highLight
+        updateTextDisplay()
     }
     
     
     func updateTextDisplay() {
         textLabel.textColor = normalTextColor           //set color for "|"
-        guard let _text = text else { return }
-        let attribute = NSMutableAttributedString(string: _text)
-        if _text.contains("|") {
+        let attribute = NSMutableAttributedString(string: text)
+        if text.contains("|") {
             // if have this character, it's highlight
-            let strings = _text.components(separatedBy: "|")
+            let strings = text.components(separatedBy: "|")
             attribute.setColorForText(textForAttribute: strings[0], withColor: highlightTextColor)
             attribute.setColorForText(textForAttribute: strings[1], withColor: normalTextColor)
         } else {
             let color = highLight ? highlightTextColor : normalTextColor
-            attribute.setColorForText(textForAttribute: _text, withColor: color)
+            attribute.setColorForText(textForAttribute: text, withColor: color)
         }
         textLabel.attributedText = attribute
     }

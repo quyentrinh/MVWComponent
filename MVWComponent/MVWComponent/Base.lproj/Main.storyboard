@@ -293,7 +293,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8W4-ow-wAN" customClass="RatingView" customModule="MVWComponent" customModuleProvider="target">
-                                <rect key="frame" x="92.5" y="164" width="190" height="97"/>
+                                <rect key="frame" x="93" y="164" width="190" height="97"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="190" id="cqp-Z8-rxx"/>
@@ -316,7 +316,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isj-Ic-hYw" customClass="RatingView" customModule="MVWComponent" customModuleProvider="target">
-                                <rect key="frame" x="92.5" y="275" width="190" height="30"/>
+                                <rect key="frame" x="93" y="275" width="190" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="VET-cF-w1D"/>
@@ -326,28 +326,67 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="darkStar" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qi6-4v-2Jl" customClass="ReviewBar" customModule="MVWComponent" customModuleProvider="target">
-                                <rect key="frame" x="71" y="370" width="233" height="63"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZh-LB-Zgd" customClass="ReviewBar" customModule="MVWComponent" customModuleProvider="target">
+                                <rect key="frame" x="41" y="424" width="297" height="55"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="IcJ-0k-NUC"/>
-                                    <constraint firstAttribute="width" constant="233" id="Lgk-Ru-ZTt"/>
-                                </constraints>
-                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="itemsNumber">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="imageSize">
+                                        <size key="value" width="30" height="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalTextColor">
+                                        <color key="value" red="0.84791263859999999" green="0.84791263859999999" blue="0.84791263859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightTextColor">
+                                        <color key="value" red="0.94901960780000005" green="0.1450980392" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="systemFontSize">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2oL-Tc-cL0" customClass="ReviewBarItem" customModule="MVWComponent" customModuleProvider="target">
+                                <rect key="frame" x="125" y="501" width="126" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="normalImage" value="ic_unlike"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="highlightImage" value="ic_like"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="highLight" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightTextColor">
+                                        <color key="value" red="0.94901960780000005" green="0.42658700418477408" blue="0.29118859668449609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalTextColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Like"/>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="imageSize">
+                                        <size key="value" width="30" height="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="systemFontSize">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="zZh-LB-Zgd" firstAttribute="top" secondItem="9uY-CX-Qw1" secondAttribute="bottom" constant="74" id="9eC-10-vUP"/>
+                            <constraint firstItem="yae-tR-ktj" firstAttribute="bottom" secondItem="zZh-LB-Zgd" secondAttribute="bottom" constant="188" id="DIG-GG-sOj"/>
                             <constraint firstItem="9uY-CX-Qw1" firstAttribute="top" secondItem="isj-Ic-hYw" secondAttribute="bottom" constant="8" id="EJH-Z3-yY2"/>
                             <constraint firstItem="8W4-ow-wAN" firstAttribute="centerX" secondItem="yae-tR-ktj" secondAttribute="centerX" id="Fqg-oM-qQa"/>
                             <constraint firstItem="9uY-CX-Qw1" firstAttribute="centerX" secondItem="yae-tR-ktj" secondAttribute="centerX" id="Mb3-BE-pFm"/>
                             <constraint firstItem="9uY-CX-Qw1" firstAttribute="width" secondItem="8W4-ow-wAN" secondAttribute="width" id="TTD-Cd-STR"/>
+                            <constraint firstItem="yae-tR-ktj" firstAttribute="bottom" secondItem="2oL-Tc-cL0" secondAttribute="bottom" constant="102" id="U12-kd-mA2"/>
+                            <constraint firstItem="2oL-Tc-cL0" firstAttribute="top" secondItem="zZh-LB-Zgd" secondAttribute="bottom" constant="22" id="WYK-Yo-B9d"/>
                             <constraint firstItem="8W4-ow-wAN" firstAttribute="top" secondItem="yae-tR-ktj" secondAttribute="top" constant="100" id="X6A-Bf-deH"/>
                             <constraint firstItem="isj-Ic-hYw" firstAttribute="top" secondItem="8W4-ow-wAN" secondAttribute="bottom" constant="14" id="XtR-kc-sWs"/>
+                            <constraint firstItem="2oL-Tc-cL0" firstAttribute="leading" secondItem="yae-tR-ktj" secondAttribute="leading" constant="125" id="c5A-al-HUY"/>
                             <constraint firstItem="isj-Ic-hYw" firstAttribute="width" secondItem="8W4-ow-wAN" secondAttribute="width" id="kTQ-e7-L9R"/>
-                            <constraint firstItem="qi6-4v-2Jl" firstAttribute="top" secondItem="9uY-CX-Qw1" secondAttribute="bottom" constant="20" id="scg-v9-vxf"/>
+                            <constraint firstItem="zZh-LB-Zgd" firstAttribute="leading" secondItem="yae-tR-ktj" secondAttribute="leading" constant="41" id="mfj-4L-egF"/>
                             <constraint firstItem="isj-Ic-hYw" firstAttribute="centerX" secondItem="yae-tR-ktj" secondAttribute="centerX" id="taR-PH-HSd"/>
-                            <constraint firstItem="qi6-4v-2Jl" firstAttribute="centerX" secondItem="yae-tR-ktj" secondAttribute="centerX" id="zS8-UW-Zyc"/>
+                            <constraint firstItem="zZh-LB-Zgd" firstAttribute="centerX" secondItem="9uY-CX-Qw1" secondAttribute="centerX" constant="2.5" id="wcm-ws-t1H"/>
+                            <constraint firstItem="2oL-Tc-cL0" firstAttribute="centerX" secondItem="isj-Ic-hYw" secondAttribute="centerX" id="wkB-T8-sEB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yae-tR-ktj"/>
                     </view>
@@ -358,7 +397,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHp-Mz-K8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="520.79999999999995" y="921.58920539730138"/>
+            <point key="canvasLocation" x="284" y="985.45727136431788"/>
         </scene>
         <!--Left Panel DemoVC-->
         <scene sceneID="ATR-W7-bTV">
@@ -952,7 +991,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cHK-p4-opp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3191" y="-664"/>
+            <point key="canvasLocation" x="3189.5999999999999" y="-664.31784107946032"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Etq-Cu-X9n">
@@ -976,4 +1015,8 @@
             <point key="canvasLocation" x="-430" y="133"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_like" width="32" height="32"/>
+        <image name="ic_unlike" width="32" height="32"/>
+    </resources>
 </document>
