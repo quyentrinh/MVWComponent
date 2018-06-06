@@ -40,9 +40,9 @@ class SegmentBarView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func updateConstraints() {
+    override func layoutSubviews() {
+        super.layoutSubviews()
         collectionView.frame = self.bounds
-        super.updateConstraints()
     }
     
     func setupUI() {
@@ -59,8 +59,6 @@ class SegmentBarView: UIView {
         _collectionView.register(SegmentBarCell.self, forCellWithReuseIdentifier: SegmentBarView.reuseIdentify)
         addSubview(_collectionView)
         collectionView = _collectionView
-        
-        updateConstraintsIfNeeded()
     }
     
 }

@@ -37,6 +37,8 @@
 		EF73E4DD20C1030C001EB1E9 /* RatingSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73E4DC20C1030C001EB1E9 /* RatingSlider.swift */; };
 		EF73E4DF20C11B47001EB1E9 /* RatingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF73E4DE20C11B47001EB1E9 /* RatingView.xib */; };
 		EF73E4E120C11B79001EB1E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF73E4E020C11B79001EB1E9 /* Images.xcassets */; };
+		EFB81E4320C771C200CA7EEA /* IconTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB81E4220C771C200CA7EEA /* IconTextView.swift */; };
+		EFB81E4520C77E8600CA7EEA /* ReviewBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB81E4420C77E8600CA7EEA /* ReviewBar.xib */; };
 		EFD84F3420C0E2040040FA15 /* CustomViewDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD84F3320C0E2040040FA15 /* CustomViewDemoVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,8 @@
 		EF73E4DC20C1030C001EB1E9 /* RatingSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingSlider.swift; sourceTree = "<group>"; };
 		EF73E4DE20C11B47001EB1E9 /* RatingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingView.xib; sourceTree = "<group>"; };
 		EF73E4E020C11B79001EB1E9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EFB81E4220C771C200CA7EEA /* IconTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextView.swift; sourceTree = "<group>"; };
+		EFB81E4420C77E8600CA7EEA /* ReviewBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewBar.xib; sourceTree = "<group>"; };
 		EFD84F3320C0E2040040FA15 /* CustomViewDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewDemoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +161,7 @@
 		EF2B21FC20BD2C7500031DA4 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				EFB81E4120C7717700CA7EEA /* ReviewView */,
 				EF25EF2720C63BBA003B927A /* TagView */,
 				EF0FE18620BF9D12007B2FE8 /* Common */,
 				EF73E4D120C0F914001EB1E9 /* RatingView */,
@@ -238,6 +243,15 @@
 			path = RatingView;
 			sourceTree = "<group>";
 		};
+		EFB81E4120C7717700CA7EEA /* ReviewView */ = {
+			isa = PBXGroup;
+			children = (
+				EFB81E4220C771C200CA7EEA /* IconTextView.swift */,
+				EFB81E4420C77E8600CA7EEA /* ReviewBar.xib */,
+			);
+			path = ReviewView;
+			sourceTree = "<group>";
+		};
 		EFD84F3220C0E1EB0040FA15 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +321,7 @@
 				EF06126020BE876100C24CB9 /* PullUpHeader.xib in Resources */,
 				EF539EE820C517FA00D8165D /* MenuTitleIconCell.xib in Resources */,
 				EF73E4DF20C11B47001EB1E9 /* RatingView.xib in Resources */,
+				EFB81E4520C77E8600CA7EEA /* ReviewBar.xib in Resources */,
 				EF539ED720C4FD0F00D8165D /* Type3HeaderView.xib in Resources */,
 				EF539EDE20C517C200D8165D /* MenuTextCell.xib in Resources */,
 				EF2B21F520BD2B4B00031DA4 /* LaunchScreen.storyboard in Resources */,
@@ -334,6 +349,7 @@
 				EF6BEF0520BFFB88007991D7 /* SegmentBarView.swift in Sources */,
 				EF0FE18120BF8CDE007B2FE8 /* MenuViewController.swift in Sources */,
 				EF0FE17E20BF8C60007B2FE8 /* LeftPanelDemoVC.swift in Sources */,
+				EFB81E4320C771C200CA7EEA /* IconTextView.swift in Sources */,
 				EF539EE320C517E300D8165D /* MenuImageCell.swift in Sources */,
 				EFD84F3420C0E2040040FA15 /* CustomViewDemoVC.swift in Sources */,
 				EF73E4D520C0FB68001EB1E9 /* FloatRatingView.swift in Sources */,
