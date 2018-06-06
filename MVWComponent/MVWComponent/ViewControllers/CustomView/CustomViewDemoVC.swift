@@ -38,10 +38,6 @@ class CustomViewDemoVC: UIViewController {
 //        let tagview = TagView(configrution: tagviewConfig, frame: CGRect(x: 20, y: 380, width: view.frame.width - 40, height: 60))
 //        tagview.tagsData = ["Gintoki", "Yiru", "Okita", "Katsura", "Messi", "Cristiano"]
 //        view.addSubview(tagview)
-        
-        let review = Bundle.main.loadNibNamed("ReviewBar", owner: nil, options: nil)?.first as! UIView
-        review.frame = CGRect(x: 50, y: 380, width: view.frame.width - 100, height: 100)
-        view.addSubview(review)
     }
 
     override func didReceiveMemoryWarning() {

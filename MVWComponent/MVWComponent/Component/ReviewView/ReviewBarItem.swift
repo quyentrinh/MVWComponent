@@ -1,5 +1,5 @@
 //
-//  IconTextView.swift
+//  ReviewBarItem.swift
 //  MVWComponent
 //
 //  Created by Quyen Trinh on 6/6/18.
@@ -9,18 +9,17 @@
 import UIKit
 
 @IBDesignable
-class IconTextView: UIView {
-
+class ReviewBarItem: UIView {
+    
     @IBInspectable open var normalImage: UIImage? {
         didSet {
             if normalImage != oldValue {
                 normalImageView.image = normalImage
                 refreshLayout()
             }
-            
         }
     }
-
+    
     @IBInspectable open var highlightImage: UIImage? {
         didSet {
             if highlightImage != oldValue {
@@ -68,7 +67,7 @@ class IconTextView: UIView {
     @IBInspectable open var systemFontSize: CGFloat = 13 {
         didSet {
             if systemFontSize != oldValue {
-                textLabel.font = .systemFont(ofSize: systemFontSize)
+                textLabel.font = .systemFont(ofSize: systemFontSize, weight: .light)
                 refreshLayout()
             }
         }
@@ -115,7 +114,7 @@ class IconTextView: UIView {
         
         refreshLayout()
     }
-
+    
     
     func setupUI() {
         let _normalImageView = UIImageView()
@@ -131,7 +130,7 @@ class IconTextView: UIView {
         
         let _textLabel = UILabel()
         _textLabel.textAlignment = .center
-        _textLabel.font = .systemFont(ofSize: systemFontSize)
+        _textLabel.font = .systemFont(ofSize: systemFontSize, weight: .light)
         addSubview(_textLabel)
         textLabel = _textLabel
     }
@@ -169,7 +168,4 @@ extension NSMutableAttributedString {
     }
     
 }
-
-
-
 
