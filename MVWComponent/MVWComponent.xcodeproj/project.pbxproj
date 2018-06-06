@@ -39,6 +39,7 @@
 		EF73E4E120C11B79001EB1E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF73E4E020C11B79001EB1E9 /* Images.xcassets */; };
 		EFB81E4320C771C200CA7EEA /* IconTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB81E4220C771C200CA7EEA /* IconTextView.swift */; };
 		EFB81E4520C77E8600CA7EEA /* ReviewBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB81E4420C77E8600CA7EEA /* ReviewBar.xib */; };
+		EFB81E4720C7863A00CA7EEA /* ReviewBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB81E4620C7863A00CA7EEA /* ReviewBar.swift */; };
 		EFD84F3420C0E2040040FA15 /* CustomViewDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD84F3320C0E2040040FA15 /* CustomViewDemoVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		EF73E4E020C11B79001EB1E9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EFB81E4220C771C200CA7EEA /* IconTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextView.swift; sourceTree = "<group>"; };
 		EFB81E4420C77E8600CA7EEA /* ReviewBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewBar.xib; sourceTree = "<group>"; };
+		EFB81E4620C7863A00CA7EEA /* ReviewBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewBar.swift; sourceTree = "<group>"; };
 		EFD84F3320C0E2040040FA15 /* CustomViewDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewDemoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -248,6 +250,7 @@
 			children = (
 				EFB81E4220C771C200CA7EEA /* IconTextView.swift */,
 				EFB81E4420C77E8600CA7EEA /* ReviewBar.xib */,
+				EFB81E4620C7863A00CA7EEA /* ReviewBar.swift */,
 			);
 			path = ReviewView;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				EF0FE17E20BF8C60007B2FE8 /* LeftPanelDemoVC.swift in Sources */,
 				EFB81E4320C771C200CA7EEA /* IconTextView.swift in Sources */,
 				EF539EE320C517E300D8165D /* MenuImageCell.swift in Sources */,
+				EFB81E4720C7863A00CA7EEA /* ReviewBar.swift in Sources */,
 				EFD84F3420C0E2040040FA15 /* CustomViewDemoVC.swift in Sources */,
 				EF73E4D520C0FB68001EB1E9 /* FloatRatingView.swift in Sources */,
 				EF0FE18820BF9D20007B2FE8 /* Extension.swift in Sources */,

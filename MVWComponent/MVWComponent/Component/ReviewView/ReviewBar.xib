@@ -10,59 +10,97 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReviewBar" customModule="MVWComponent" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="322" height="59"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qq7-Zx-giK" customClass="IconTextView" customModule="MVWComponent" customModuleProvider="target">
-                    <rect key="frame" x="138" y="187" width="100" height="63"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xiG-H6-GJ7" customClass="IconTextView" customModule="MVWComponent" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="107.5" height="59"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="image" keyPath="normalImage" value="StarEmpty"/>
-                        <userDefinedRuntimeAttribute type="size" keyPath="imageSize">
-                            <size key="value" width="35" height="35"/>
-                        </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="image" keyPath="highlightImage" value="StarFull_Blue"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="text" value="354.20"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="text" value="4.3 | 2.9"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="systemFontSize">
+                            <real key="value" value="13"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="imageSize">
+                            <size key="value" width="30" height="30"/>
+                        </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="normalTextColor">
-                            <color key="value" red="0.81334333810000004" green="0.81334333810000004" blue="0.81334333810000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="highlightTextColor">
-                            <color key="value" red="0.94901960780000005" green="0.1450980392" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="value" red="0.33725490200000002" green="0.52549019610000003" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="highLight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gd7-zx-3i7" customClass="IconTextView" customModule="MVWComponent" customModuleProvider="target">
-                    <rect key="frame" x="68" y="350" width="241" height="156"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wtd-bD-XQM" customClass="IconTextView" customModule="MVWComponent" customModuleProvider="target">
+                    <rect key="frame" x="107.5" y="0.0" width="107.5" height="59"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="image" keyPath="normalImage" value="StarEmpty"/>
                         <userDefinedRuntimeAttribute type="image" keyPath="highlightImage" value="StarFull_Blue"/>
                         <userDefinedRuntimeAttribute type="size" keyPath="imageSize">
-                            <size key="value" width="100" height="100"/>
+                            <size key="value" width="30" height="30"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="text" value="123"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="text" value="5.6 | 3.1"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="systemFontSize">
+                            <real key="value" value="13"/>
+                        </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="normalTextColor">
-                            <color key="value" red="0.81334333810000004" green="0.81334333810000004" blue="0.81334333810000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="highlightTextColor">
-                            <color key="value" red="1" green="0.4941176471" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="value" red="0.33725490200000002" green="0.52549019610000003" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="highLight" value="YES"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="systemFontSize">
-                            <real key="value" value="50"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSh-y5-diN" customClass="IconTextView" customModule="MVWComponent" customModuleProvider="target">
+                    <rect key="frame" x="214.5" y="0.0" width="107.5" height="59"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="image" keyPath="normalImage" value="StarEmpty"/>
+                        <userDefinedRuntimeAttribute type="image" keyPath="highlightImage" value="StarFull_Blue"/>
+                        <userDefinedRuntimeAttribute type="size" keyPath="imageSize">
+                            <size key="value" width="30" height="30"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="text" value="2.3"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="systemFontSize">
+                            <real key="value" value="13"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="normalTextColor">
+                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="highlightTextColor">
+                            <color key="value" red="0.33725490200000002" green="0.52549019610000003" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="highLight" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TSh-y5-diN" secondAttribute="trailing" id="1Dq-bw-Hcs"/>
+                <constraint firstItem="wtd-bD-XQM" firstAttribute="width" secondItem="xiG-H6-GJ7" secondAttribute="width" id="1LC-WZ-Bgi"/>
+                <constraint firstItem="TSh-y5-diN" firstAttribute="width" secondItem="xiG-H6-GJ7" secondAttribute="width" id="KgT-yi-Dut"/>
+                <constraint firstItem="TSh-y5-diN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MWg-DX-HDp"/>
+                <constraint firstItem="xiG-H6-GJ7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QDt-gO-dWi"/>
+                <constraint firstItem="wtd-bD-XQM" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Tws-X8-RN2"/>
+                <constraint firstItem="xiG-H6-GJ7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="cHz-Cy-s8x"/>
+                <constraint firstAttribute="bottom" secondItem="xiG-H6-GJ7" secondAttribute="bottom" id="mu5-h4-Cfp"/>
+                <constraint firstItem="wtd-bD-XQM" firstAttribute="leading" secondItem="xiG-H6-GJ7" secondAttribute="trailing" id="rti-i0-vSZ"/>
+                <constraint firstAttribute="bottom" secondItem="TSh-y5-diN" secondAttribute="bottom" id="sEG-xu-bBH"/>
+                <constraint firstAttribute="bottom" secondItem="wtd-bD-XQM" secondAttribute="bottom" id="zQu-fz-wWA"/>
+                <constraint firstItem="TSh-y5-diN" firstAttribute="leading" secondItem="wtd-bD-XQM" secondAttribute="trailing" id="zgb-8q-8X8"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="25.5" y="51.5"/>
+            <point key="canvasLocation" x="-12" y="256.5"/>
         </view>
     </objects>
     <resources>

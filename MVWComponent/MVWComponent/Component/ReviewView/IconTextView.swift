@@ -41,24 +41,25 @@ class IconTextView: UIView {
     @IBInspectable open var text: String? {
         didSet {
             if text != oldValue {
-                textLabel.text = text
+                updateTextDisplay()
                 refreshLayout()
             }
         }
     }
     
-    @IBInspectable open var normalTextColor: UIColor? = .darkText {
+    @IBInspectable open var normalTextColor: UIColor = .darkText {
         didSet {
             if normalTextColor != oldValue {
-                textLabel.textColor = normalTextColor
+                updateTextDisplay()
                 refreshLayout()
             }
         }
     }
     
-    @IBInspectable open var highlightTextColor: UIColor? = .blue {
+    @IBInspectable open var highlightTextColor: UIColor = .blue {
         didSet {
             if highlightTextColor != oldValue {
+                updateTextDisplay()
                 refreshLayout()
             }
         }
@@ -78,7 +79,7 @@ class IconTextView: UIView {
             if highLight != oldValue {
                 normalImageView.isHidden = highLight
                 highlightImageView.isHidden = !highLight
-                textLabel.textColor = highLight ? highlightTextColor : normalTextColor
+                updateTextDisplay()
                 refreshLayout()
             }
         }
@@ -109,7 +110,6 @@ class IconTextView: UIView {
         let imagePositionX = (contentFrame.width - imageSize.width) / 2
         normalImageView.frame = CGRect(origin: CGPoint(x: imagePositionX, y: padding), size: imageSize)
         highlightImageView.frame = normalImageView.frame
-        highlightImageView.isHidden = true
         let labelPositionY = imageSize.height + padding*2
         textLabel.frame = CGRect(x: 0, y: labelPositionY, width: contentFrame.width, height: contentFrame.height - labelPositionY)
         
@@ -125,34 +125,51 @@ class IconTextView: UIView {
         
         let _highlightImageView = UIImageView()
         _highlightImageView.contentMode = imageContentMode
+        _highlightImageView.isHidden = true
         addSubview(_highlightImageView)
         highlightImageView = _highlightImageView
         
         let _textLabel = UILabel()
         _textLabel.textAlignment = .center
         _textLabel.font = .systemFont(ofSize: systemFontSize)
-        _textLabel.textColor = normalTextColor
         addSubview(_textLabel)
         textLabel = _textLabel
     }
     
     func refreshLayout() {
-        
+        //refresh layout if needed
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    func updateTextDisplay() {
+        textLabel.textColor = normalTextColor           //set color for "|"
+        guard let _text = text else { return }
+        let attribute = NSMutableAttributedString(string: _text)
+        if _text.contains("|") {
+            // if have this character, it's highlight
+            let strings = _text.components(separatedBy: "|")
+            attribute.setColorForText(textForAttribute: strings[0], withColor: highlightTextColor)
+            attribute.setColorForText(textForAttribute: strings[1], withColor: normalTextColor)
+        } else {
+            let color = highLight ? highlightTextColor : normalTextColor
+            attribute.setColorForText(textForAttribute: _text, withColor: color)
+        }
+        textLabel.attributedText = attribute
+    }
     
     
 }
+
+
+extension NSMutableAttributedString {
+    
+    func setColorForText(textForAttribute: String, withColor color: UIColor) {
+        let range: NSRange = self.mutableString.range(of: textForAttribute, options: .caseInsensitive)
+        self.addAttribute(NSAttributedStringKey.foregroundColor, value: color, range: range)
+    }
+    
+}
+
+
+
+
