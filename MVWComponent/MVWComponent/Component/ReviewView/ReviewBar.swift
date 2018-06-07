@@ -170,14 +170,4 @@ class ReviewBar: UIView {
 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

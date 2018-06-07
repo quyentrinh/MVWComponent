@@ -79,7 +79,7 @@ class ReviewBarItem: UIView {
         }
     }
     
-    open var imageContentMode: UIViewContentMode = UIViewContentMode.scaleAspectFit
+    private let imageContentMode: UIViewContentMode = UIViewContentMode.scaleAspectFit
     private let padding: CGFloat = 5.0
     private var normalImageView: UIImageView!
     private var highlightImageView: UIImageView!
