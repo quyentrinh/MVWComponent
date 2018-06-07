@@ -64,7 +64,11 @@ extension LeftPanelDemoVC: MenuViewControllerDelegate {
         print("Menu dismissed")
     }
     
-    func menuView(_ menu: MenuViewController, didTapRowAt Index: Int) {
+    func menuView(_ menu: MenuViewController, didTapSectionAt index: Int) {
+        print("Section \(index) Tapped")
+    }
+    
+    func menuView(_ menu: MenuViewController, didTapRowAt index: Int) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "DEMO")
             self.navigationController?.pushViewController(vc!, animated: true)

@@ -9,7 +9,8 @@
 import UIKit
 
 protocol MenuViewControllerDelegate: class {
-    func menuView(_ menu: MenuViewController, didTapRowAt Index: Int)
+    func menuView(_ menu: MenuViewController, didTapRowAt index: Int)
+    func menuView(_ menu: MenuViewController, didTapSectionAt index: Int)
     func menuView(_ menu: MenuViewController, didTapIconIn section: Int, At index: Int)
     func menuViewDidDisappear()
 }
@@ -39,12 +40,33 @@ class MenuViewController: BaseSideViewController {
         
         setupUI()
         
-        viewModel.reloadSections = { [weak self] (section: Int) in
+        viewModel.reloadSections = { [weak self] section in
             guard let sself = self else { return }
             sself.tableView.beginUpdates()
             sself.tableView.reloadSections([section], with: .automatic)
             sself.tableView.endUpdates()
         }
+        
+        viewModel.menuDidTapAtSection = { [weak self] section in
+            guard let sself = self else { return }
+            sself.dismiss { [weak self] in
+                guard let ssself = self else { return }
+                if let action = ssself.delegate?.menuView(ssself, didTapSectionAt: section) {
+                    action
+                }
+            }
+        }
+        
+        viewModel.menuDidTapAtImage = { [weak self] (section, index) in
+            guard let sself = self else { return }
+            sself.dismiss { [weak self] in
+                guard let ssself = self else { return }
+                if let action = ssself.delegate?.menuView(ssself, didTapIconIn: section, At: index) {
+                    action
+                }
+            }
+        }
+
     }
     
     //MARK: - SETUP UI
@@ -96,10 +118,13 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return viewModel.viewForHeaderIn(section: section)
+        let header = viewModel.viewForHeaderIn(section: section)
+        return header
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        
         return viewModel.heightForHeaderIn(section: section);
     }
     
@@ -128,16 +153,4 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 
-//extension MenuViewController: MenuImageCellDelegate {
-//
-//    func imageCell(_ cell: MenuImageCell, didTapImageIn section: Int, At index: Int) {
-//        dismiss { [weak self] in
-//            guard let sself = self else { return }
-//            if let action = sself.delegate?.menuView(sself, didTapIconIn: section, At: index) {
-//                action
-//            }
-//        }
-//    }
-//
-//}
 

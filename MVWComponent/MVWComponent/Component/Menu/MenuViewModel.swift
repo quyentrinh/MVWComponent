@@ -15,6 +15,8 @@ class MenuViewModel {
     private var model : MenuModel!
     
     var reloadSections: ((_ section: Int) -> Void)?
+    var menuDidTapAtSection: ((_ section: Int) -> Void)?
+    var menuDidTapAtImage: ((_ section: Int, _ index: Int) -> Void)?
     
     init(model _model: MenuModel) {
         model = _model
@@ -97,14 +99,21 @@ class MenuViewModel {
 
 
 extension MenuViewModel: MenuSectionViewDelegate {
-    func toggleSection(header: MenuSectionView, section: Int) {
-        if let sectionData = model.sections![section-1], sectionData.isExpandable {
+    func menuSection(header: MenuSectionView, didTapAt section: Int) {
+        guard let sectionData = model.sections![section-1] else { return }
+        
+        if sectionData.isExpandable {
             let expand = sectionData.isExpanded
             sectionData.isExpanded = !expand
             reloadSections!(section)
+        } else {
+            menuDidTapAtSection!(section)
         }
     }
     
+    func menuSection(header: MenuSectionView, didTapImageIn section: Int, At index: Int) {
+        menuDidTapAtImage!(section, index)
+    }
     
 }
 

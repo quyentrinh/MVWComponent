@@ -31,7 +31,8 @@ enum MenuSectionType {
 
 
 protocol MenuSectionViewDelegate: class {
-    func toggleSection(header: MenuSectionView, section: Int)
+    func menuSection(header: MenuSectionView,didTapAt section: Int)
+    func menuSection(header: MenuSectionView, didTapImageIn section: Int, At index: Int)
 }
 
 class MenuSectionView: UIView {
@@ -125,12 +126,12 @@ class MenuSectionView: UIView {
             createTextHeadingHeaderView()
             break
         }
-        
+        backgroundColor = .white
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapHeader)))
     }
     
     @objc private func didTapHeader() {
-        if let action = delegate?.toggleSection(header: self, section: section!) {
+        if let action = delegate?.menuSection(header: self, didTapAt: section!) {
             action
         }
         
@@ -148,8 +149,8 @@ class MenuSectionView: UIView {
         if let _images = imagesNameArray {
             for i in 0..<_images.count {
                 let imageView = UIImageView(frame: .zero)
-                imageView.backgroundColor = .groupTableViewBackground
                 imageView.tag = i + tagOffSet
+                imageView.clipsToBounds = true
                 imageView.isUserInteractionEnabled = true
                 let recognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapRecognizer(_:)))
                 imageView.addGestureRecognizer(recognizer)
@@ -231,11 +232,11 @@ class MenuSectionView: UIView {
     }
     
     @objc func imageTapRecognizer(_ recognizer: UITapGestureRecognizer) {
-//        let image = recognizer.view as! UIImageView
-//        let index = image.tag - tagOffSet
-//        if let action = delegate?.imageCell(self, didTapImageIn: section, At: index) {
-//            action
-//        }
+        let image = recognizer.view as! UIImageView
+        let index = image.tag - tagOffSet
+        if let action = delegate?.menuSection(header: self, didTapImageIn: section!, At: index) {
+            action
+        }
     }
     
     
