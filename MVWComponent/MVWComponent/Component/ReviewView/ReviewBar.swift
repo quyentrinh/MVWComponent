@@ -8,14 +8,19 @@
 
 import UIKit
 
+protocol ReviewBarDatasource: class {
+    func reviewBar(_ segmentbar: ReviewBar, titleForItemAt Index: Int) -> String?
+    func reviewBar(_ segmentbar: ReviewBar, normalImageForItemAt Index: Int) -> UIImage?
+    func reviewBar(_ segmentbar: ReviewBar, highLightImageForItemAt Index: Int) -> UIImage?
+    func reviewBar(_ segmentbar: ReviewBar, shouldHighLightForItemAt Index: Int) -> Bool
+}
+
 protocol ReviewBarDelegate: class {
     func reviewBar(_ segmentbar: ReviewBar, didSelectItemAt Index: Int)
 }
 
 @IBDesignable
 class ReviewBar: UIView {
-    
-    weak var delegate : ReviewBarDelegate?
     
     @IBInspectable open var itemsNumber: Int = 3 {
         didSet {
@@ -57,7 +62,15 @@ class ReviewBar: UIView {
         }
     }
     
+    weak var delegate : ReviewBarDelegate?
+    weak var datasource : ReviewBarDatasource? {
+        didSet {
+            updateDisplay()
+        }
+    }
+    private var tagOffset = 100
     private var reviewItems = [ReviewBarItem]()
+    
     
     //MARK:- SETUP
     
@@ -91,12 +104,44 @@ class ReviewBar: UIView {
         removeAllItems()
         reviewItems.removeAll()
         
-        for _ in 0..<itemsNumber {
+        for i in 0..<itemsNumber {
             let item = ReviewBarItem(frame: .zero)
+            item.tag = i + tagOffset
+            let recognizer = UITapGestureRecognizer(target: self, action: #selector(itemTapRecognizer(_:)))
+            item.addGestureRecognizer(recognizer)
             addSubview(item)
             reviewItems.append(item)
         }
     }
+    
+    func updateDisplay() {
+        //update data from datasource
+        for i in 0..<itemsNumber {
+            let item = reviewItems[i]
+            if let image = datasource?.reviewBar(self, normalImageForItemAt: i) {
+                item.normalImage = image
+            }
+            if let image = datasource?.reviewBar(self, highLightImageForItemAt: i) {
+                item.highlightImage = image
+            }
+            if let title = datasource?.reviewBar(self, titleForItemAt: i) {
+                item.text = title
+            }
+            if let highligh = datasource?.reviewBar(self, shouldHighLightForItemAt: i) {
+                item.highLight = highligh
+            }
+        }
+    }
+    
+    @objc func itemTapRecognizer(_ recognizer: UITapGestureRecognizer) {
+        let item = recognizer.view as! ReviewBarItem
+        let index = item.tag - tagOffset
+        if let action = delegate?.reviewBar(self, didSelectItemAt: index) {
+            action
+        }
+    }
+    
+    //MARK:- Refresh DISPLAY
     
     func removeAllItems() {
         for item in reviewItems {
@@ -123,4 +168,16 @@ class ReviewBar: UIView {
         }
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

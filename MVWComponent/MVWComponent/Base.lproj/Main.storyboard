@@ -78,7 +78,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="4Tk-Ic-u7T" kind="show" id="phl-RW-1GL"/>
+                                            <segue destination="ePe-CO-u9m" kind="show" id="okf-XK-QEl"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="dp2-5r-dHu" style="IBUITableViewCellStyleDefault" id="2Ds-37-bly">
@@ -285,49 +285,31 @@
             <point key="canvasLocation" x="522" y="133"/>
         </scene>
         <!--Custom View DemoVC-->
-        <scene sceneID="oUG-Md-s4A">
+        <scene sceneID="xWp-x0-Fvr">
             <objects>
-                <viewController id="4Tk-Ic-u7T" customClass="CustomViewDemoVC" customModule="MVWComponent" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fYn-kd-SUr">
+                <viewController id="ePe-CO-u9m" customClass="CustomViewDemoVC" customModule="MVWComponent" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6mD-AV-YbC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8W4-ow-wAN" customClass="RatingView" customModule="MVWComponent" customModuleProvider="target">
-                                <rect key="frame" x="93" y="164" width="190" height="97"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="190" id="cqp-Z8-rxx"/>
-                                    <constraint firstAttribute="height" constant="97" id="uXH-42-UCq"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasSlider" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="darkStar" value="NO"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9uY-CX-Qw1" customClass="RatingView" customModule="MVWComponent" customModuleProvider="target">
-                                <rect key="frame" x="92" y="313" width="190" height="37"/>
+                                <rect key="frame" x="90" y="319" width="190" height="37"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="OaA-Yr-nxM"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hasSlider" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="darkStar" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isj-Ic-hYw" customClass="RatingView" customModule="MVWComponent" customModuleProvider="target">
-                                <rect key="frame" x="93" y="275" width="190" height="30"/>
+                                <rect key="frame" x="91" y="281" width="190" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="VET-cF-w1D"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hasSlider" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="darkStar" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZh-LB-Zgd" customClass="ReviewBar" customModule="MVWComponent" customModuleProvider="target">
-                                <rect key="frame" x="41" y="424" width="297" height="55"/>
+                                <rect key="frame" x="39" y="430" width="297" height="67"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="itemsNumber">
@@ -348,7 +330,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2oL-Tc-cL0" customClass="ReviewBarItem" customModule="MVWComponent" customModuleProvider="target">
-                                <rect key="frame" x="125" y="501" width="126" height="64"/>
+                                <rect key="frame" x="123" y="551" width="126" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="normalImage" value="ic_unlike"/>
@@ -369,35 +351,50 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8W4-ow-wAN" customClass="RatingView" customModule="MVWComponent" customModuleProvider="target">
+                                <rect key="frame" x="91" y="170" width="190" height="97"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasSlider" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="darkStar" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="zZh-LB-Zgd" firstAttribute="top" secondItem="9uY-CX-Qw1" secondAttribute="bottom" constant="74" id="9eC-10-vUP"/>
-                            <constraint firstItem="yae-tR-ktj" firstAttribute="bottom" secondItem="zZh-LB-Zgd" secondAttribute="bottom" constant="188" id="DIG-GG-sOj"/>
-                            <constraint firstItem="9uY-CX-Qw1" firstAttribute="top" secondItem="isj-Ic-hYw" secondAttribute="bottom" constant="8" id="EJH-Z3-yY2"/>
-                            <constraint firstItem="8W4-ow-wAN" firstAttribute="centerX" secondItem="yae-tR-ktj" secondAttribute="centerX" id="Fqg-oM-qQa"/>
-                            <constraint firstItem="9uY-CX-Qw1" firstAttribute="centerX" secondItem="yae-tR-ktj" secondAttribute="centerX" id="Mb3-BE-pFm"/>
-                            <constraint firstItem="9uY-CX-Qw1" firstAttribute="width" secondItem="8W4-ow-wAN" secondAttribute="width" id="TTD-Cd-STR"/>
-                            <constraint firstItem="yae-tR-ktj" firstAttribute="bottom" secondItem="2oL-Tc-cL0" secondAttribute="bottom" constant="102" id="U12-kd-mA2"/>
-                            <constraint firstItem="2oL-Tc-cL0" firstAttribute="top" secondItem="zZh-LB-Zgd" secondAttribute="bottom" constant="22" id="WYK-Yo-B9d"/>
-                            <constraint firstItem="8W4-ow-wAN" firstAttribute="top" secondItem="yae-tR-ktj" secondAttribute="top" constant="100" id="X6A-Bf-deH"/>
-                            <constraint firstItem="isj-Ic-hYw" firstAttribute="top" secondItem="8W4-ow-wAN" secondAttribute="bottom" constant="14" id="XtR-kc-sWs"/>
-                            <constraint firstItem="2oL-Tc-cL0" firstAttribute="leading" secondItem="yae-tR-ktj" secondAttribute="leading" constant="125" id="c5A-al-HUY"/>
-                            <constraint firstItem="isj-Ic-hYw" firstAttribute="width" secondItem="8W4-ow-wAN" secondAttribute="width" id="kTQ-e7-L9R"/>
-                            <constraint firstItem="zZh-LB-Zgd" firstAttribute="leading" secondItem="yae-tR-ktj" secondAttribute="leading" constant="41" id="mfj-4L-egF"/>
-                            <constraint firstItem="isj-Ic-hYw" firstAttribute="centerX" secondItem="yae-tR-ktj" secondAttribute="centerX" id="taR-PH-HSd"/>
-                            <constraint firstItem="zZh-LB-Zgd" firstAttribute="centerX" secondItem="9uY-CX-Qw1" secondAttribute="centerX" constant="2.5" id="wcm-ws-t1H"/>
-                            <constraint firstItem="2oL-Tc-cL0" firstAttribute="centerX" secondItem="isj-Ic-hYw" secondAttribute="centerX" id="wkB-T8-sEB"/>
+                            <constraint firstItem="zZh-LB-Zgd" firstAttribute="leading" secondItem="BAy-5i-QFg" secondAttribute="leading" constant="39" id="IqH-PC-IzM"/>
+                            <constraint firstItem="isj-Ic-hYw" firstAttribute="top" secondItem="8W4-ow-wAN" secondAttribute="bottom" constant="14" id="Ld7-5K-bzT"/>
+                            <constraint firstItem="zZh-LB-Zgd" firstAttribute="top" secondItem="9uY-CX-Qw1" secondAttribute="bottom" constant="74" id="M74-TA-gTl"/>
+                            <constraint firstItem="9uY-CX-Qw1" firstAttribute="leading" secondItem="BAy-5i-QFg" secondAttribute="leading" constant="90" id="ML2-B3-2ok"/>
+                            <constraint firstItem="8W4-ow-wAN" firstAttribute="leading" secondItem="isj-Ic-hYw" secondAttribute="leading" id="Qrr-41-SB1"/>
+                            <constraint firstItem="BAy-5i-QFg" firstAttribute="trailing" secondItem="9uY-CX-Qw1" secondAttribute="trailing" constant="95" id="Rbk-QB-0g7"/>
+                            <constraint firstItem="8W4-ow-wAN" firstAttribute="leading" secondItem="BAy-5i-QFg" secondAttribute="leading" constant="91" id="RzL-Dx-JSK"/>
+                            <constraint firstItem="isj-Ic-hYw" firstAttribute="centerX" secondItem="2oL-Tc-cL0" secondAttribute="centerX" id="U4Y-Dn-t7J"/>
+                            <constraint firstItem="2oL-Tc-cL0" firstAttribute="leading" secondItem="BAy-5i-QFg" secondAttribute="leading" constant="123" id="UaZ-WK-2HZ"/>
+                            <constraint firstItem="zZh-LB-Zgd" firstAttribute="top" secondItem="6mD-AV-YbC" secondAttribute="top" constant="430" id="Uxq-Wp-UOR"/>
+                            <constraint firstItem="2oL-Tc-cL0" firstAttribute="top" secondItem="zZh-LB-Zgd" secondAttribute="bottom" constant="54" id="bWx-xJ-xPS"/>
+                            <constraint firstItem="isj-Ic-hYw" firstAttribute="top" secondItem="6mD-AV-YbC" secondAttribute="top" constant="281" id="f7E-nG-w8B"/>
+                            <constraint firstItem="9uY-CX-Qw1" firstAttribute="top" secondItem="6mD-AV-YbC" secondAttribute="top" constant="319" id="fDD-xQ-iJy"/>
+                            <constraint firstItem="8W4-ow-wAN" firstAttribute="top" secondItem="BAy-5i-QFg" secondAttribute="top" constant="106" id="mfA-gz-FXt"/>
+                            <constraint firstItem="zZh-LB-Zgd" firstAttribute="centerX" secondItem="6mD-AV-YbC" secondAttribute="centerX" id="mgV-WR-hCc"/>
+                            <constraint firstItem="2oL-Tc-cL0" firstAttribute="top" secondItem="6mD-AV-YbC" secondAttribute="top" constant="551" id="qJl-h5-YQk"/>
+                            <constraint firstItem="8W4-ow-wAN" firstAttribute="trailing" secondItem="isj-Ic-hYw" secondAttribute="trailing" id="qku-fq-u0r"/>
+                            <constraint firstItem="9uY-CX-Qw1" firstAttribute="top" secondItem="isj-Ic-hYw" secondAttribute="bottom" constant="8" symbolic="YES" id="uOl-Bz-RUY"/>
+                            <constraint firstItem="BAy-5i-QFg" firstAttribute="bottom" secondItem="2oL-Tc-cL0" secondAttribute="bottom" constant="52" id="xYN-0K-1m0"/>
+                            <constraint firstItem="BAy-5i-QFg" firstAttribute="trailing" secondItem="8W4-ow-wAN" secondAttribute="trailing" constant="94" id="ylp-0z-MSL"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="yae-tR-ktj"/>
+                        <viewLayoutGuide key="safeArea" id="BAy-5i-QFg"/>
                     </view>
                     <connections>
-                        <outlet property="ratingView" destination="8W4-ow-wAN" id="iyn-HN-6Nh"/>
-                        <outlet property="ratingViewWithoutSlideer" destination="isj-Ic-hYw" id="K5E-P7-3Jk"/>
+                        <outlet property="ratingView" destination="9uY-CX-Qw1" id="ZSX-fo-nLK"/>
+                        <outlet property="ratingViewWithoutSlideer" destination="isj-Ic-hYw" id="A8p-lT-coJ"/>
+                        <outlet property="reviewBar" destination="zZh-LB-Zgd" id="TUP-Pi-F8v"/>
+                        <outlet property="reviewBarItem" destination="2oL-Tc-cL0" id="XzM-by-7pG"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HHp-Mz-K8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Vv-49-QKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="284" y="985.45727136431788"/>
+            <point key="canvasLocation" x="520.79999999999995" y="1022.3388305847077"/>
         </scene>
         <!--Left Panel DemoVC-->
         <scene sceneID="ATR-W7-bTV">

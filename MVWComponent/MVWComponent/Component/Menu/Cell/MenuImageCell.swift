@@ -46,7 +46,7 @@ class MenuImageCell: UITableViewCell {
                 imageView.tag = i + tagOffset
                 imageView.image = UIImage(named: _images[i])
                 imageView.isUserInteractionEnabled = true
-                let recognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapRecognizer(recognizer:)))
+                let recognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapRecognizer(_:)))
                 imageView.addGestureRecognizer(recognizer)
                 
                 contentView.addSubview(imageView)
@@ -54,7 +54,7 @@ class MenuImageCell: UITableViewCell {
         }
     }
     
-    @objc func imageTapRecognizer(recognizer: UITapGestureRecognizer) {
+    @objc func imageTapRecognizer(_ recognizer: UITapGestureRecognizer) {
         let image = recognizer.view as! UIImageView
         let index = image.tag - tagOffset
         if let action = delegate?.imageCell(self, didTapImageIn: section, At: index) {

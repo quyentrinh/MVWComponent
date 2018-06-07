@@ -13,7 +13,12 @@ class CustomViewDemoVC: UIViewController {
     
     @IBOutlet weak var ratingView: RatingView!
     @IBOutlet weak var ratingViewWithoutSlideer: RatingView!
+    @IBOutlet weak var reviewBar: ReviewBar!
+    @IBOutlet weak var reviewBarItem: ReviewBarItem!
     
+    
+    var arrTitles : [String]!
+    var arrImage : [UIImage]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,25 +31,20 @@ class CustomViewDemoVC: UIViewController {
         ratingViewWithoutSlideer.ratingValue = 4.7
         print("rating : \(ratingView.ratingValue)")
         
-//        let tagviewConfig = TagConfiguration(backgroundColor: .groupTableViewBackground,
-//                                             selectedBackgroundColor: .lightGray,
-//                                             borderColor: .brown, borderWidth: 0.8,
-//                                             cornerRadius: 5.0,
-//                                             padding: 5.0,
-//                                             textColor: .darkGray,
-//                                             font: .systemFont(ofSize: 13)
-//        )
-//
-//        let tagview = TagView(configrution: tagviewConfig, frame: CGRect(x: 20, y: 380, width: view.frame.width - 40, height: 60))
-//        tagview.tagsData = ["Gintoki", "Yiru", "Okita", "Katsura", "Messi", "Cristiano"]
-//        view.addSubview(tagview)
+        arrTitles = ["Messi | Leo", "Ronaldo", "Neymar | Jr", "Hazard"]
+        arrImage = [#imageLiteral(resourceName: "ic_dismiss") , #imageLiteral(resourceName: "ic_like") ,#imageLiteral(resourceName: "StarFull_Gray") ,#imageLiteral(resourceName: "StarFull_Blue")]
+        
+        reviewBar.delegate = self
+        reviewBar.datasource = self
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
     
 }
 
@@ -68,7 +68,33 @@ extension CustomViewDemoVC : SegmentBarViewDelegate, SegmentBarViewDatasource {
     func segmentBarView(_ segmentbar: SegmentBarView, sizeForRowAt Index: Int) -> CGSize? {
         return CGSize(width: 45, height: 30)
     }
+}
+
+extension CustomViewDemoVC: ReviewBarDelegate, ReviewBarDatasource {
+    func reviewBar(_ segmentbar: ReviewBar, didSelectItemAt Index: Int) {
+        print("Inden \(Index) tapped.")
+    }
+    
+    func reviewBar(_ segmentbar: ReviewBar, titleForItemAt Index: Int) -> String? {
+        return arrTitles[Index]
+    }
+    
+    func reviewBar(_ segmentbar: ReviewBar, normalImageForItemAt Index: Int) -> UIImage? {
+        return arrImage[Index]
+    }
+    
+    func reviewBar(_ segmentbar: ReviewBar, highLightImageForItemAt Index: Int) -> UIImage? {
+        return arrImage[Index]
+    }
+    
+    func reviewBar(_ segmentbar: ReviewBar, shouldHighLightForItemAt Index: Int) -> Bool {
+        if Index%2 == 1 {
+            return true
+        }
+        return false
+    }
     
     
 }
+
 
