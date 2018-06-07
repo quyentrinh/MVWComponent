@@ -23,9 +23,8 @@ class MenuViewController: BaseSideViewController {
         _tableView.delegate = self
         _tableView.dataSource = self
         _tableView.separatorStyle = .none
-        _tableView.register(UINib(nibName: "MenuTextCell", bundle: nil), forCellReuseIdentifier: "menutextcell")
-        _tableView.register(UINib(nibName: "MenuImageCell", bundle: nil), forCellReuseIdentifier: "menuimagecell")
-        _tableView.register(UINib(nibName: "MenuTitleIconCell", bundle: nil), forCellReuseIdentifier: "menutitleiconcell")
+        _tableView.register(MenuCell.nib, forCellReuseIdentifier: MenuCell.identifier)
+        
         return _tableView
     }()
 
@@ -37,7 +36,15 @@ class MenuViewController: BaseSideViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupUI()
+        
+        viewModel.reloadSections = { [weak self] (section: Int) in
+            guard let sself = self else { return }
+            sself.tableView.beginUpdates()
+            sself.tableView.reloadSections([section], with: .automatic)
+            sself.tableView.endUpdates()
+        }
     }
     
     //MARK: - SETUP UI
@@ -96,31 +103,18 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         return viewModel.heightForHeaderIn(section: section);
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return viewModel.heightForRow(indexPath: indexPath)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let model = viewModel.cellModelFor(indexPath: indexPath) else {
             let cell = UITableViewCell.init(style: .default, reuseIdentifier: "cell")
             return cell
         }
-        
-        switch model.type {
-        case .text: do {
-            let cell = tableView.dequeueReusableCell(withIdentifier: model.type.identifier) as! MenuTextCell
-            cell.titleLabel.text = model.text
-            return cell
-            }
-        case .image: do {
-            let cell = tableView.dequeueReusableCell(withIdentifier: model.type.identifier) as! MenuImageCell
-            cell.delegate = self
-            cell.section = indexPath.section
-            cell.images = model.images
-            return cell
-            }
-        case .both: do {
-            let cell = tableView.dequeueReusableCell(withIdentifier: model.type.identifier) as! MenuTitleIconCell
-            cell.titleLabel.text = model.text
-            return cell
-            }
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: MenuCell.identifier) as! MenuCell
+        cell.titleLabel.text = model.title
+        return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -134,16 +128,16 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 
-extension MenuViewController: MenuImageCellDelegate {
-
-    func imageCell(_ cell: MenuImageCell, didTapImageIn section: Int, At index: Int) {
-        dismiss { [weak self] in
-            guard let sself = self else { return }
-            if let action = sself.delegate?.menuView(sself, didTapIconIn: section, At: index) {
-                action
-            }
-        }
-    }
-    
-}
+//extension MenuViewController: MenuImageCellDelegate {
+//
+//    func imageCell(_ cell: MenuImageCell, didTapImageIn section: Int, At index: Int) {
+//        dismiss { [weak self] in
+//            guard let sself = self else { return }
+//            if let action = sself.delegate?.menuView(sself, didTapIconIn: section, At: index) {
+//                action
+//            }
+//        }
+//    }
+//
+//}
 

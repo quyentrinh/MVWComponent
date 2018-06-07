@@ -22,22 +22,17 @@
 		EF367F8120C7C5E000FF9E64 /* ReviewBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF367F8020C7C5E000FF9E64 /* ReviewBarItem.swift */; };
 		EF3E5F9F20C14FF100F6A118 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3E5F9E20C14FF100F6A118 /* MenuViewModel.swift */; };
 		EF3E5FA120C150D300F6A118 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3E5FA020C150D300F6A118 /* MenuModel.swift */; };
-		EF539ED320C4FCE100D8165D /* Type1HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF539ED220C4FCE100D8165D /* Type1HeaderView.xib */; };
-		EF539ED520C4FD0500D8165D /* Type2HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF539ED420C4FD0500D8165D /* Type2HeaderView.xib */; };
-		EF539ED720C4FD0F00D8165D /* Type3HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF539ED620C4FD0F00D8165D /* Type3HeaderView.xib */; };
-		EF539ED920C5120F00D8165D /* NormalHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF539ED820C5120F00D8165D /* NormalHeaderView.xib */; };
-		EF539EDD20C517C200D8165D /* MenuTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF539EDB20C517C200D8165D /* MenuTextCell.swift */; };
-		EF539EDE20C517C200D8165D /* MenuTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF539EDC20C517C200D8165D /* MenuTextCell.xib */; };
-		EF539EE320C517E300D8165D /* MenuImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF539EE120C517E300D8165D /* MenuImageCell.swift */; };
-		EF539EE420C517E300D8165D /* MenuImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF539EE220C517E300D8165D /* MenuImageCell.xib */; };
-		EF539EE720C517FA00D8165D /* MenuTitleIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF539EE520C517FA00D8165D /* MenuTitleIconCell.swift */; };
-		EF539EE820C517FA00D8165D /* MenuTitleIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF539EE620C517FA00D8165D /* MenuTitleIconCell.xib */; };
 		EF6BEF0520BFFB88007991D7 /* SegmentBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BEF0420BFFB88007991D7 /* SegmentBarView.swift */; };
 		EF73E4D520C0FB68001EB1E9 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73E4D420C0FB68001EB1E9 /* FloatRatingView.swift */; };
 		EF73E4D920C10197001EB1E9 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73E4D820C10197001EB1E9 /* RatingView.swift */; };
 		EF73E4DD20C1030C001EB1E9 /* RatingSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73E4DC20C1030C001EB1E9 /* RatingSlider.swift */; };
 		EF73E4DF20C11B47001EB1E9 /* RatingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF73E4DE20C11B47001EB1E9 /* RatingView.xib */; };
 		EF73E4E120C11B79001EB1E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF73E4E020C11B79001EB1E9 /* Images.xcassets */; };
+		EFB3776F20C8E381000044FE /* MenuHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB3776E20C8E381000044FE /* MenuHeaderView.xib */; };
+		EFB3777720C8E502000044FE /* MenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB3777620C8E502000044FE /* MenuHeaderView.swift */; };
+		EFB3777920C8E559000044FE /* MenuSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB3777820C8E559000044FE /* MenuSectionView.swift */; };
+		EFB3777C20C8E5C5000044FE /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB3777A20C8E5C5000044FE /* MenuCell.swift */; };
+		EFB3777D20C8E5C5000044FE /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB3777B20C8E5C5000044FE /* MenuCell.xib */; };
 		EFB81E4720C7863A00CA7EEA /* ReviewBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB81E4620C7863A00CA7EEA /* ReviewBar.swift */; };
 		EFD84F3420C0E2040040FA15 /* CustomViewDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD84F3320C0E2040040FA15 /* CustomViewDemoVC.swift */; };
 /* End PBXBuildFile section */
@@ -60,22 +55,17 @@
 		EF367F8020C7C5E000FF9E64 /* ReviewBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewBarItem.swift; sourceTree = "<group>"; };
 		EF3E5F9E20C14FF100F6A118 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		EF3E5FA020C150D300F6A118 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
-		EF539ED220C4FCE100D8165D /* Type1HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Type1HeaderView.xib; sourceTree = "<group>"; };
-		EF539ED420C4FD0500D8165D /* Type2HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Type2HeaderView.xib; sourceTree = "<group>"; };
-		EF539ED620C4FD0F00D8165D /* Type3HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Type3HeaderView.xib; sourceTree = "<group>"; };
-		EF539ED820C5120F00D8165D /* NormalHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalHeaderView.xib; sourceTree = "<group>"; };
-		EF539EDB20C517C200D8165D /* MenuTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTextCell.swift; sourceTree = "<group>"; };
-		EF539EDC20C517C200D8165D /* MenuTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTextCell.xib; sourceTree = "<group>"; };
-		EF539EE120C517E300D8165D /* MenuImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuImageCell.swift; sourceTree = "<group>"; };
-		EF539EE220C517E300D8165D /* MenuImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuImageCell.xib; sourceTree = "<group>"; };
-		EF539EE520C517FA00D8165D /* MenuTitleIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTitleIconCell.swift; sourceTree = "<group>"; };
-		EF539EE620C517FA00D8165D /* MenuTitleIconCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTitleIconCell.xib; sourceTree = "<group>"; };
 		EF6BEF0420BFFB88007991D7 /* SegmentBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentBarView.swift; sourceTree = "<group>"; };
 		EF73E4D420C0FB68001EB1E9 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
 		EF73E4D820C10197001EB1E9 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		EF73E4DC20C1030C001EB1E9 /* RatingSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingSlider.swift; sourceTree = "<group>"; };
 		EF73E4DE20C11B47001EB1E9 /* RatingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingView.xib; sourceTree = "<group>"; };
 		EF73E4E020C11B79001EB1E9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EFB3776E20C8E381000044FE /* MenuHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuHeaderView.xib; sourceTree = "<group>"; };
+		EFB3777620C8E502000044FE /* MenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderView.swift; sourceTree = "<group>"; };
+		EFB3777820C8E559000044FE /* MenuSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSectionView.swift; sourceTree = "<group>"; };
+		EFB3777A20C8E5C5000044FE /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		EFB3777B20C8E5C5000044FE /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		EFB81E4620C7863A00CA7EEA /* ReviewBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewBar.swift; sourceTree = "<group>"; };
 		EFD84F3320C0E2040040FA15 /* CustomViewDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewDemoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,12 +92,12 @@
 		EF0FE17F20BF8CB6007B2FE8 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				EF0FE18A20BFCD45007B2FE8 /* BaseSideViewController.swift */,
 				EF539EDA20C5179E00D8165D /* Cell */,
 				EF539ED120C4E6C500D8165D /* HeaderView */,
+				EF3E5FA020C150D300F6A118 /* MenuModel.swift */,
 				EF3E5F9E20C14FF100F6A118 /* MenuViewModel.swift */,
 				EF0FE18020BF8CDE007B2FE8 /* MenuViewController.swift */,
-				EF0FE18A20BFCD45007B2FE8 /* BaseSideViewController.swift */,
-				EF3E5FA020C150D300F6A118 /* MenuModel.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -193,10 +183,9 @@
 		EF539ED120C4E6C500D8165D /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
-				EF539ED220C4FCE100D8165D /* Type1HeaderView.xib */,
-				EF539ED420C4FD0500D8165D /* Type2HeaderView.xib */,
-				EF539ED620C4FD0F00D8165D /* Type3HeaderView.xib */,
-				EF539ED820C5120F00D8165D /* NormalHeaderView.xib */,
+				EFB3776E20C8E381000044FE /* MenuHeaderView.xib */,
+				EFB3777620C8E502000044FE /* MenuHeaderView.swift */,
+				EFB3777820C8E559000044FE /* MenuSectionView.swift */,
 			);
 			path = HeaderView;
 			sourceTree = "<group>";
@@ -204,12 +193,8 @@
 		EF539EDA20C5179E00D8165D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				EF539EDB20C517C200D8165D /* MenuTextCell.swift */,
-				EF539EDC20C517C200D8165D /* MenuTextCell.xib */,
-				EF539EE120C517E300D8165D /* MenuImageCell.swift */,
-				EF539EE220C517E300D8165D /* MenuImageCell.xib */,
-				EF539EE520C517FA00D8165D /* MenuTitleIconCell.swift */,
-				EF539EE620C517FA00D8165D /* MenuTitleIconCell.xib */,
+				EFB3777A20C8E5C5000044FE /* MenuCell.swift */,
+				EFB3777B20C8E5C5000044FE /* MenuCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -319,16 +304,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF06126020BE876100C24CB9 /* PullUpHeader.xib in Resources */,
-				EF539EE820C517FA00D8165D /* MenuTitleIconCell.xib in Resources */,
 				EF73E4DF20C11B47001EB1E9 /* RatingView.xib in Resources */,
-				EF539ED720C4FD0F00D8165D /* Type3HeaderView.xib in Resources */,
-				EF539EDE20C517C200D8165D /* MenuTextCell.xib in Resources */,
 				EF2B21F520BD2B4B00031DA4 /* LaunchScreen.storyboard in Resources */,
-				EF539ED920C5120F00D8165D /* NormalHeaderView.xib in Resources */,
-				EF539EE420C517E300D8165D /* MenuImageCell.xib in Resources */,
+				EFB3777D20C8E5C5000044FE /* MenuCell.xib in Resources */,
 				EF73E4E120C11B79001EB1E9 /* Images.xcassets in Resources */,
-				EF539ED520C4FD0500D8165D /* Type2HeaderView.xib in Resources */,
-				EF539ED320C4FCE100D8165D /* Type1HeaderView.xib in Resources */,
+				EFB3776F20C8E381000044FE /* MenuHeaderView.xib in Resources */,
 				EF2B21F220BD2B4B00031DA4 /* Assets.xcassets in Resources */,
 				EF2B21F020BD2B4A00031DA4 /* Main.storyboard in Resources */,
 			);
@@ -341,22 +321,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF539EE720C517FA00D8165D /* MenuTitleIconCell.swift in Sources */,
 				EF73E4D920C10197001EB1E9 /* RatingView.swift in Sources */,
 				EF26EBA020BE45520064C3A7 /* PullUpDemoVC.swift in Sources */,
 				EF367F8120C7C5E000FF9E64 /* ReviewBarItem.swift in Sources */,
 				EF0FE18B20BFCD45007B2FE8 /* BaseSideViewController.swift in Sources */,
 				EF6BEF0520BFFB88007991D7 /* SegmentBarView.swift in Sources */,
 				EF0FE18120BF8CDE007B2FE8 /* MenuViewController.swift in Sources */,
+				EFB3777C20C8E5C5000044FE /* MenuCell.swift in Sources */,
 				EF0FE17E20BF8C60007B2FE8 /* LeftPanelDemoVC.swift in Sources */,
-				EF539EE320C517E300D8165D /* MenuImageCell.swift in Sources */,
 				EFB81E4720C7863A00CA7EEA /* ReviewBar.swift in Sources */,
 				EFD84F3420C0E2040040FA15 /* CustomViewDemoVC.swift in Sources */,
+				EFB3777720C8E502000044FE /* MenuHeaderView.swift in Sources */,
 				EF73E4D520C0FB68001EB1E9 /* FloatRatingView.swift in Sources */,
 				EF0FE18820BF9D20007B2FE8 /* Extension.swift in Sources */,
 				EF73E4DD20C1030C001EB1E9 /* RatingSlider.swift in Sources */,
-				EF539EDD20C517C200D8165D /* MenuTextCell.swift in Sources */,
 				EF3E5FA120C150D300F6A118 /* MenuModel.swift in Sources */,
+				EFB3777920C8E559000044FE /* MenuSectionView.swift in Sources */,
 				EF3E5F9F20C14FF100F6A118 /* MenuViewModel.swift in Sources */,
 				EF26EB9E20BE451B0064C3A7 /* PullUpViewController.swift in Sources */,
 				EF2B21EB20BD2B4A00031DA4 /* AppDelegate.swift in Sources */,

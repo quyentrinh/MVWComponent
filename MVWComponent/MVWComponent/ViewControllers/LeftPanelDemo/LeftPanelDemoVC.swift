@@ -21,39 +21,39 @@ class LeftPanelDemoVC: UIViewController {
 
     @IBAction func showButtonTapped(_ sender: Any) {
         
-        var cellModels = Array<[MenuCellModel]>()
-        
-        let cell11 = MenuCellModel(icon: "", text: "Gintoki Yoruzaki")
-        let cell12 = MenuCellModel(icon: "", text: "Otiku Sogou")
-        let cell13 = MenuCellModel(icon: "", text: "Kamui Otutsu")
-        let cell14 = MenuCellModel(icon: "", text: "Itachi Uchiha")
-        let cell15 = MenuCellModel(icon: "", text: "Naruto Uzumaki")
-        let cell16 = MenuCellModel(icon: "", text: "Saitama")
-        let cell17 = MenuCellModel(icon: "", text: "Monkey.D.Luffy")
-        let section1 = [cell11, cell12, cell13, cell14, cell15, cell16, cell17]
-        
-        let cell22 = MenuCellModel(images: ["123", "43", "asd", "41"])
-        let cell23 = MenuCellModel(icon: "", text: "Tasumaki")
-        let section2 = [cell22, cell23]
+        let section1 = MenuSectionModel(headingTitle: "Akatsuki")
+        let cellModel11 = MenuCellModel(title: "Nagato Uzumaki")
+        let cellModel12 = MenuCellModel(title: "Itachi Uchiha")
+        let cellModel13 = MenuCellModel(title: "Orochimaru")
+        let cellModel14 = MenuCellModel(title: "Sasori")
+        section1.cellModel = [cellModel11, cellModel12, cellModel13, cellModel14]
         
         
-        let cell31 = MenuCellModel(images: ["123","41"])
-        let cell32 = MenuCellModel(text: "Log out")
-        let section3 = [cell31, cell32]
+        let section2 = MenuSectionModel(title: "Gintama", icon: "StarEmpty")
+        let cellModel21 = MenuCellModel(title: "Okita")
+        let cellModel22 = MenuCellModel(title: "Katsura")
+        section2.cellModel = [cellModel21, cellModel22]
         
+        let section3 = MenuSectionModel(title: "One Piece", icon: "StarFull_Gray")
+        let cellModel31 = MenuCellModel(title: "Monkey.D.luffy")
+        let cellModel32 = MenuCellModel(title: "Ronoroa Zoro")
+        let cellModel33 = MenuCellModel(title: "Sanji")
+        section3.cellModel = [cellModel31, cellModel32, cellModel33]
         
+        let section4 = MenuSectionModel(title: "Saitama", icon: "StarFull_Blue")
         
-        cellModels.append(section1)
-        cellModels.append(section2)
-        cellModels.append(section3)
+        let section5 = MenuSectionModel(title: "Sign Out")
         
-        let model = MenuModel(data: cellModels, headerType: .one)
+        let section6 = MenuSectionModel(title: "Gintoki", icon: "ic_unlike")
         
-        let viewModel = MenuViewModel(model: model)
+        let section7 = MenuSectionModel(images: ["StarEmpty", "ic_like", "StarFull_Blue", "ic_unlike"])
         
+        let menuModel = MenuModel(sections: [section1, section2, section3, section4, section7, section6, section5])
+        
+        let viewModel = MenuViewModel(model: menuModel)
         let vc = MenuViewController()
-        vc.delegate = self
         vc.viewModel = viewModel
+        vc.delegate = self
         showMenu(vc)
     }
     
