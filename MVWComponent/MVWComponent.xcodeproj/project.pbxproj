@@ -10,6 +10,8 @@
 		EF06126020BE876100C24CB9 /* PullUpHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF06125F20BE876100C24CB9 /* PullUpHeader.xib */; };
 		EF0F062420CA0F10003087DF /* Menu.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF0F062320CA0F10003087DF /* Menu.xcassets */; };
 		EF0F062A20CA40FB003087DF /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F062920CA40FB003087DF /* HomeTableViewController.swift */; };
+		EF0F062F20CA6B20003087DF /* BaseNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F062E20CA6B20003087DF /* BaseNavigationBar.swift */; };
+		EF0F063120CA7373003087DF /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F063020CA7373003087DF /* CustomNavigationBar.swift */; };
 		EF0FE18120BF8CDE007B2FE8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE18020BF8CDE007B2FE8 /* MenuViewController.swift */; };
 		EF0FE18820BF9D20007B2FE8 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE18720BF9D20007B2FE8 /* Extension.swift */; };
 		EF0FE18B20BFCD45007B2FE8 /* BaseSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE18A20BFCD45007B2FE8 /* BaseSideViewController.swift */; };
@@ -42,6 +44,8 @@
 		EF06125F20BE876100C24CB9 /* PullUpHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PullUpHeader.xib; sourceTree = "<group>"; };
 		EF0F062320CA0F10003087DF /* Menu.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Menu.xcassets; sourceTree = "<group>"; };
 		EF0F062920CA40FB003087DF /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		EF0F062E20CA6B20003087DF /* BaseNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationBar.swift; sourceTree = "<group>"; };
+		EF0F063020CA7373003087DF /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		EF0FE18020BF8CDE007B2FE8 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		EF0FE18720BF9D20007B2FE8 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		EF0FE18A20BFCD45007B2FE8 /* BaseSideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSideViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF0F062B20CA55E8003087DF /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				EF0F062E20CA6B20003087DF /* BaseNavigationBar.swift */,
+				EF0F063020CA7373003087DF /* CustomNavigationBar.swift */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
 		EF0FE17F20BF8CB6007B2FE8 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +159,7 @@
 		EF2B21FC20BD2C7500031DA4 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				EF0F062B20CA55E8003087DF /* NavigationBar */,
 				EFB81E4120C7717700CA7EEA /* ReviewView */,
 				EF25EF2720C63BBA003B927A /* TagView */,
 				EF0FE18620BF9D12007B2FE8 /* Common */,
@@ -317,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF0F063120CA7373003087DF /* CustomNavigationBar.swift in Sources */,
 				EF73E4D920C10197001EB1E9 /* RatingView.swift in Sources */,
 				EF26EBA020BE45520064C3A7 /* PullUpDemoVC.swift in Sources */,
 				EF367F8120C7C5E000FF9E64 /* ReviewBarItem.swift in Sources */,
@@ -330,6 +345,7 @@
 				EF73E4D520C0FB68001EB1E9 /* FloatRatingView.swift in Sources */,
 				EF0FE18820BF9D20007B2FE8 /* Extension.swift in Sources */,
 				EF73E4DD20C1030C001EB1E9 /* RatingSlider.swift in Sources */,
+				EF0F062F20CA6B20003087DF /* BaseNavigationBar.swift in Sources */,
 				EF3E5FA120C150D300F6A118 /* MenuModel.swift in Sources */,
 				EFB3777920C8E559000044FE /* MenuSectionView.swift in Sources */,
 				EF3E5F9F20C14FF100F6A118 /* MenuViewModel.swift in Sources */,
