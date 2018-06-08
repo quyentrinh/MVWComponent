@@ -74,7 +74,7 @@ class MenuViewController: BaseSideViewController {
         tableView.frame = contentView.bounds
         tableView.frame.origin.y -= 20            //height of status bar
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        contentView.insertSubview(tableView, belowSubview: dismisButton)
+        contentView.addSubview(tableView)
     }
     
     //MARK: - Help

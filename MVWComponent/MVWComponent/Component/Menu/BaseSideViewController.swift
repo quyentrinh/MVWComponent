@@ -42,11 +42,11 @@ class BaseSideViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        contentView.frame = contentViewViewHidenFrame()
+        contentView.frame = contentViewHidenFrame()
         dismisButton.frame = CGRect(x: view.xwidth() - buttonsize - padding, y: padding, width: buttonsize, height: buttonsize)
         
         UIView.animate(withDuration: 0.3, animations: {
-            self.contentView.frame = self.contentViewViewVisibleFrame()
+            self.contentView.frame = self.contentViewVisibleFrame()
         }) { _ in
             self.view.layoutIfNeeded()
             self.contentView.layer.addObserver(self, forKeyPath: "position", options: .new, context: nil)
@@ -96,11 +96,11 @@ class BaseSideViewController: UIViewController {
         panGestureRecognizer = _panGestureRecognizer
     }
     
-    private func contentViewViewVisibleFrame() -> CGRect {
+    private func contentViewVisibleFrame() -> CGRect {
         return CGRect(x: 0, y: 0, width: view.bounds.width - rightOffSet, height: view.bounds.height)
     }
     
-    private func contentViewViewHidenFrame() -> CGRect {
+    private func contentViewHidenFrame() -> CGRect {
         return CGRect(x: rightOffSet - view.bounds.width, y: 0, width: view.bounds.width - rightOffSet, height: view.bounds.height)
     }
     
@@ -111,7 +111,7 @@ class BaseSideViewController: UIViewController {
     }
     
     @objc private func handlePanGestureRecognizer(_ gestureRecognizer: UIPanGestureRecognizer) {
-        view.bringSubview(toFront: gestureRecognizer.view!)
+
         var translatePoint = gestureRecognizer.translation(in: gestureRecognizer.view?.superview)
         
         let staticY = gestureRecognizer.view?.center.y
