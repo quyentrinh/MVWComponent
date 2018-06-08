@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		EF06126020BE876100C24CB9 /* PullUpHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF06125F20BE876100C24CB9 /* PullUpHeader.xib */; };
 		EF0F062420CA0F10003087DF /* Menu.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF0F062320CA0F10003087DF /* Menu.xcassets */; };
-		EF0FE17E20BF8C60007B2FE8 /* LeftPanelDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE17D20BF8C60007B2FE8 /* LeftPanelDemoVC.swift */; };
+		EF0F062A20CA40FB003087DF /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F062920CA40FB003087DF /* HomeTableViewController.swift */; };
 		EF0FE18120BF8CDE007B2FE8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE18020BF8CDE007B2FE8 /* MenuViewController.swift */; };
 		EF0FE18820BF9D20007B2FE8 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE18720BF9D20007B2FE8 /* Extension.swift */; };
 		EF0FE18B20BFCD45007B2FE8 /* BaseSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE18A20BFCD45007B2FE8 /* BaseSideViewController.swift */; };
@@ -41,7 +41,7 @@
 /* Begin PBXFileReference section */
 		EF06125F20BE876100C24CB9 /* PullUpHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PullUpHeader.xib; sourceTree = "<group>"; };
 		EF0F062320CA0F10003087DF /* Menu.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Menu.xcassets; sourceTree = "<group>"; };
-		EF0FE17D20BF8C60007B2FE8 /* LeftPanelDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftPanelDemoVC.swift; sourceTree = "<group>"; };
+		EF0F062920CA40FB003087DF /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		EF0FE18020BF8CDE007B2FE8 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		EF0FE18720BF9D20007B2FE8 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		EF0FE18A20BFCD45007B2FE8 /* BaseSideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSideViewController.swift; sourceTree = "<group>"; };
@@ -83,14 +83,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EF0FE17C20BF8C3F007B2FE8 /* LeftPanelDemo */ = {
-			isa = PBXGroup;
-			children = (
-				EF0FE17D20BF8C60007B2FE8 /* LeftPanelDemoVC.swift */,
-			);
-			path = LeftPanelDemo;
-			sourceTree = "<group>";
-		};
 		EF0FE17F20BF8CB6007B2FE8 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,8 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				EFD84F3220C0E1EB0040FA15 /* CustomView */,
-				EF0FE17C20BF8C3F007B2FE8 /* LeftPanelDemo */,
 				EF56F18A20BE913800724712 /* PullUpDemo */,
+				EF0F062920CA40FB003087DF /* HomeTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -332,7 +324,6 @@
 				EF6BEF0520BFFB88007991D7 /* SegmentBarView.swift in Sources */,
 				EF0FE18120BF8CDE007B2FE8 /* MenuViewController.swift in Sources */,
 				EFB3777C20C8E5C5000044FE /* MenuCell.swift in Sources */,
-				EF0FE17E20BF8C60007B2FE8 /* LeftPanelDemoVC.swift in Sources */,
 				EFB81E4720C7863A00CA7EEA /* ReviewBar.swift in Sources */,
 				EFD84F3420C0E2040040FA15 /* CustomViewDemoVC.swift in Sources */,
 				EFB3777720C8E502000044FE /* MenuHeaderView.swift in Sources */,
@@ -343,6 +334,7 @@
 				EFB3777920C8E559000044FE /* MenuSectionView.swift in Sources */,
 				EF3E5F9F20C14FF100F6A118 /* MenuViewModel.swift in Sources */,
 				EF26EB9E20BE451B0064C3A7 /* PullUpViewController.swift in Sources */,
+				EF0F062A20CA40FB003087DF /* HomeTableViewController.swift in Sources */,
 				EF2B21EB20BD2B4A00031DA4 /* AppDelegate.swift in Sources */,
 				EF25EF2920C63BE1003B927A /* TagView.swift in Sources */,
 			);
