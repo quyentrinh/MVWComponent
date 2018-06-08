@@ -12,6 +12,7 @@
 		EF0F062A20CA40FB003087DF /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F062920CA40FB003087DF /* HomeTableViewController.swift */; };
 		EF0F062F20CA6B20003087DF /* BaseNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F062E20CA6B20003087DF /* BaseNavigationBar.swift */; };
 		EF0F063120CA7373003087DF /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F063020CA7373003087DF /* CustomNavigationBar.swift */; };
+		EF0F063620CA82D5003087DF /* NavigationDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F063520CA82D5003087DF /* NavigationDemoVC.swift */; };
 		EF0FE18120BF8CDE007B2FE8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE18020BF8CDE007B2FE8 /* MenuViewController.swift */; };
 		EF0FE18820BF9D20007B2FE8 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE18720BF9D20007B2FE8 /* Extension.swift */; };
 		EF0FE18B20BFCD45007B2FE8 /* BaseSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE18A20BFCD45007B2FE8 /* BaseSideViewController.swift */; };
@@ -46,6 +47,7 @@
 		EF0F062920CA40FB003087DF /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		EF0F062E20CA6B20003087DF /* BaseNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationBar.swift; sourceTree = "<group>"; };
 		EF0F063020CA7373003087DF /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		EF0F063520CA82D5003087DF /* NavigationDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDemoVC.swift; sourceTree = "<group>"; };
 		EF0FE18020BF8CDE007B2FE8 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		EF0FE18720BF9D20007B2FE8 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		EF0FE18A20BFCD45007B2FE8 /* BaseSideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSideViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 				EF0F063020CA7373003087DF /* CustomNavigationBar.swift */,
 			);
 			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		EF0F063420CA82BB003087DF /* Navigaiton */ = {
+			isa = PBXGroup;
+			children = (
+				EF0F063520CA82D5003087DF /* NavigationDemoVC.swift */,
+			);
+			path = Navigaiton;
 			sourceTree = "<group>";
 		};
 		EF0FE17F20BF8CB6007B2FE8 /* Menu */ = {
@@ -182,6 +192,7 @@
 		EF2B220020BD2DC100031DA4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				EF0F063420CA82BB003087DF /* Navigaiton */,
 				EFD84F3220C0E1EB0040FA15 /* CustomView */,
 				EF56F18A20BE913800724712 /* PullUpDemo */,
 				EF0F062920CA40FB003087DF /* HomeTableViewController.swift */,
@@ -337,6 +348,7 @@
 				EF367F8120C7C5E000FF9E64 /* ReviewBarItem.swift in Sources */,
 				EF0FE18B20BFCD45007B2FE8 /* BaseSideViewController.swift in Sources */,
 				EF6BEF0520BFFB88007991D7 /* SegmentBarView.swift in Sources */,
+				EF0F063620CA82D5003087DF /* NavigationDemoVC.swift in Sources */,
 				EF0FE18120BF8CDE007B2FE8 /* MenuViewController.swift in Sources */,
 				EFB3777C20C8E5C5000044FE /* MenuCell.swift in Sources */,
 				EFB81E4720C7863A00CA7EEA /* ReviewBar.swift in Sources */,

@@ -254,30 +254,17 @@
             </objects>
             <point key="canvasLocation" x="1431" y="-190"/>
         </scene>
-        <!--View Controller-->
+        <!--Navigation DemoVC-->
         <scene sceneID="SGB-HQ-0mD">
             <objects>
-                <viewController id="GZy-7H-Ktn" sceneMemberID="viewController">
+                <viewController id="GZy-7H-Ktn" customClass="NavigationDemoVC" customModule="MVWComponent" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U4A-Lf-a8V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JT9-V9-gPa" customClass="BaseNavigationBar" customModule="MVWComponent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="164" width="375" height="60"/>
-                                <color key="backgroundColor" red="1" green="0.74433507080000005" blue="0.74014977660000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="7Ik-vL-8TY"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="JT9-V9-gPa" firstAttribute="leading" secondItem="U4A-Lf-a8V" secondAttribute="leading" id="6US-bR-Bl2"/>
-                            <constraint firstItem="AAE-X0-cwa" firstAttribute="trailing" secondItem="JT9-V9-gPa" secondAttribute="trailing" id="MT5-8S-d21"/>
-                            <constraint firstItem="JT9-V9-gPa" firstAttribute="top" secondItem="AAE-X0-cwa" secondAttribute="top" constant="100" id="tE6-Zc-OuC"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="AAE-X0-cwa"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTR-xh-JiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

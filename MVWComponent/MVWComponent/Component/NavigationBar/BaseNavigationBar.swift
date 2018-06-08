@@ -22,11 +22,11 @@ class BaseNavigationBar: UIView {
     
     //MARK:- SETUP
 
-    init(leftItems: [UIButton]?, rightItems: [UIButton]?, frame: CGRect) {
+    init(_ leftItems: [UIButton]?,_ rightItems: [UIButton]?,_ frame: CGRect) {
         super.init(frame: frame)
         leftButtons = leftItems
         rightButtons = rightItems
-        setupUI()
+        createBaseUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -63,22 +63,24 @@ class BaseNavigationBar: UIView {
     }
 
     //MARK: - UI
-    func setupUI() {
+    func createBaseUI() {
         backgroundColor = .white
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        layer.shadowRadius = 0.5
+        layer.shadowOpacity = 0.3
+        
         if let _leftButtons = leftButtons {
             for button in _leftButtons {
-                button.backgroundColor = .gray
                 addSubview(button)
             }
         }
         if let _rightButtons = rightButtons {
             for button in _rightButtons {
-                button.backgroundColor = .gray
                 addSubview(button)
             }
         }
         let view = UIView()
-        view.backgroundColor = .groupTableViewBackground
         view.clipsToBounds = true
         addSubview(view)
         titleView = view
