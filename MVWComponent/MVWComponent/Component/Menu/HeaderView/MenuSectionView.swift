@@ -41,11 +41,13 @@ class MenuSectionView: UIView {
     private let padding : CGFloat = 15.0
     private let iconSize : CGFloat = 20.0
     private let imageSize : CGFloat = 30.0
+    private let arrowSize : CGFloat = 20.0
     
     private let tagOffSet : Int = 100
     
     private var textLabel : UILabel!
     private var iconImageView : UIImageView!
+    private var arrowImageView : UIImageView!
     
     private var imagesNameArray: [String]?
     private var iconName: String?
@@ -93,6 +95,9 @@ class MenuSectionView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        arrowImageView.frame = CGRect(x: bounds.width - padding - arrowSize + 5.0, y: (bounds.height - arrowSize) / 2, width: arrowSize, height: arrowSize)
+        
         switch type {
         case .onlyText:
             updateLayoutOnlyTextHeaderView()
@@ -112,6 +117,13 @@ class MenuSectionView: UIView {
     
     
     func setupUI() {
+        backgroundColor = .white
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapHeader)))
+        
+        let arrow = UIImageView(image: UIImage(named: "ic_menu_arrow"))
+        addSubview(arrow)
+        arrowImageView = arrow
+        
         switch type {
         case .onlyText:
             createOnlyTextHeaderView()
@@ -126,16 +138,8 @@ class MenuSectionView: UIView {
             createTextHeadingHeaderView()
             break
         }
-        backgroundColor = .white
-        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapHeader)))
     }
     
-    @objc private func didTapHeader() {
-        if let action = delegate?.menuSection(header: self, didTapAt: section!) {
-            action
-        }
-        
-    }
     //MARK: - Create UI
     
     func createOnlyTextHeaderView() {
@@ -215,6 +219,10 @@ class MenuSectionView: UIView {
     
     //MARK: - Handle
     
+    func setHeaderExpand(flag :Bool) {
+        arrowImageView.rotate(flag ? .pi / 2 : 0.0)
+    }
+    
     func updateDisplay() {
         
         if let _text = text {
@@ -231,6 +239,13 @@ class MenuSectionView: UIView {
         }
     }
     
+    @objc private func didTapHeader() {
+        if let action = delegate?.menuSection(header: self, didTapAt: section!) {
+            action
+        }
+        
+    }
+    
     @objc func imageTapRecognizer(_ recognizer: UITapGestureRecognizer) {
         let image = recognizer.view as! UIImageView
         let index = image.tag - tagOffSet
@@ -238,12 +253,19 @@ class MenuSectionView: UIView {
             action
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
 }
+
+
+extension UIView {
+    func rotate(_ toValue: CGFloat, duration: CFTimeInterval = 0.2) {
+        let animation = CABasicAnimation(keyPath: "transform.rotation")
+        
+        animation.toValue = toValue
+        animation.duration = duration
+        animation.isRemovedOnCompletion = false
+        animation.fillMode = kCAFillModeForwards
+        
+        self.layer.add(animation, forKey: nil)
+    }
+}
+

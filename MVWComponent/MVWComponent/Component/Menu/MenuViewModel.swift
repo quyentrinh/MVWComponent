@@ -69,6 +69,7 @@ class MenuViewModel {
             
             headerView.section = section
             headerView.delegate = self
+            headerView.setHeaderExpand(flag: sectionData.isExpanded)
             return headerView
         }
     }
@@ -105,6 +106,7 @@ extension MenuViewModel: MenuSectionViewDelegate {
         if sectionData.isExpandable {
             let expand = sectionData.isExpanded
             sectionData.isExpanded = !expand
+            header.setHeaderExpand(flag: !expand)
             reloadSections!(section)
         } else {
             menuDidTapAtSection!(section)

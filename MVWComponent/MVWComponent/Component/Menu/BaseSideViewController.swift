@@ -13,7 +13,7 @@ class BaseSideViewController: UIViewController {
     var rightOffSet: CGFloat = 80.0
 
     private let buttonsize : CGFloat = 20.0
-    private let padding : CGFloat = 5.0
+    private let padding : CGFloat = 15.0
     private var currentX : CGFloat = 0
     
     var contentView: UIView!
@@ -43,7 +43,7 @@ class BaseSideViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         contentView.frame = contentViewViewHidenFrame()
-        dismisButton.frame = CGRect(x: contentView.xwidth() - buttonsize - padding, y: padding, width: buttonsize, height: buttonsize)
+        dismisButton.frame = CGRect(x: view.xwidth() - buttonsize - padding, y: padding, width: buttonsize, height: buttonsize)
         
         UIView.animate(withDuration: 0.3, animations: {
             self.contentView.frame = self.contentViewViewVisibleFrame()
@@ -83,8 +83,8 @@ class BaseSideViewController: UIViewController {
         //dismis button
         let _button = UIButton()
         _button.addTarget(self, action: #selector(dismissButtonPress), for: .touchUpInside)
-        _button.backgroundColor = .black
-        _contentView.addSubview(_button)
+        _button.setBackgroundImage(UIImage(named: "ic_menu_close"), for: .normal)
+        view.addSubview(_button)
         dismisButton = _button
     }
     
@@ -169,9 +169,10 @@ class BaseSideViewController: UIViewController {
     func dismiss(completion: (() -> Swift.Void)? = nil)  {
         UIView.animate(withDuration: 0.3, animations: {
             self.contentView.frame.origin.x = self.rightOffSet - self.view.bounds.width
-            UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelNormal               //bring back status bar
+            self.dismisButton.isHidden = true
             self.view.backgroundColor = UIColor.black.withAlphaComponent(0.0)
         }, completion: { _ in
+            UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelNormal               //bring back status bar
             self.dismiss(animated: false, completion: completion)
         })
     }
