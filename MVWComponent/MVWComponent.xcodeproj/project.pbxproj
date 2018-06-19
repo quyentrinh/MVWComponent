@@ -38,6 +38,7 @@
 		EFB3777C20C8E5C5000044FE /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB3777A20C8E5C5000044FE /* MenuCell.swift */; };
 		EFB3777D20C8E5C5000044FE /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB3777B20C8E5C5000044FE /* MenuCell.xib */; };
 		EFB81E4720C7863A00CA7EEA /* ReviewBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB81E4620C7863A00CA7EEA /* ReviewBar.swift */; };
+		EFCD34EE20D8AB630097075D /* nav.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFCD34ED20D8AB630097075D /* nav.xcassets */; };
 		EFD84F3420C0E2040040FA15 /* CustomViewDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD84F3320C0E2040040FA15 /* CustomViewDemoVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		EFB3777A20C8E5C5000044FE /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		EFB3777B20C8E5C5000044FE /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		EFB81E4620C7863A00CA7EEA /* ReviewBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewBar.swift; sourceTree = "<group>"; };
+		EFCD34ED20D8AB630097075D /* nav.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = nav.xcassets; sourceTree = "<group>"; };
 		EFD84F3320C0E2040040FA15 /* CustomViewDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewDemoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 			children = (
 				EF0F062E20CA6B20003087DF /* BaseNavigationBar.swift */,
 				EF0F063020CA7373003087DF /* CustomNavigationBar.swift */,
+				EFCD34ED20D8AB630097075D /* nav.xcassets */,
 			);
 			path = NavigationBar;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				EF06126020BE876100C24CB9 /* PullUpHeader.xib in Resources */,
 				EF73E4DF20C11B47001EB1E9 /* RatingView.xib in Resources */,
 				EF2B21F520BD2B4B00031DA4 /* LaunchScreen.storyboard in Resources */,
+				EFCD34EE20D8AB630097075D /* nav.xcassets in Resources */,
 				EFB3777D20C8E5C5000044FE /* MenuCell.xib in Resources */,
 				EF73E4E120C11B79001EB1E9 /* Rating.xcassets in Resources */,
 				EFB3776F20C8E381000044FE /* MenuHeaderView.xib in Resources */,

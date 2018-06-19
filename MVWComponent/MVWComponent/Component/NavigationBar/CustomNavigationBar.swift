@@ -13,7 +13,6 @@ enum NavigationBarType {
     case subTitle
     case notification
     case logo
-    case share
     case search
 }
 
@@ -33,6 +32,12 @@ class CustomNavigationBar: BaseNavigationBar {
         }
     }
     
+    var notification: String? {
+        didSet {
+            notificationLabel.text = notification
+        }
+    }
+    
     //MARK:- PRIVATE PROPERTY
     
     private var navigationBarType: NavigationBarType = .title
@@ -40,6 +45,8 @@ class CustomNavigationBar: BaseNavigationBar {
     private var titleLabel: UILabel!
     
     private var subTitleLabel: UILabel!
+    
+    private var notificationLabel: UILabel!
 
     init(leftItems: [UIButton]?, rightItems: [UIButton]?, barType: NavigationBarType, frame: CGRect) {
         super.init(leftItems, rightItems, frame)
@@ -63,10 +70,10 @@ class CustomNavigationBar: BaseNavigationBar {
             createTitleWithSubNavigation()
             break
         case .notification:
+            createNotifyNavigation()
             break
         case .logo:
-            break
-        case .share:
+            createImageTitleNavigation()
             break
         case .search:
             break
@@ -99,7 +106,7 @@ class CustomNavigationBar: BaseNavigationBar {
         guard let titlelabel = titleLabel else { return }
         
         let icon = UIImageView(frame: .zero)
-        icon.image = #imageLiteral(resourceName: "StarFull_Blue")
+        icon.image = #imageLiteral(resourceName: "nav_ic_subtitle")
         icon.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(icon)
         
@@ -121,6 +128,49 @@ class CustomNavigationBar: BaseNavigationBar {
         subTitleLabel = label
     }
     
+    func createImageTitleNavigation() {
+        guard let view = titleView else { return }
+        
+        let image = UIImageView(frame: .zero)
+        image.image = #imageLiteral(resourceName: "nav_logo")
+        image.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(image)
+        
+        image.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        image.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        image.heightAnchor.constraint(lessThanOrEqualTo: view.heightAnchor).isActive = true
+        image.widthAnchor.constraint(equalTo: image.heightAnchor, multiplier: 200/110).isActive = true
+        
+    }
+    
+    func createNotifyNavigation() {
+        
+        createTitleNavigation()
+        
+        guard let view = titleView else { return }
+        guard let titlelabel = titleLabel else { return }
+        
+        let labelWidth:CGFloat = 17.0
+        
+        let label = UILabel(frame: .zero)
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 12.0, weight: .regular)
+        label.textColor = .white
+        label.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.2784313725, blue: 0.5098039216, alpha: 1)
+        
+        label.layer.masksToBounds = true
+        label.layer.cornerRadius = labelWidth*0.5
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(label)
+        
+        label.widthAnchor.constraint(equalToConstant: labelWidth).isActive = true
+        label.heightAnchor.constraint(equalToConstant: labelWidth).isActive = true
+        label.leadingAnchor.constraint(equalTo: titlelabel.trailingAnchor, constant: 10.0).isActive = true
+        label.centerYAnchor.constraint(equalTo: titlelabel.centerYAnchor).isActive = true
+        
+        notificationLabel = label
+    }
     
     //MARK:- Update Layout
 

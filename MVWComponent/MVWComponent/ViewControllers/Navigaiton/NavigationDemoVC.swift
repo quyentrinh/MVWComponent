@@ -10,25 +10,37 @@ import UIKit
 
 class NavigationDemoVC: UIViewController {
 
+    let button1 = UIButton(type: .contactAdd)
+    let button2 = UIButton(type: .infoDark)
+    let button3 = UIButton(type: .detailDisclosure)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .groupTableViewBackground
     
         var frame = CGRect(x: 0, y: 100, width: view.frame.width, height: 44.0)
-        let button1 = UIButton(type: .contactAdd)
+        
         button1.addTarget(self, action: #selector(tapped), for: .touchUpInside)
-        let button2 = UIButton(type: .infoDark)
-        let button3 = UIButton(type: .detailDisclosure)
         let nav1 = CustomNavigationBar(leftItems: [button1], rightItems: [button2, button3], barType: .title, frame: frame)
-        nav1.title = "Title NAvigation"
+        nav1.title = "映画館を探す"
         view.addSubview(nav1)
         
         frame.origin.y += 70
-        let nav2 = CustomNavigationBar(leftItems: [button1], rightItems: nil, barType: .subTitle, frame: frame)
-        nav2.title = "Sub titlte"
-        nav2.subTitle = "ac-214"
+        let nav2 = CustomNavigationBar(leftItems: nil, rightItems: nil, barType: .subTitle, frame: frame)
+        nav2.title = "ラプラスの魔女"
+        nav2.subTitle = "132分"
         view.addSubview(nav2)
+
+        frame.origin.y += 70
+        let nav3 = CustomNavigationBar(leftItems: nil, rightItems: nil, barType: .logo, frame: frame)
+        view.addSubview(nav3)
+        
+        frame.origin.y += 70
+        let nav4 = CustomNavigationBar(leftItems: nil, rightItems: nil, barType: .notification, frame: frame)
+        nav4.title = "お知らせ"
+        nav4.notification = "5"
+        view.addSubview(nav4)
     }
 
     override func didReceiveMemoryWarning() {
