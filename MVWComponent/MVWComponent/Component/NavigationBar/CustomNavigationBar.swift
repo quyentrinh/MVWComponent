@@ -40,13 +40,15 @@ class CustomNavigationBar: BaseNavigationBar {
     
     //MARK:- PRIVATE PROPERTY
     
-    private var navigationBarType: NavigationBarType = .title
+    var navigationBarType: NavigationBarType = .title
     
-    private var titleLabel: UILabel!
+    var titleLabel: UILabel!
     
-    private var subTitleLabel: UILabel!
+    var subTitleLabel: UILabel!
     
-    private var notificationLabel: UILabel!
+    var notificationLabel: UILabel!
+    
+    var searchField: UITextField!
 
     init(leftItems: [UIButton]?, rightItems: [UIButton]?, barType: NavigationBarType, frame: CGRect) {
         super.init(leftItems, rightItems, frame)
@@ -87,7 +89,7 @@ class CustomNavigationBar: BaseNavigationBar {
     func createTitleNavigation()  {
         let label = UILabel(frame: .zero)
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 14.0, weight: .medium)
+        label.font = .systemFont(ofSize: 15.0, weight: .medium)
         
         guard let view = titleView else { return }
         
@@ -201,6 +203,8 @@ class CustomNavigationBar: BaseNavigationBar {
         search.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0.0).isActive = true
         search.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -0.0).isActive = true
         search.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+        searchField = search
     }
     
     //MARK:- Update Layout

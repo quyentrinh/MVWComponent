@@ -39,6 +39,7 @@
 		EFB3777D20C8E5C5000044FE /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB3777B20C8E5C5000044FE /* MenuCell.xib */; };
 		EFB81E4720C7863A00CA7EEA /* ReviewBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB81E4620C7863A00CA7EEA /* ReviewBar.swift */; };
 		EFCD34EE20D8AB630097075D /* nav.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFCD34ED20D8AB630097075D /* nav.xcassets */; };
+		EFCD34F020D8DF350097075D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD34EF20D8DF350097075D /* BaseViewController.swift */; };
 		EFD84F3420C0E2040040FA15 /* CustomViewDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD84F3320C0E2040040FA15 /* CustomViewDemoVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		EFB3777B20C8E5C5000044FE /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		EFB81E4620C7863A00CA7EEA /* ReviewBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewBar.swift; sourceTree = "<group>"; };
 		EFCD34ED20D8AB630097075D /* nav.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = nav.xcassets; sourceTree = "<group>"; };
+		EFCD34EF20D8DF350097075D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EFD84F3320C0E2040040FA15 /* CustomViewDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewDemoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,12 +103,12 @@
 			path = NavigationBar;
 			sourceTree = "<group>";
 		};
-		EF0F063420CA82BB003087DF /* Navigaiton */ = {
+		EF0F063420CA82BB003087DF /* Navigtion */ = {
 			isa = PBXGroup;
 			children = (
 				EF0F063520CA82D5003087DF /* NavigationDemoVC.swift */,
 			);
-			path = Navigaiton;
+			path = Navigtion;
 			sourceTree = "<group>";
 		};
 		EF0FE17F20BF8CB6007B2FE8 /* Menu */ = {
@@ -195,7 +197,8 @@
 		EF2B220020BD2DC100031DA4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				EF0F063420CA82BB003087DF /* Navigaiton */,
+				EFCD34EF20D8DF350097075D /* BaseViewController.swift */,
+				EF0F063420CA82BB003087DF /* Navigtion */,
 				EFD84F3220C0E1EB0040FA15 /* CustomView */,
 				EF56F18A20BE913800724712 /* PullUpDemo */,
 				EF0F062920CA40FB003087DF /* HomeTableViewController.swift */,
@@ -351,6 +354,7 @@
 				EF26EBA020BE45520064C3A7 /* PullUpDemoVC.swift in Sources */,
 				EF367F8120C7C5E000FF9E64 /* ReviewBarItem.swift in Sources */,
 				EF0FE18B20BFCD45007B2FE8 /* BaseSideViewController.swift in Sources */,
+				EFCD34F020D8DF350097075D /* BaseViewController.swift in Sources */,
 				EF6BEF0520BFFB88007991D7 /* SegmentBarView.swift in Sources */,
 				EF0F063620CA82D5003087DF /* NavigationDemoVC.swift in Sources */,
 				EF0FE18120BF8CDE007B2FE8 /* MenuViewController.swift in Sources */,

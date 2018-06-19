@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomViewDemoVC: UIViewController {
+class CustomViewDemoVC: BaseViewController {
 
     
     @IBOutlet weak var ratingView: RatingView!
@@ -16,6 +16,7 @@ class CustomViewDemoVC: UIViewController {
     @IBOutlet weak var reviewBar: ReviewBar!
     @IBOutlet weak var reviewBarItem: ReviewBarItem!
     
+    let button1 = UIButton(type: .contactAdd)
     
     var arrTitles : [String]!
     var arrImage : [UIImage]!
@@ -23,6 +24,9 @@ class CustomViewDemoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        nav_title = "映画館を探す"
+        nav_subTitle = "132分"
+        
         let segment = SegmentBarView(frame: CGRect(x: 20, y: 100, width: view.frame.width - 40, height: 30))
         segment.delegate = self
         segment.datasource = self
@@ -44,7 +48,13 @@ class CustomViewDemoVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func navigationBarType() -> NavigationBarType {
+        return .subTitle
+    }
     
+    override func navigationBarRightItems() -> Array<UIButton>? {
+        return [button1]
+    }
     
 }
 

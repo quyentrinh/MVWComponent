@@ -10,7 +10,7 @@ import UIKit
 
 class BaseNavigationBar: UIView {
     
-    private let statusBarHeigh: CGFloat = 0.0
+    private let statusBarHeigh: CGFloat = 20.0
     private let padding: CGFloat = 8.0
     private let buttonSize: CGSize = CGSize(width: 30.0, height: 44.0)
     
@@ -66,7 +66,7 @@ class BaseNavigationBar: UIView {
     func createBaseUI() {
         backgroundColor = .white
         layer.shadowColor = UIColor.gray.cgColor
-        layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        layer.shadowOffset = CGSize(width: 0.0, height: 1.5)
         layer.shadowRadius = 0.5
         layer.shadowOpacity = 0.3
         

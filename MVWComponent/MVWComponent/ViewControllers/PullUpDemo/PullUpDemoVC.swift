@@ -8,14 +8,20 @@
 
 import UIKit
 
-class PullUpDemoVC: UIViewController {
+class PullUpDemoVC: BaseViewController {
 
+    let button1 = UIButton(type: .contactAdd)
+    let button2 = UIButton(type: .infoDark)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nav_title = "PullUp Demo"
+        notification = "7"
         // Do any additional setup after loading the view.
     }
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -30,6 +36,14 @@ class PullUpDemoVC: UIViewController {
         pullupVC.topMargin = 60
         pullupVC.headerHeight = 40
         addPullUpController(pullupVC)
+    }
+    
+    override func navigationBarType() -> NavigationBarType {
+        return .notification
+    }
+    
+    override func navigationBarRightItems() -> Array<UIButton>? {
+        return [button2]
     }
 }
 
