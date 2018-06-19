@@ -76,6 +76,7 @@ class CustomNavigationBar: BaseNavigationBar {
             createImageTitleNavigation()
             break
         case .search:
+            createSearchNavigation()
             break
         }
 
@@ -170,6 +171,36 @@ class CustomNavigationBar: BaseNavigationBar {
         label.centerYAnchor.constraint(equalTo: titlelabel.centerYAnchor).isActive = true
         
         notificationLabel = label
+    }
+    
+    func createSearchNavigation() {
+        
+        guard let view = titleView else { return }
+        
+        let search = UITextField(frame: .zero)
+        search.backgroundColor = #colorLiteral(red: 0.9019607843, green: 0.9254901961, blue: 0.9450980392, alpha: 1)
+        search.font = UIFont.systemFont(ofSize: 13.0)
+        search.textColor = #colorLiteral(red: 0.2980392157, green: 0.3215686275, blue: 0.3568627451, alpha: 1)
+        search.tintColor = .black
+        search.borderStyle = .none
+        search.clearButtonMode = .whileEditing
+        search.layer.cornerRadius = 4.0
+        search.placeholder = "作品・映画館・人物を検索"
+        
+        let searchLView = UIView(frame: CGRect(x: 0, y: 0, width: 40.0, height: 30.0))
+        let icon = UIImageView(frame: CGRect(x: 11, y: 6, width: 18.0, height: 18.0))
+        icon.image = #imageLiteral(resourceName: "nav_search")
+        searchLView.addSubview(icon)
+        search.leftView = searchLView
+        search.leftViewMode = .always
+        
+        search.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(search)
+        
+        search.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
+        search.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0.0).isActive = true
+        search.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -0.0).isActive = true
+        search.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
     //MARK:- Update Layout

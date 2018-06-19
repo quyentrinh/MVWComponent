@@ -22,7 +22,7 @@ class NavigationDemoVC: UIViewController {
         var frame = CGRect(x: 0, y: 100, width: view.frame.width, height: 44.0)
         
         button1.addTarget(self, action: #selector(tapped), for: .touchUpInside)
-        let nav1 = CustomNavigationBar(leftItems: [button1], rightItems: [button2, button3], barType: .title, frame: frame)
+        let nav1 = CustomNavigationBar(leftItems: nil, rightItems: nil, barType: .title, frame: frame)
         nav1.title = "映画館を探す"
         view.addSubview(nav1)
         
@@ -41,6 +41,10 @@ class NavigationDemoVC: UIViewController {
         nav4.title = "お知らせ"
         nav4.notification = "5"
         view.addSubview(nav4)
+        
+        frame.origin.y += 70
+        let nav5 = CustomNavigationBar(leftItems: [button3], rightItems: [button1], barType: .search, frame: frame)
+        view.addSubview(nav5)
     }
 
     override func didReceiveMemoryWarning() {
