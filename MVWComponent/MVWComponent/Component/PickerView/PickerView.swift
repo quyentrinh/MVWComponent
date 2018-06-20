@@ -14,10 +14,19 @@ enum PickerType {
     case booking
 }
 
+protocol PickerViewDelegate: class {
+    func pickerView(_ picker: PickerView, didSelected value: String?, at index: Int)
+}
+
 class PickerView: UIView {
+    
+    weak var delegate : PickerViewDelegate?
+    
     
     //constant value
 
+    private let buttonColor: UIColor = UIColor(red: 74/255.0, green: 105/255.0, blue: 158/255.0, alpha: 1.0)
+    private let buttonTitleFont: UIFont = UIFont.systemFont(ofSize: 13, weight: .regular)
     private let toolBarHeight: CGFloat = 44.0
 
     lazy var pickerHeight: CGFloat = {
@@ -38,20 +47,27 @@ class PickerView: UIView {
        return ["1", "2", "3", "4", "5"]
     }()
     
+    //property
+    private var selectedIndex: Int!
 
     //outlet
     private var contentView: UIView!
     private var toolBar: UIToolbar!
     private var constraintBottomLayout: NSLayoutConstraint!
     
-    private var flexibleSpace: UIBarButtonItem = {
-        return UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
+    private lazy var cancelButton: UIBarButtonItem = {
+        let button = createBarButton()
+        button.setTitle("キャンセル", for: .normal)
+        button.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
+        let item = UIBarButtonItem(customView: button)
+        return item
     }()
-    private var cancelButton: UIBarButtonItem = {
-        return UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonTapped))
-    }()
-    private var doneButton: UIBarButtonItem = {
-        return UIBarButtonItem(barButtonSystemItem: .done, target: self, action: nil)
+    private lazy var doneButton: UIBarButtonItem = {
+        let button = createBarButton()
+        button.setTitle("完了", for: .normal)
+        button.addTarget(self, action: #selector(doneButtonTapped), for: .touchUpInside)
+        let item = UIBarButtonItem(customView: button)
+        return item
     }()
     
     init(data: [String], type: PickerType) {
@@ -81,7 +97,12 @@ class PickerView: UIView {
         let toolbar = UIToolbar(frame: .zero)
         toolbar.tintColor = .darkGray
         toolbar.barTintColor = .white
-        toolbar.items = [cancelButton, flexibleSpace, doneButton]
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
+        let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: self, action: nil)
+        space.width = 24.0
+        
+        toolbar.items = [space, cancelButton, flexibleSpace, doneButton, space]
         view.addSubview(toolbar)
         toolBar = toolbar
         
@@ -94,6 +115,13 @@ class PickerView: UIView {
             createBookingPicker()
         }
         updateLayout()
+    }
+    
+    private func createBarButton() -> UIButton {
+        let button = UIButton(type: .custom)
+        button.titleLabel?.font = buttonTitleFont
+        button.setTitleColor(buttonColor, for: .normal)
+        return button
     }
     
     private func createNormalPicker() {
@@ -112,7 +140,18 @@ class PickerView: UIView {
     }
     
     private func createDateTimePicker() {
+        let picker = UIDatePicker(frame: .zero)
+        picker.datePickerMode = .date
+        picker.maximumDate = Date()
+        picker.backgroundColor = .white
+        picker.translatesAutoresizingMaskIntoConstraints = false
         
+        contentView.addSubview(picker)
+        
+        picker.topAnchor.constraint(equalTo: toolBar.bottomAnchor).isActive = true
+        picker.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        picker.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        picker.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
     }
     
     private func createBookingPicker() {
@@ -160,6 +199,19 @@ private extension PickerView {
         dismiss()
     }
     
+    @objc func doneButtonTapped() {
+        dismiss()
+        switch pickerType {
+        case .datetime:
+            return
+        default:
+            if let action = delegate?.pickerView(self, didSelected: data[selectedIndex], at: selectedIndex) {
+                action
+            }
+        }
+        
+    }
+    
 }
 
 
@@ -174,6 +226,10 @@ extension PickerView: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return data[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedIndex = row
     }
     
 }

@@ -22,18 +22,16 @@ class PickerDemoVC: UIViewController {
     }
     
     @IBAction func showPickerTapped(_ sender: Any) {
-        let picker = PickerView(data: [], type: .normal)
+        let picker = PickerView(data: [], type: .datetime)
+        picker.delegate = self
         picker.show()
     }
     
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+}
+
+extension PickerDemoVC: PickerViewDelegate {
+    func pickerView(_ picker: PickerView, didSelected value: String?, at index: Int) {
+        print("\(String(describing: value!)) - at \(index)")
     }
-    */
-
 }
