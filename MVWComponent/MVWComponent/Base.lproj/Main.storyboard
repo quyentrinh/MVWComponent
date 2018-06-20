@@ -85,13 +85,25 @@
                                             <segue destination="GZy-7H-Ktn" kind="show" id="mT6-hX-gdI"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="60k-VR-pzr">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Gwb-7N-Cre" style="IBUITableViewCellStyleDefault" id="60k-VR-pzr">
                                         <rect key="frame" x="0.0" y="243.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="60k-VR-pzr" id="wK4-gi-U6z">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Picker view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gwb-7N-Cre">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="YTc-6Q-iAT" kind="show" id="Jgc-HY-WWi"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -269,6 +281,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTR-xh-JiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1429.5999999999999" y="609.44527736131943"/>
+        </scene>
+        <!--Picker DemoVC-->
+        <scene sceneID="IWk-nl-zOO">
+            <objects>
+                <viewController id="YTc-6Q-iAT" customClass="PickerDemoVC" customModule="MVWComponent" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wrp-yK-Zfj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptS-xu-XYG">
+                                <rect key="frame" x="164" y="129" width="46" height="30"/>
+                                <state key="normal" title="SHOW"/>
+                                <connections>
+                                    <action selector="showPickerTapped:" destination="YTc-6Q-iAT" eventType="touchUpInside" id="SvG-5l-2i8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ptS-xu-XYG" firstAttribute="top" secondItem="UJj-jp-cRu" secondAttribute="top" constant="109" id="4Pz-Gg-Dva"/>
+                            <constraint firstItem="ptS-xu-XYG" firstAttribute="centerX" secondItem="UJj-jp-cRu" secondAttribute="centerX" id="dcr-is-LUH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UJj-jp-cRu"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U7P-30-eCX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2287" y="333"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="fkn-3x-Umx">
