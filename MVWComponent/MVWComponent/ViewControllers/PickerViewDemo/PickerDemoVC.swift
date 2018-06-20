@@ -22,7 +22,7 @@ class PickerDemoVC: UIViewController {
     }
     
     @IBAction func showPickerTapped(_ sender: Any) {
-        let picker = PickerView(data: [], type: .datetime)
+        let picker = PickerView(data: [], type: .booking)
         picker.delegate = self
         picker.show()
     }

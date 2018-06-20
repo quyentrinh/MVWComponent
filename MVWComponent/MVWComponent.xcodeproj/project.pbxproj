@@ -34,6 +34,8 @@
 		EF73E4E120C11B79001EB1E9 /* Rating.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF73E4E020C11B79001EB1E9 /* Rating.xcassets */; };
 		EFAEAEF620DA13FF00186B4C /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAEAEF520DA13FF00186B4C /* PickerView.swift */; };
 		EFAEAEF920DA3F9500186B4C /* PickerDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAEAEF820DA3F9500186B4C /* PickerDemoVC.swift */; };
+		EFAEAEFB20DA694900186B4C /* BookingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFAEAEFA20DA694900186B4C /* BookingHeaderView.xib */; };
+		EFAEAEFD20DA6D6C00186B4C /* BookingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAEAEFC20DA6D6C00186B4C /* BookingHeaderView.swift */; };
 		EFB3776F20C8E381000044FE /* MenuHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB3776E20C8E381000044FE /* MenuHeaderView.xib */; };
 		EFB3777720C8E502000044FE /* MenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB3777620C8E502000044FE /* MenuHeaderView.swift */; };
 		EFB3777920C8E559000044FE /* MenuSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB3777820C8E559000044FE /* MenuSectionView.swift */; };
@@ -75,6 +77,8 @@
 		EF73E4E020C11B79001EB1E9 /* Rating.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Rating.xcassets; sourceTree = "<group>"; };
 		EFAEAEF520DA13FF00186B4C /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		EFAEAEF820DA3F9500186B4C /* PickerDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDemoVC.swift; sourceTree = "<group>"; };
+		EFAEAEFA20DA694900186B4C /* BookingHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingHeaderView.xib; sourceTree = "<group>"; };
+		EFAEAEFC20DA6D6C00186B4C /* BookingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingHeaderView.swift; sourceTree = "<group>"; };
 		EFB3776E20C8E381000044FE /* MenuHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuHeaderView.xib; sourceTree = "<group>"; };
 		EFB3777620C8E502000044FE /* MenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderView.swift; sourceTree = "<group>"; };
 		EFB3777820C8E559000044FE /* MenuSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSectionView.swift; sourceTree = "<group>"; };
@@ -264,6 +268,8 @@
 			isa = PBXGroup;
 			children = (
 				EFAEAEF520DA13FF00186B4C /* PickerView.swift */,
+				EFAEAEFA20DA694900186B4C /* BookingHeaderView.xib */,
+				EFAEAEFC20DA6D6C00186B4C /* BookingHeaderView.swift */,
 			);
 			path = PickerView;
 			sourceTree = "<group>";
@@ -352,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF06126020BE876100C24CB9 /* PullUpHeader.xib in Resources */,
+				EFAEAEFB20DA694900186B4C /* BookingHeaderView.xib in Resources */,
 				EF73E4DF20C11B47001EB1E9 /* RatingView.xib in Resources */,
 				EF2B21F520BD2B4B00031DA4 /* LaunchScreen.storyboard in Resources */,
 				EFCD34EE20D8AB630097075D /* nav.xcassets in Resources */,
@@ -389,6 +396,7 @@
 				EF0FE18820BF9D20007B2FE8 /* Extension.swift in Sources */,
 				EF73E4DD20C1030C001EB1E9 /* RatingSlider.swift in Sources */,
 				EF0F062F20CA6B20003087DF /* BaseNavigationBar.swift in Sources */,
+				EFAEAEFD20DA6D6C00186B4C /* BookingHeaderView.swift in Sources */,
 				EF3E5FA120C150D300F6A118 /* MenuModel.swift in Sources */,
 				EFB3777920C8E559000044FE /* MenuSectionView.swift in Sources */,
 				EF3E5F9F20C14FF100F6A118 /* MenuViewModel.swift in Sources */,

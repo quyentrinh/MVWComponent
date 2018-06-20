@@ -28,9 +28,13 @@ class PickerView: UIView {
     private let buttonColor: UIColor = UIColor(red: 74/255.0, green: 105/255.0, blue: 158/255.0, alpha: 1.0)
     private let buttonTitleFont: UIFont = UIFont.systemFont(ofSize: 13, weight: .regular)
     private let toolBarHeight: CGFloat = 44.0
-
+    private let headerBarHeight: CGFloat = 100.0
     lazy var pickerHeight: CGFloat = {
-        return bounds.size.width*(224/375) + toolBarHeight
+        let defaultH = bounds.size.width*(224/375) + toolBarHeight
+        if pickerType == .booking {
+            return defaultH + headerBarHeight //header
+        }
+        return defaultH
     }()
 
     private var appWindow: UIWindow {
@@ -53,6 +57,7 @@ class PickerView: UIView {
     //outlet
     private var contentView: UIView!
     private var toolBar: UIToolbar!
+    private var headerView: UIView!
     private var constraintBottomLayout: NSLayoutConstraint!
     
     private lazy var cancelButton: UIBarButtonItem = {
@@ -156,6 +161,12 @@ class PickerView: UIView {
     
     private func createBookingPicker() {
         createNormalPicker()
+        
+        guard let header = Bundle.main.loadNibNamed("BookingHeaderView", owner: nil, options: nil)?.first as? BookingHeaderView else { return }
+        header.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.addSubview(header)
+        headerView = header
     }
     
     private func updateLayout() {
@@ -166,6 +177,18 @@ class PickerView: UIView {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         toolBar.translatesAutoresizingMaskIntoConstraints = false
         
+        toolBar.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        toolBar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        toolBar.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        toolBar.heightAnchor.constraint(equalToConstant: toolBarHeight).isActive = true
+        
+        if let header = headerView {
+            header.topAnchor.constraint(equalTo: toolBar.bottomAnchor).isActive = true
+            header.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+            header.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+            header.heightAnchor.constraint(equalToConstant: headerBarHeight).isActive = true
+        }
+        
         contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         contentView.heightAnchor.constraint(equalToConstant: pickerHeight).isActive = true
@@ -173,11 +196,6 @@ class PickerView: UIView {
         let bot = contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: pickerHeight)
         addConstraint(bot)
         constraintBottomLayout = bot
-        
-        toolBar.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        toolBar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        toolBar.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        toolBar.heightAnchor.constraint(equalToConstant: toolBarHeight).isActive = true
         
         layoutIfNeeded()
     
@@ -211,7 +229,7 @@ private extension PickerView {
         }
         
     }
-    
+
 }
 
 
