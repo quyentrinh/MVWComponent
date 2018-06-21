@@ -25,12 +25,15 @@ class PickerView: UIView {
     
     //constant value
 
-    private let buttonColor: UIColor = UIColor(red: 74/255.0, green: 105/255.0, blue: 158/255.0, alpha: 1.0)
+    private let buttonCancelColor: UIColor = UIColor(red: 119/255.0, green: 128/255.0, blue: 143/255.0, alpha: 1.0)
+    private let buttonDoneColor: UIColor = UIColor(red: 66/255.0, green: 133/255.0, blue: 244/255.0, alpha: 1.0)
     private let buttonTitleFont: UIFont = UIFont.systemFont(ofSize: 13, weight: .regular)
-    private let toolBarHeight: CGFloat = 44.0
-    private let headerBarHeight: CGFloat = 100.0
+    private let buttonTitleColor: UIColor = .white
+    private let toolBarHeight: CGFloat = 52.0
+    private let headerBarHeight: CGFloat = 93.0
+    
     lazy var pickerHeight: CGFloat = {
-        let defaultH = bounds.size.width*(224/375) + toolBarHeight
+        let defaultH = bounds.size.width*(218/375) + toolBarHeight
         if pickerType == .booking {
             return defaultH + headerBarHeight //header
         }
@@ -52,7 +55,7 @@ class PickerView: UIView {
     }()
     
     //property
-    private var selectedIndex: Int!
+    private var selectedIndex: Int = 0
 
     //outlet
     private var contentView: UIView!
@@ -63,6 +66,7 @@ class PickerView: UIView {
     private lazy var cancelButton: UIBarButtonItem = {
         let button = createBarButton()
         button.setTitle("キャンセル", for: .normal)
+        button.backgroundColor = buttonCancelColor
         button.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
         let item = UIBarButtonItem(customView: button)
         return item
@@ -70,6 +74,7 @@ class PickerView: UIView {
     private lazy var doneButton: UIBarButtonItem = {
         let button = createBarButton()
         button.setTitle("完了", for: .normal)
+        button.backgroundColor = buttonDoneColor
         button.addTarget(self, action: #selector(doneButtonTapped), for: .touchUpInside)
         let item = UIBarButtonItem(customView: button)
         return item
@@ -124,8 +129,10 @@ class PickerView: UIView {
     
     private func createBarButton() -> UIButton {
         let button = UIButton(type: .custom)
+        button.contentEdgeInsets = UIEdgeInsets(top: 6, left: 11, bottom: 6, right: 11)
         button.titleLabel?.font = buttonTitleFont
-        button.setTitleColor(buttonColor, for: .normal)
+        button.setTitleColor(buttonTitleColor, for: .normal)
+        button.layer.cornerRadius = 4.0
         return button
     }
     
@@ -138,7 +145,7 @@ class PickerView: UIView {
         
         contentView.addSubview(picker)
         
-        picker.topAnchor.constraint(equalTo: toolBar.bottomAnchor).isActive = true
+        picker.topAnchor.constraint(equalTo: headerView == nil ? toolBar.bottomAnchor:headerView.bottomAnchor).isActive = true
         picker.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         picker.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         picker.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
@@ -160,13 +167,14 @@ class PickerView: UIView {
     }
     
     private func createBookingPicker() {
-        createNormalPicker()
-        
         guard let header = Bundle.main.loadNibNamed("BookingHeaderView", owner: nil, options: nil)?.first as? BookingHeaderView else { return }
         header.translatesAutoresizingMaskIntoConstraints = false
         
         contentView.addSubview(header)
         headerView = header
+        
+        createNormalPicker()
+        
     }
     
     private func updateLayout() {
@@ -176,7 +184,6 @@ class PickerView: UIView {
         
         contentView.translatesAutoresizingMaskIntoConstraints = false
         toolBar.translatesAutoresizingMaskIntoConstraints = false
-        
         toolBar.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         toolBar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         toolBar.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
