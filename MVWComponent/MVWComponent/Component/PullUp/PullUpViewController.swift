@@ -91,7 +91,9 @@ class PullUpViewController: UIViewController {
         //wrap view
         let _wrapView = UIView()
         _wrapView.layer.cornerRadius = cornerRadius
-        _wrapView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        if #available(iOS 11.0, *) {
+            _wrapView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        }
         _wrapView.clipsToBounds = true
         _wrapView.backgroundColor = .white
         view.addSubview(_wrapView)
