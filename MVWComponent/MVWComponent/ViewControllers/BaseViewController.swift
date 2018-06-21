@@ -87,8 +87,6 @@ extension BaseViewController {
     
     func addNavigation() {
         
-        let frame = CGRect(x: 0, y: 0, width:  view.frame.width, height: 64.0)
-        
         var leftItem = navigationBarLeftItems()
         
         if leftItem == nil {
@@ -96,9 +94,18 @@ extension BaseViewController {
         }
         leftItem?.insert(backButton(), at: 0)
         
-        let navBar = CustomNavigationBar(leftItems: leftItem, rightItems: navigationBarRightItems(), barType: navigationBarType(), frame: frame)
+        let navBar = CustomNavigationBar(leftItems: leftItem, rightItems: navigationBarRightItems(), barType: navigationBarType(), frame: .zero)
     
         view.addSubview(navBar)
+        navBar.translatesAutoresizingMaskIntoConstraints = false
+        if #available(iOS 11.0, *) {
+            navBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        } else {
+            navBar.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor, constant: 0).isActive = true
+        }
+        navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        navBar.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
         
         navigationBar = navBar
     }
