@@ -291,17 +291,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptS-xu-XYG">
-                                <rect key="frame" x="164" y="129" width="46" height="30"/>
-                                <state key="normal" title="SHOW"/>
+                                <rect key="frame" x="162" y="129" width="50" height="30"/>
+                                <state key="normal" title="Normal"/>
                                 <connections>
-                                    <action selector="showPickerTapped:" destination="YTc-6Q-iAT" eventType="touchUpInside" id="SvG-5l-2i8"/>
+                                    <action selector="showPickerTapped:" destination="YTc-6Q-iAT" eventType="touchUpInside" id="dFs-B5-MbV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2FQ-SW-uGt">
+                                <rect key="frame" x="162" y="188" width="33" height="30"/>
+                                <state key="normal" title="Date"/>
+                                <connections>
+                                    <action selector="datePicker:" destination="YTc-6Q-iAT" eventType="touchUpInside" id="3X6-qx-FDV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ta-W2-54C">
+                                <rect key="frame" x="162" y="241" width="56" height="30"/>
+                                <state key="normal" title="Booking"/>
+                                <connections>
+                                    <action selector="bookingPicker:" destination="YTc-6Q-iAT" eventType="touchUpInside" id="eSg-Pg-Hww"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ptS-xu-XYG" firstAttribute="top" secondItem="UJj-jp-cRu" secondAttribute="top" constant="109" id="4Pz-Gg-Dva"/>
+                            <constraint firstItem="2FQ-SW-uGt" firstAttribute="leading" secondItem="ptS-xu-XYG" secondAttribute="leading" id="7JW-Mj-1pf"/>
+                            <constraint firstItem="9Ta-W2-54C" firstAttribute="top" secondItem="2FQ-SW-uGt" secondAttribute="bottom" constant="23" id="FbB-MK-Hh0"/>
                             <constraint firstItem="ptS-xu-XYG" firstAttribute="centerX" secondItem="UJj-jp-cRu" secondAttribute="centerX" id="dcr-is-LUH"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2FQ-SW-uGt" secondAttribute="trailing" constant="20" symbolic="YES" id="fBa-ma-5Iy"/>
+                            <constraint firstItem="2FQ-SW-uGt" firstAttribute="top" secondItem="ptS-xu-XYG" secondAttribute="bottom" constant="29" id="j0h-LB-3B0"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9Ta-W2-54C" secondAttribute="trailing" constant="20" symbolic="YES" id="tKZ-e1-uyX"/>
+                            <constraint firstItem="2FQ-SW-uGt" firstAttribute="leading" secondItem="9Ta-W2-54C" secondAttribute="leading" id="vyo-kf-kDg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UJj-jp-cRu"/>
                     </view>

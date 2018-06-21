@@ -33,11 +33,12 @@ class PickerView: UIView {
     private let headerBarHeight: CGFloat = 93.0
     
     lazy var pickerHeight: CGFloat = {
-        let defaultH = bounds.size.width*(218/375) + toolBarHeight
-        if pickerType == .booking {
-            return defaultH + headerBarHeight //header
+        switch pickerType {
+        case .booking:
+            return bounds.size.width*(218/375) + toolBarHeight + headerBarHeight
+        default:
+            return bounds.size.width*(182/375) + toolBarHeight
         }
-        return defaultH
     }()
 
     private var appWindow: UIWindow {
@@ -153,6 +154,7 @@ class PickerView: UIView {
     
     private func createDateTimePicker() {
         let picker = UIDatePicker(frame: .zero)
+        picker.locale = Locale(identifier: "ja_JP")
         picker.datePickerMode = .date
         picker.maximumDate = Date()
         picker.backgroundColor = .white
@@ -200,7 +202,24 @@ class PickerView: UIView {
         contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         contentView.heightAnchor.constraint(equalToConstant: pickerHeight).isActive = true
         
-        let bot = contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: pickerHeight)
+        var bot: NSLayoutConstraint
+        if #available(iOS 11.0, *) {
+            bot = contentView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: pickerHeight)
+            
+            //iPhone X bottom issue
+            
+            let view = UIView(frame: .zero)
+            view.backgroundColor = .white
+            view.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(view)
+            
+            view.topAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+            view.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+            view.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+            view.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        } else {
+            bot = contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: pickerHeight)
+        }
         addConstraint(bot)
         constraintBottomLayout = bot
         

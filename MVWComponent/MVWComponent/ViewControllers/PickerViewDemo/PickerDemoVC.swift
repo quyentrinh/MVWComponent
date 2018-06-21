@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PickerDemoVC: UIViewController {
+class PickerDemoVC: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +22,23 @@ class PickerDemoVC: UIViewController {
     }
     
     @IBAction func showPickerTapped(_ sender: Any) {
+        let picker = PickerView(data: [], type: .normal)
+        picker.delegate = self
+        picker.show()
+    }
+    
+    @IBAction func datePicker(_ sender: Any) {
+        let picker = PickerView(data: [], type: .datetime)
+        picker.delegate = self
+        picker.show()
+    }
+    
+    @IBAction func bookingPicker(_ sender: Any) {
         let picker = PickerView(data: [], type: .booking)
         picker.delegate = self
         picker.show()
     }
     
-
 }
 
 extension PickerDemoVC: PickerViewDelegate {
