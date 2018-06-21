@@ -101,7 +101,7 @@ extension BaseViewController {
         if #available(iOS 11.0, *) {
             navBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         } else {
-            navBar.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor, constant: 0).isActive = true
+            navBar.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 0).isActive = true
         }
         navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
