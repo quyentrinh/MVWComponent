@@ -9,21 +9,43 @@
 import UIKit
 
 enum MenuSectionType {
-    case onlyText
-    case textHeading
-    case imageGroup
     case iconText
+    case imageGroup
+    case textH1         //with background
+    case textH2         //with left indent
+    case textH3         //just text
+    case blank          //empty view
     
-    var identifier: String {
+    var textColor: UIColor {
         switch self {
-        case .onlyText:
-            return "onlyText"
-        case .textHeading:
-            return "textHeading"
-        case .imageGroup:
-            return "imageGroup"
-        case .iconText:
-            return "iconText"
+        case .textH1, .iconText:
+            return #colorLiteral(red: 0.1098039216, green: 0.1176470588, blue: 0.1294117647, alpha: 1)
+        case .textH2:
+            return #colorLiteral(red: 0.2980392157, green: 0.3215686275, blue: 0.3568627451, alpha: 1)
+        case .textH3:
+            return #colorLiteral(red: 0.2901960784, green: 0.4078431373, blue: 0.6196078431, alpha: 1)
+        default :
+            return .white
+        }
+    }
+    
+    var textFont: UIFont {
+        switch self {
+        case .textH2:
+            return UIFont.systemFont(ofSize: 12, weight: .thin)
+        case .textH3:
+            return UIFont.systemFont(ofSize: 12, weight: .regular)
+        default :
+            return UIFont.systemFont(ofSize: 14, weight: .regular)
+        }
+    }
+    
+    var backgroundColor: UIColor {
+        switch self {
+        case .textH1:
+            return UIColor(red: 230/255.0, green: 236/255.0, blue: 241/255.0, alpha: 1.0)
+        default :
+            return .white
         }
     }
     
@@ -36,22 +58,18 @@ protocol MenuSectionViewDelegate: class {
 }
 
 class MenuSectionView: UIView {
-
-    private var type : MenuSectionType = .onlyText
-    private let padding : CGFloat = 15.0
-    private let iconSize : CGFloat = 20.0
-    private let imageSize : CGFloat = 30.0
-    private let arrowSize : CGFloat = 20.0
     
+    private let padding : CGFloat = 12.0
+    private let iconSize : CGFloat = 16.0
+    private let imageSize : CGFloat = 28.0
+    private let arrowSize : CGFloat = 16.0
     private let tagOffSet : Int = 100
     
     private var textLabel : UILabel!
     private var iconImageView : UIImageView!
     private var arrowImageView : UIImageView!
     
-    private var imagesNameArray: [String]?
-    private var iconName: String?
-    private var text: String?
+    private var sectionModel: MenuSectionModel?
     
     var section: Int?
     
@@ -59,32 +77,9 @@ class MenuSectionView: UIView {
     
     //MARK:- SETUP
     
-    init(title: String, frame: CGRect) {
+    init(model: MenuSectionModel, frame: CGRect = .zero) {
         super.init(frame: frame)
-        type = .onlyText
-        text = title
-        setupUI()
-    }
-    
-    init(headingTitle: String, frame: CGRect) {
-        super.init(frame: frame)
-        type = .textHeading
-        text = headingTitle
-        setupUI()
-    }
-    
-    init(title: String, icon: String, frame: CGRect) {
-        super.init(frame: frame)
-        type = .iconText
-        text = title
-        iconName = icon
-        setupUI()
-    }
-    
-    init(images: [String], frame: CGRect) {
-        super.init(frame: frame)
-        imagesNameArray = images
-        type = .imageGroup
+        sectionModel = model
         setupUI()
     }
     
@@ -96,61 +91,72 @@ class MenuSectionView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        arrowImageView.frame = CGRect(x: bounds.width - padding - arrowSize + 5.0, y: (bounds.height - arrowSize) / 2, width: arrowSize, height: arrowSize)
+        if let arrow = arrowImageView {
+            arrow.frame = CGRect(x: bounds.width - padding - arrowSize + 5.0, y: (bounds.height - arrowSize) / 2, width: arrowSize, height: arrowSize)
+        }
         
-        switch type {
-        case .onlyText:
-            updateLayoutOnlyTextHeaderView()
+        guard let model = sectionModel else { return }
+        
+        switch model.type! {
+        case .textH1, .textH3:
+            updateLayoutOnlyTextHeaderView(indent: 0)
             break
+        case .textH2:
+            updateLayoutOnlyTextHeaderView(indent: iconSize + padding)
         case .imageGroup:
             updateLayoutImageGroupHeaderView()
             break
         case .iconText:
             updateLayoutIconTextHeaderView()
             break
-        case .textHeading:
-            updateLayoutTextHeadingHeaderView()
-            break
+        default:
+            return
         }
         updateDisplay()
     }
     
     
     func setupUI() {
-        backgroundColor = .white
+        
+        guard let model = sectionModel else { return }
+        
+        backgroundColor = model.type!.backgroundColor
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapHeader)))
         
-        let arrow = UIImageView(image: UIImage(named: "ic_menu_arrow"))
-        addSubview(arrow)
-        arrowImageView = arrow
+        if model.isExpandable {
+            let arrow = UIImageView(image: UIImage(named: "ic_mn_arrow"))
+            addSubview(arrow)
+            arrowImageView = arrow
+        }
         
-        switch type {
-        case .onlyText:
-            createOnlyTextHeaderView()
+        switch model.type! {
+        case .textH1, .textH2, .textH3:
+            createOnlyTextHeaderView(model: model)
             break
         case .imageGroup:
-            createImageGroupHeaderView()
+            createImageGroupHeaderView(model: model)
             break
         case .iconText:
-            createIconTextHeaderView()
+            createIconTextHeaderView(model: model)
             break
-        case .textHeading:
-            createTextHeadingHeaderView()
-            break
+        default:
+            return
         }
     }
     
     //MARK: - Create UI
     
-    func createOnlyTextHeaderView() {
+    func createOnlyTextHeaderView(model: MenuSectionModel) {
         let textLabel  = UILabel(frame: .zero)
-        textLabel.font = UIFont.systemFont(ofSize: 13, weight: .regular)
+        textLabel.font = model.type!.textFont
+        textLabel.textColor = model.type!.textColor
         addSubview(textLabel)
         self.textLabel = textLabel
     }
     
-    func createImageGroupHeaderView() {
-        if let _images = imagesNameArray {
+    func createImageGroupHeaderView(model: MenuSectionModel) {
+        guard let model = sectionModel else { return }
+        if let _images = model.imagesName {
             for i in 0..<_images.count {
                 let imageView = UIImageView(frame: .zero)
                 imageView.tag = i + tagOffSet
@@ -164,7 +170,7 @@ class MenuSectionView: UIView {
         }
     }
     
-    func createIconTextHeaderView() {
+    func createIconTextHeaderView(model: MenuSectionModel) {
         let icon = UIImageView(frame: .zero)
         icon.contentMode = .scaleToFill
         icon.clipsToBounds = true
@@ -172,29 +178,23 @@ class MenuSectionView: UIView {
         self.iconImageView = icon
         
         let textLabel  = UILabel(frame: .zero)
-        textLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        textLabel.font = model.type!.textFont
+        textLabel.textColor = model.type!.textColor
         addSubview(textLabel)
         self.textLabel = textLabel
     }
-    
-    func createTextHeadingHeaderView() {
-        let textLabel  = UILabel(frame: .zero)
-        textLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
-        addSubview(textLabel)
-        self.textLabel = textLabel
-    }
-    
     
     //MARK: - Update Layout
     
-    func updateLayoutOnlyTextHeaderView() {
+    func updateLayoutOnlyTextHeaderView(indent: CGFloat) {
         let contentFrame = bounds
-        textLabel?.frame  = CGRect(x: padding, y: 0, width: contentFrame.width - padding, height: contentFrame.height)
+        textLabel?.frame  = CGRect(x: padding + indent, y: 0, width: contentFrame.width - padding, height: contentFrame.height)
     }
     
     func updateLayoutImageGroupHeaderView() {
         let contentFrame = bounds
-        if let _images = imagesNameArray {
+        guard let model = sectionModel else { return }
+        if let _images = model.imagesName {
             for i in 0..<_images.count {
                 let positionX = (imageSize + padding)*CGFloat(i) + padding
                 let imageView = viewWithTag(i + tagOffSet) as! UIImageView
@@ -209,29 +209,25 @@ class MenuSectionView: UIView {
         self.textLabel.frame = CGRect(x: padding*2 + iconSize, y: 0, width: contentFrame.width - iconSize - padding*2, height: contentFrame.height)
     }
     
-    func updateLayoutTextHeadingHeaderView() {
-        backgroundColor = .groupTableViewBackground
-        let contentFrame = bounds
-        textLabel?.frame  = CGRect(x: padding, y: 0, width: contentFrame.width - padding, height: contentFrame.height)
-    }
-    
-    
     
     //MARK: - Handle
     
     func setHeaderExpand(flag :Bool) {
-        arrowImageView.rotate(flag ? .pi / 2 : 0.0)
+        if let arrow = arrowImageView {
+            arrow.rotate(flag ? .pi / 2 : 0.0)
+        }
     }
     
     func updateDisplay() {
+        guard let model = sectionModel else { return }
         
-        if let _text = text {
+        if let _text = model.title {
             textLabel.text = _text
         }
-        if let _icon = iconName {
+        if let _icon = model.iconName {
             iconImageView.image = UIImage(named: _icon)
         }
-        if let _images = imagesNameArray {
+        if let _images = model.imagesName {
             for i in 0..<_images.count {
                 let imageView = viewWithTag(i + tagOffSet) as! UIImageView
                 imageView.image = UIImage(named: _images[i])
@@ -259,13 +255,12 @@ class MenuSectionView: UIView {
 extension UIView {
     func rotate(_ toValue: CGFloat, duration: CFTimeInterval = 0.2) {
         let animation = CABasicAnimation(keyPath: "transform.rotation")
-        
         animation.toValue = toValue
         animation.duration = duration
         animation.isRemovedOnCompletion = false
         animation.fillMode = kCAFillModeForwards
-        
         self.layer.add(animation, forKey: nil)
     }
 }
+
 

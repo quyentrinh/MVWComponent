@@ -9,10 +9,13 @@
 import UIKit
 
 
+import UIKit
+
+
 class MenuModel {
     
     var sections : [MenuSectionModel?]?
-
+    
     init(sections _sections: [MenuSectionModel]) {
         sections = _sections
     }
@@ -22,6 +25,7 @@ class MenuModel {
 
 class MenuSectionModel {
     var title : String?
+    var height : CGFloat?
     var iconName : String?
     var imagesName : [String]?
     var type: MenuSectionType?
@@ -35,14 +39,9 @@ class MenuSectionModel {
         return false
     }
     
-    init(title _title: String) {
-        type = .onlyText
+    init(title _title: String, withType _type: MenuSectionType) {
+        type = _type
         title = _title
-    }
-    
-    init(headingTitle: String) {
-        type = .textHeading
-        title = headingTitle
     }
     
     init(title _title: String, icon:String) {
@@ -55,7 +54,11 @@ class MenuSectionModel {
         type = .imageGroup
         imagesName = images
     }
-
+    
+    init(height _height: CGFloat) {
+        type = .blank
+        height = _height
+    }
     
 }
 
@@ -67,22 +70,3 @@ class MenuCellModel {
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

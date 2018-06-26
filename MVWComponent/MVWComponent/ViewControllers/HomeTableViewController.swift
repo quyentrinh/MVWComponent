@@ -27,34 +27,38 @@ class HomeTableViewController: UITableViewController {
 
     @IBAction func menuButtonTapped(_ sender: Any) {
         
-        let section1 = MenuSectionModel(headingTitle: "Akatsuki")
-        let cellModel11 = MenuCellModel(title: "Nagato Uzumaki")
-        let cellModel12 = MenuCellModel(title: "Itachi Uchiha")
-        let cellModel13 = MenuCellModel(title: "Orochimaru")
-        let cellModel14 = MenuCellModel(title: "Sasori")
-        section1.cellModel = [cellModel11, cellModel12, cellModel13, cellModel14]
+        let emptyCell = MenuCellModel(title: "空の")
         
+        let schedule = MenuSectionModel(title: "映画館を探す", icon: "ic_mn_schedule")
+        schedule.cellModel = [emptyCell]
         
-        let section2 = MenuSectionModel(title: "Gintama", icon: "StarEmpty")
-        let cellModel21 = MenuCellModel(title: "Okita")
-        let cellModel22 = MenuCellModel(title: "Katsura")
-        section2.cellModel = [cellModel21, cellModel22]
+        let history = MenuSectionModel(title: "閲覧履歴", icon: "ic_mn_rekisiki")
+        history.cellModel = [emptyCell]
         
-        let section3 = MenuSectionModel(title: "One Piece", icon: "StarFull_Gray")
-        let cellModel31 = MenuCellModel(title: "Monkey.D.luffy")
-        let cellModel32 = MenuCellModel(title: "Ronoroa Zoro")
-        let cellModel33 = MenuCellModel(title: "Sanji")
-        section3.cellModel = [cellModel31, cellModel32, cellModel33]
+        let setting = MenuSectionModel(title: "設定", icon: "ic_mn_setting")
+        let accountInfo = MenuSectionModel(title: "アカウント情報", withType: .textH2)
+        let notificaton = MenuSectionModel(title: "プッシュ通知・お知らせの設定", withType: .textH2)
         
-        let section4 = MenuSectionModel(title: "Saitama", icon: "StarFull_Blue")
+        let help = MenuSectionModel(title: "ヘルプ・お問い合わせ", icon: "ic_mn_help")
+        help.cellModel = [emptyCell]
         
-        let section5 = MenuSectionModel(title: "Sign Out")
+        let mitaiRecommend = MenuSectionModel(title: "Mitaiをおすすめする", withType: .textH1)
+        let social1 = MenuSectionModel(images: ["ic_mn_twitter", "ic_mn_line", "ic_mn_facebook", "ic_mn_google"])
         
-        let section6 = MenuSectionModel(title: "Gintoki", icon: "ic_unlike")
+        let review = MenuSectionModel(title: "アプリのレビューを書く", icon: "ic_mn_review")
+        review.cellModel = [emptyCell]
         
-        let section7 = MenuSectionModel(images: ["StarEmpty", "ic_like", "StarFull_Blue", "ic_unlike"])
+        let officalAccount = MenuSectionModel(title: "公式アカウント", withType: .textH1)
+        let social2 = MenuSectionModel(images: ["ic_mn_twitter", "ic_mn_facebook"])
+        let logout = MenuSectionModel(title: "ログアウト", withType: .textH3)
         
-        let menuModel = MenuModel(sections: [section1, section2, section3, section4, section7, section6, section5])
+        let blank10 = MenuSectionModel(height: 10.0)
+        let blank20 = MenuSectionModel(height: 20.0)
+        
+        let menuModel = MenuModel(sections: [blank10, schedule, history, setting, accountInfo, notificaton, help, blank10,
+                                             mitaiRecommend, blank10, social1, review, blank10,
+                                             officalAccount, blank10, social2, blank20,
+                                             logout])
         
         let viewModel = MenuViewModel(model: menuModel)
         let vc = MenuViewController()

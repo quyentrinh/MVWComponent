@@ -19,12 +19,16 @@ class MenuViewController: BaseSideViewController {
     
     weak var delegate: MenuViewControllerDelegate?
     
-    private lazy var tableView: UITableView = {
-        let _tableView = UITableView()
+    private lazy var tableView: ExpyTableView = {
+        let _tableView = ExpyTableView()
         _tableView.delegate = self
         _tableView.dataSource = self
         _tableView.separatorStyle = .none
         _tableView.register(MenuCell.nib, forCellReuseIdentifier: MenuCell.identifier)
+        _tableView.register(MenuHeaderCell.self, forCellReuseIdentifier: MenuHeaderCell.identifier)
+        
+        let head =  Bundle.main.loadNibNamed("MenuHeaderView", owner: nil, options: nil)?.first as? UIView
+        _tableView.tableHeaderView = head
         
         return _tableView
     }()
@@ -69,6 +73,15 @@ class MenuViewController: BaseSideViewController {
 
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if let tableViewHeader = self.tableView.tableHeaderView {
+            tableViewHeader.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 90.0)
+            tableView.reloadData()
+        }
+    }
+    
+    
     //MARK: - SETUP UI
     func setupUI() {
         tableView.frame = contentView.bounds
@@ -102,43 +115,41 @@ class MenuViewController: BaseSideViewController {
     
 }
 
-extension MenuViewController {
-    
+
+extension MenuViewController: ExpyTableViewDataSource {
+    func tableView(_ tableView: ExpyTableView, expandableCellForSection section: Int) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MenuHeaderCell.self)) as! MenuHeaderCell
+        cell.updateCell()
+        return cell
+    }
 }
+
 
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        return 10
         return viewModel.numberOfSection()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRowIn(section: section)
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = viewModel.viewForHeaderIn(section: section)
-        return header
-    }
-
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        
-        
-        return viewModel.heightForHeaderIn(section: section);
+        return 5
+//        return viewModel.numberOfRowIn(section: section)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return viewModel.heightForRow(indexPath: indexPath)
+        return 40.0
+//        return viewModel.heightForRow(indexPath: indexPath)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let model = viewModel.cellModelFor(indexPath: indexPath) else {
-            let cell = UITableViewCell.init(style: .default, reuseIdentifier: "cell")
-            return cell
-        }
+//        guard let model = viewModel.cellModelFor(indexPath: indexPath) else {
+//            let cell = UITableViewCell.init(style: .default, reuseIdentifier: "cell")
+//            return cell
+//        }
         let cell = tableView.dequeueReusableCell(withIdentifier: MenuCell.identifier) as! MenuCell
-        cell.titleLabel.text = model.title
+//        cell.titleLabel.text = model.title
         return cell
     }
 

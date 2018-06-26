@@ -45,6 +45,9 @@
 		EFCD34EE20D8AB630097075D /* nav.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFCD34ED20D8AB630097075D /* nav.xcassets */; };
 		EFCD34F020D8DF350097075D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD34EF20D8DF350097075D /* BaseViewController.swift */; };
 		EFD84F3420C0E2040040FA15 /* CustomViewDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD84F3320C0E2040040FA15 /* CustomViewDemoVC.swift */; };
+		EFE0909420E1F2E300DA59F9 /* ExpyAbstractions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE0909120E1F2E300DA59F9 /* ExpyAbstractions.swift */; };
+		EFE0909520E1F2E300DA59F9 /* ExpyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE0909220E1F2E300DA59F9 /* ExpyTableView.swift */; };
+		EFE0909820E1F34F00DA59F9 /* MenuHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE0909620E1F34F00DA59F9 /* MenuHeaderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +91,9 @@
 		EFCD34ED20D8AB630097075D /* nav.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = nav.xcassets; sourceTree = "<group>"; };
 		EFCD34EF20D8DF350097075D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EFD84F3320C0E2040040FA15 /* CustomViewDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewDemoVC.swift; sourceTree = "<group>"; };
+		EFE0909120E1F2E300DA59F9 /* ExpyAbstractions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpyAbstractions.swift; sourceTree = "<group>"; };
+		EFE0909220E1F2E300DA59F9 /* ExpyTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpyTableView.swift; sourceTree = "<group>"; };
+		EFE0909620E1F34F00DA59F9 /* MenuHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 		EF0FE17F20BF8CB6007B2FE8 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				EFE0908F20E1F2E300DA59F9 /* Classes */,
 				EF539EDA20C5179E00D8165D /* Cell */,
 				EF539ED120C4E6C500D8165D /* HeaderView */,
 				EF0F062320CA0F10003087DF /* Menu.xcassets */,
@@ -231,6 +238,7 @@
 			children = (
 				EFB3777A20C8E5C5000044FE /* MenuCell.swift */,
 				EFB3777B20C8E5C5000044FE /* MenuCell.xib */,
+				EFE0909620E1F34F00DA59F9 /* MenuHeaderCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -297,6 +305,15 @@
 				EFD84F3320C0E2040040FA15 /* CustomViewDemoVC.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		EFE0908F20E1F2E300DA59F9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EFE0909120E1F2E300DA59F9 /* ExpyAbstractions.swift */,
+				EFE0909220E1F2E300DA59F9 /* ExpyTableView.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFE0909420E1F2E300DA59F9 /* ExpyAbstractions.swift in Sources */,
 				EF0F063120CA7373003087DF /* CustomNavigationBar.swift in Sources */,
 				EF73E4D920C10197001EB1E9 /* RatingView.swift in Sources */,
 				EF26EBA020BE45520064C3A7 /* PullUpDemoVC.swift in Sources */,
@@ -386,6 +404,8 @@
 				EFCD34F020D8DF350097075D /* BaseViewController.swift in Sources */,
 				EF6BEF0520BFFB88007991D7 /* SegmentBarView.swift in Sources */,
 				EF0F063620CA82D5003087DF /* NavigationDemoVC.swift in Sources */,
+				EFE0909820E1F34F00DA59F9 /* MenuHeaderCell.swift in Sources */,
+				EFE0909520E1F2E300DA59F9 /* ExpyTableView.swift in Sources */,
 				EF0FE18120BF8CDE007B2FE8 /* MenuViewController.swift in Sources */,
 				EFAEAEF920DA3F9500186B4C /* PickerDemoVC.swift in Sources */,
 				EFB3777C20C8E5C5000044FE /* MenuCell.swift in Sources */,

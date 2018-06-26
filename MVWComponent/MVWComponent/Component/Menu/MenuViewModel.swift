@@ -12,6 +12,9 @@ import UIKit
 
 class MenuViewModel {
     
+    private let topHeaderHeight: CGFloat = 90
+    private let headerHeight: CGFloat = 40
+    
     private var model : MenuModel!
     
     var reloadSections: ((_ section: Int) -> Void)?
@@ -51,22 +54,7 @@ class MenuViewModel {
             guard let sectionData = model.sections![section-1] else {
                 return nil
             }
-            let headerView : MenuSectionView
-            switch sectionData.type! {
-            case .onlyText:
-                headerView = MenuSectionView(title: sectionData.title!, frame: .zero)
-                break
-            case .textHeading:
-                headerView = MenuSectionView(headingTitle: sectionData.title!, frame: .zero)
-                break
-            case .imageGroup:
-                headerView = MenuSectionView(images: sectionData.imagesName!, frame: .zero)
-                break
-            case .iconText:
-                headerView = MenuSectionView(title: sectionData.title!, icon: sectionData.iconName!, frame: .zero)
-                break
-            }
-            
+            let headerView = MenuSectionView(model: sectionData)
             headerView.section = section
             headerView.delegate = self
             headerView.setHeaderExpand(flag: sectionData.isExpanded)
@@ -76,9 +64,15 @@ class MenuViewModel {
     
     func heightForHeaderIn(section: Int) -> CGFloat {
         if section == 0 {
-            return 80
+            return topHeaderHeight
         }
-        return 40
+        guard let sectionData = model.sections![section-1] else {
+            return 0.0
+        }
+        if sectionData.type! == .blank {
+            return sectionData.height!
+        }
+        return headerHeight
     }
     
     func heightForRow(indexPath: IndexPath) -> CGFloat {
@@ -92,7 +86,7 @@ class MenuViewModel {
         return nil
     }
     
-
+    
     
     //MARK:- Private method
     
@@ -118,4 +112,5 @@ extension MenuViewModel: MenuSectionViewDelegate {
     }
     
 }
+
 

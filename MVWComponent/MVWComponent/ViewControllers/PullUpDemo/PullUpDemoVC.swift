@@ -31,10 +31,9 @@ class PullUpDemoVC: BaseViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "DEMO")
         let navigation = UINavigationController(rootViewController: vc!)
         let pullupVC = PullUpViewController(content: navigation)
-        pullupVC.datasource = self
         pullupVC.delegate = self
-        pullupVC.topMargin = 60
-        pullupVC.headerHeight = 40
+        pullupVC.topMargin = 80
+        pullupVC.dismissImage = UIImage(named: "ic_dismiss")
         addPullUpController(pullupVC)
     }
     
@@ -47,19 +46,10 @@ class PullUpDemoVC: BaseViewController {
     }
 }
 
-extension PullUpDemoVC : PullUpDataSource, PullUpDataDelegate {
-    
-    func imageForCloseButton() -> UIImage? {
-        return UIImage(named: "ic_dismiss")
-    }
-    
-
-    func viewForHeaderBar() -> UIView? {
-        let vview = Bundle.main.loadNibNamed("PullUpHeader", owner: nil, options: nil)![0] as! UIView
-        return vview
-    }
-    
+extension PullUpDemoVC : PullUpDataDelegate {
     func pullUpViewControllerDidDisappear() {
         print("Dismiss")
     }
+    
+    
 }
