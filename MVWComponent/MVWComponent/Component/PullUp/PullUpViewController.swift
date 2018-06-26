@@ -21,7 +21,7 @@ class PullUpViewController: UIViewController {
     //Private property
     private let dismissButtonTopMargin : CGFloat = 16.0
     private let dismissButtonInset : CGFloat = 10.0
-    private let cornerRadius : CGFloat = 10.0
+    private let cornerRadius : CGFloat = 16.0
     private let statusBarHeight : CGFloat = 20.0
     private let extraHeight : CGFloat = 20.0
     private let buttonsize : CGFloat = 44.0
