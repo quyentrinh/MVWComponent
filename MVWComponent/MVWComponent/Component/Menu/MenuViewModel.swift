@@ -42,17 +42,31 @@ class MenuViewModel {
         return 1
     }
     
-    func headerViewFor(tableView: UITableView, section: Int) -> MenuHeaderCell {
+    func headerViewFor(tableView: UITableView, section: Int) -> UITableViewCell {
         guard let sectionData = model.sections?[section] else {
-            return MenuHeaderCell(style: .default, reuseIdentifier: MenuHeaderCell.identifier)
+            return UITableViewCell(style: .default, reuseIdentifier: "cell")
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: MenuHeaderCell.identifier) as! MenuHeaderCell
-        if let cellsection = cell.section, cellsection == section {
-            return cell
+        let cell: MenuHeaderCell?
+        switch sectionData.type! {
+        case .iconText:
+            cell = tableView.dequeueReusableCell(withIdentifier: IconTextHeaderCell.identifier) as! IconTextHeaderCell
+        case .imageGroup:
+            cell = tableView.dequeueReusableCell(withIdentifier: ImageGroupHeaderCell.identifier) as! ImageGroupHeaderCell
+        case .textH1:
+            cell = tableView.dequeueReusableCell(withIdentifier: H1TextHeaderCell.identifier) as! H1TextHeaderCell
+        case .textH2:
+            cell = tableView.dequeueReusableCell(withIdentifier: H2TextHeaderCell.identifier) as! H2TextHeaderCell
+        case .textH3:
+            cell = tableView.dequeueReusableCell(withIdentifier: H3TextHeaderCell.identifier) as! H3TextHeaderCell
+        case .blank:
+            cell = tableView.dequeueReusableCell(withIdentifier: BlankHeaderCell.identifier) as! BlankHeaderCell
         }
-        cell.updateHeader(model: sectionData)
-        cell.section = section
-        return cell
+        guard let _cell = cell else {
+            return UITableViewCell(style: .default, reuseIdentifier: "cell")
+        }
+        _cell.updateDisplay(model: sectionData)
+        _cell.section = section
+        return _cell
     }
     
     func cellFor(tableView: UITableView, indexPath: IndexPath) -> MenuCell {

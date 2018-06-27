@@ -25,7 +25,12 @@ class MenuViewController: BaseSideViewController {
         _tableView.dataSource = self
         _tableView.separatorStyle = .none
         _tableView.register(MenuCell.nib, forCellReuseIdentifier: MenuCell.identifier)
-        _tableView.register(MenuHeaderCell.self, forCellReuseIdentifier: MenuHeaderCell.identifier)
+        _tableView.register(IconTextHeaderCell.self, forCellReuseIdentifier: IconTextHeaderCell.identifier)
+        _tableView.register(H1TextHeaderCell.self, forCellReuseIdentifier: H1TextHeaderCell.identifier)
+        _tableView.register(H2TextHeaderCell.self, forCellReuseIdentifier: H2TextHeaderCell.identifier)
+        _tableView.register(H3TextHeaderCell.self, forCellReuseIdentifier: H3TextHeaderCell.identifier)
+        _tableView.register(ImageGroupHeaderCell.self, forCellReuseIdentifier: ImageGroupHeaderCell.identifier)
+        _tableView.register(BlankHeaderCell.self, forCellReuseIdentifier: BlankHeaderCell.identifier)
         
         let head =  Bundle.main.loadNibNamed("MenuHeaderView", owner: nil, options: nil)?.first as? UIView
         _tableView.tableHeaderView = head
@@ -122,7 +127,7 @@ class MenuViewController: BaseSideViewController {
 
 extension MenuViewController: ExpyTableViewDataSource {
     func tableView(_ tableView: ExpyTableView, expandableCellForSection section: Int) -> UITableViewCell {
-        return viewModel.headerViewFor(tableView: tableView,section: section)
+        return viewModel.headerViewFor(tableView: tableView, section: section)
     }
 }
 
@@ -146,13 +151,20 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         return viewModel.cellFor(tableView: tableView, indexPath: indexPath)
     }
 
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        dismiss { [weak self] in
+//            guard let sself = self else { return }
+//            if let action = sself.delegate?.menuView(sself, didTapRowAt: (sself.menuIndexFor(indexPath: indexPath))) {
+//                action
+//            }
+//        }
+//    }
+}
+
+extension MenuViewController: ExpyTableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        dismiss { [weak self] in
-            guard let sself = self else { return }
-            if let action = sself.delegate?.menuView(sself, didTapRowAt: (sself.menuIndexFor(indexPath: indexPath))) {
-                action
-            }
-        }
+        tableView.deselectRow(at: indexPath, animated: false)
+        print("DID SELECT row: \(indexPath.row), section: \(indexPath.section)")
     }
 }
 

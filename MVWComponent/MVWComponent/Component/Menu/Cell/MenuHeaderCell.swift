@@ -58,15 +58,6 @@ protocol MenuHeaderViewDelegate: class {
 
 class MenuHeaderCell: UITableViewCell {
     
-    static var nib:UINib {
-        return UINib(nibName: identifier, bundle: nil)
-    }
-    
-    static var identifier: String {
-        return String(describing: self)
-    }
-    
-    
     private let padding : CGFloat = 12.0
     private let iconSize : CGFloat = 16.0
     private let imageSize : CGFloat = 28.0
@@ -75,27 +66,19 @@ class MenuHeaderCell: UITableViewCell {
     
     private var titleLabel : UILabel!
     private var iconImageView : UIImageView!
+    private let maxNumberImageSocial : Int = 4
     private var arrowImageView : UIImageView!
     
     private var sectionModel: MenuSectionModel?
     
+    fileprivate var headerType: MenuHeaderType?
+    
     var section: Int?
     
     weak var delegate : MenuHeaderViewDelegate?
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-    
-    func updateHeader(model: MenuSectionModel?, frame: CGRect = .zero) {
-        sectionModel = model
-        setupUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -105,14 +88,84 @@ class MenuHeaderCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        updateLayout()
+    }
+    
+    func setupUI() {
         
+        selectionStyle = .none
+        
+        backgroundColor = headerType!.backgroundColor
+
+        let arrow = UIImageView(frame: .zero)
+        arrow.image = #imageLiteral(resourceName: "ic_menu_arrow")
+        arrow.isHidden = true
+        addSubview(arrow)
+        self.arrowImageView = arrow
+        
+        switch headerType! {
+        case .textH1, .textH2, .textH3:
+            createOnlyTextHeaderView()
+            break
+        case .imageGroup:
+            createImageGroupHeaderView()
+            break
+        case .iconText:
+            createIconTextHeaderView()
+            break
+        default:
+            return
+        }
+    }
+    
+    //MARK: - Create UI
+    
+    func createOnlyTextHeaderView() {
+        let textLabel  = UILabel(frame: .zero)
+        textLabel.font = headerType!.textFont
+        textLabel.textColor = headerType!.textColor
+        addSubview(textLabel)
+        self.titleLabel = textLabel
+    }
+    
+    func createImageGroupHeaderView() {
+        for i in 0..<maxNumberImageSocial {
+            let imageView = UIImageView(frame: .zero)
+            imageView.tag = i + tagOffSet
+            imageView.clipsToBounds = true
+            imageView.isUserInteractionEnabled = true
+            imageView.isHidden = true
+            let recognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapRecognizer(_:)))
+            imageView.addGestureRecognizer(recognizer)
+            
+            addSubview(imageView)
+        }
+    }
+    
+    func createIconTextHeaderView() {
+        let icon = UIImageView(frame: .zero)
+        icon.contentMode = .scaleToFill
+        icon.clipsToBounds = true
+        addSubview(icon)
+        self.iconImageView = icon
+        
+        let textLabel  = UILabel(frame: .zero)
+        textLabel.font = headerType!.textFont
+        textLabel.textColor = headerType!.textColor
+        addSubview(textLabel)
+        self.titleLabel = textLabel
+    }
+    
+    //MARK: - Update Layout
+    
+    func updateLayout() {
+        
+        let frame = contentView.bounds
         if let arrow = arrowImageView {
-            arrow.frame = CGRect(x: bounds.width - padding - arrowSize + 5.0, y: (bounds.height - arrowSize) / 2, width: arrowSize, height: arrowSize)
+            arrow.frame = CGRect(x: frame.width - padding - arrowSize + 5.0, y: (frame.height - arrowSize) / 2, width: arrowSize, height: arrowSize)
         }
         
-        guard let model = sectionModel else { return }
-        
-        switch model.type! {
+        switch headerType! {
         case .textH1, .textH3:
             updateLayoutOnlyTextHeaderView(indent: 0)
             break
@@ -127,81 +180,8 @@ class MenuHeaderCell: UITableViewCell {
         default:
             return
         }
-        updateDisplay()
+
     }
-    
-    
-    func setupUI() {
-        
-        selectionStyle = .none
-        
-        guard let model = sectionModel else { return }
-        
-        backgroundColor = model.type!.backgroundColor
-//        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapHeader)))
-        
-        if model.isExpandable {
-            let arrow = UIImageView(image: #imageLiteral(resourceName: "ic_menu_arrow"))
-            addSubview(arrow)
-            arrowImageView = arrow
-        }
-        
-        switch model.type! {
-        case .textH1, .textH2, .textH3:
-            createOnlyTextHeaderView(model: model)
-            break
-        case .imageGroup:
-            createImageGroupHeaderView(model: model)
-            break
-        case .iconText:
-            createIconTextHeaderView(model: model)
-            break
-        default:
-            return
-        }
-    }
-    
-    //MARK: - Create UI
-    
-    func createOnlyTextHeaderView(model: MenuSectionModel) {
-        let textLabel  = UILabel(frame: .zero)
-        textLabel.font = model.type!.textFont
-        textLabel.textColor = model.type!.textColor
-        addSubview(textLabel)
-        self.titleLabel = textLabel
-    }
-    
-    func createImageGroupHeaderView(model: MenuSectionModel) {
-        guard let model = sectionModel else { return }
-        if let _images = model.imagesName {
-            for i in 0..<_images.count {
-                let imageView = UIImageView(frame: .zero)
-                imageView.tag = i + tagOffSet
-                imageView.clipsToBounds = true
-                imageView.isUserInteractionEnabled = true
-                let recognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapRecognizer(_:)))
-                imageView.addGestureRecognizer(recognizer)
-                
-                addSubview(imageView)
-            }
-        }
-    }
-    
-    func createIconTextHeaderView(model: MenuSectionModel) {
-        let icon = UIImageView(frame: .zero)
-        icon.contentMode = .scaleToFill
-        icon.clipsToBounds = true
-        addSubview(icon)
-        self.iconImageView = icon
-        
-        let textLabel  = UILabel(frame: .zero)
-        textLabel.font = model.type!.textFont
-        textLabel.textColor = model.type!.textColor
-        addSubview(textLabel)
-        self.titleLabel = textLabel
-    }
-    
-    //MARK: - Update Layout
     
     func updateLayoutOnlyTextHeaderView(indent: CGFloat) {
         let contentFrame = bounds
@@ -210,13 +190,10 @@ class MenuHeaderCell: UITableViewCell {
     
     func updateLayoutImageGroupHeaderView() {
         let contentFrame = bounds
-        guard let model = sectionModel else { return }
-        if let _images = model.imagesName {
-            for i in 0..<_images.count {
-                let positionX = (imageSize + padding)*CGFloat(i) + padding
-                let imageView = viewWithTag(i + tagOffSet) as! UIImageView
-                imageView.frame = CGRect(x: positionX, y: (contentFrame.height - imageSize)/2, width: imageSize, height: imageSize)
-            }
+        for i in 0..<maxNumberImageSocial {
+            let positionX = (imageSize + padding)*CGFloat(i) + padding
+            let imageView = viewWithTag(i + tagOffSet) as! UIImageView
+            imageView.frame = CGRect(x: positionX, y: (contentFrame.height - imageSize)/2, width: imageSize, height: imageSize)
         }
     }
     
@@ -235,28 +212,24 @@ class MenuHeaderCell: UITableViewCell {
         }
     }
     
-    func updateDisplay() {
-        guard let model = sectionModel else { return }
+    func updateDisplay(model: MenuSectionModel?) {
+        guard let _model = model else { return }
         
-        if let _text = model.title {
+        arrowImageView.isHidden = !_model.isExpandable
+
+        if let _text = _model.title {
             titleLabel.text = _text
         }
-        if let _icon = model.iconName {
+        if let _icon = _model.iconName {
             iconImageView.image = UIImage(named: _icon)
         }
-        if let _images = model.imagesName {
+        if let _images = _model.imagesName {
             for i in 0..<_images.count {
                 let imageView = viewWithTag(i + tagOffSet) as! UIImageView
+                imageView.isHidden = false
                 imageView.image = UIImage(named: _images[i])
             }
         }
-    }
-    
-    @objc private func didTapHeader() {
-        if let action = delegate?.menuHeader(self, didTapAt: section!) {
-            action
-        }
-        
     }
     
     @objc func imageTapRecognizer(_ recognizer: UITapGestureRecognizer) {
@@ -266,6 +239,120 @@ class MenuHeaderCell: UITableViewCell {
             action
         }
     }
+}
+
+//
+//
+//
+//
+//
+
+class IconTextHeaderCell: MenuHeaderCell {
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        headerType = .iconText
+        setupUI()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    static var identifier: String {
+        return String(describing: self)
+    }
+    
+}
+
+class ImageGroupHeaderCell: MenuHeaderCell {
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        headerType = .imageGroup
+        setupUI()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    static var identifier: String {
+        return String(describing: self)
+    }
+}
+
+class H1TextHeaderCell: MenuHeaderCell {
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        headerType = .textH1
+        setupUI()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    static var identifier: String {
+        return String(describing: self)
+    }
+    
+}
+
+class H2TextHeaderCell: MenuHeaderCell {
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        headerType = .textH2
+        setupUI()
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    static var identifier: String {
+        return String(describing: self)
+    }
+    
+}
+
+class H3TextHeaderCell: MenuHeaderCell {
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        headerType = .textH3
+        setupUI()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    static var identifier: String {
+        return String(describing: self)
+    }
+    
+}
+
+class BlankHeaderCell: MenuHeaderCell {
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        headerType = .blank
+        setupUI()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    static var identifier: String {
+        return String(describing: self)
+    }
+    
 }
 
 
