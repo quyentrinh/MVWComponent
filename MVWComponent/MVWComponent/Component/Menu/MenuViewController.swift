@@ -30,6 +30,10 @@ class MenuViewController: BaseSideViewController {
         let head =  Bundle.main.loadNibNamed("MenuHeaderView", owner: nil, options: nil)?.first as? UIView
         _tableView.tableHeaderView = head
         
+        _tableView.estimatedRowHeight = 0
+        _tableView.estimatedSectionHeaderHeight = 0
+        _tableView.estimatedSectionFooterHeight = 0
+        
         return _tableView
     }()
 
@@ -118,9 +122,7 @@ class MenuViewController: BaseSideViewController {
 
 extension MenuViewController: ExpyTableViewDataSource {
     func tableView(_ tableView: ExpyTableView, expandableCellForSection section: Int) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MenuHeaderCell.self)) as! MenuHeaderCell
-        cell.updateCell()
-        return cell
+        return viewModel.headerViewFor(tableView: tableView,section: section)
     }
 }
 
@@ -129,28 +131,19 @@ extension MenuViewController: ExpyTableViewDataSource {
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
         return viewModel.numberOfSection()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-//        return viewModel.numberOfRowIn(section: section)
+        return viewModel.numberOfRowIn(section: section)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40.0
-//        return viewModel.heightForRow(indexPath: indexPath)
+        return viewModel.heightForRow(indexPath: indexPath)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let model = viewModel.cellModelFor(indexPath: indexPath) else {
-//            let cell = UITableViewCell.init(style: .default, reuseIdentifier: "cell")
-//            return cell
-//        }
-        let cell = tableView.dequeueReusableCell(withIdentifier: MenuCell.identifier) as! MenuCell
-//        cell.titleLabel.text = model.title
-        return cell
+        return viewModel.cellFor(tableView: tableView, indexPath: indexPath)
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

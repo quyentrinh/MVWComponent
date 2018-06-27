@@ -38,7 +38,6 @@
 		EFAEAEFD20DA6D6C00186B4C /* BookingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAEAEFC20DA6D6C00186B4C /* BookingHeaderView.swift */; };
 		EFB3776F20C8E381000044FE /* MenuHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB3776E20C8E381000044FE /* MenuHeaderView.xib */; };
 		EFB3777720C8E502000044FE /* MenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB3777620C8E502000044FE /* MenuHeaderView.swift */; };
-		EFB3777920C8E559000044FE /* MenuSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB3777820C8E559000044FE /* MenuSectionView.swift */; };
 		EFB3777C20C8E5C5000044FE /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB3777A20C8E5C5000044FE /* MenuCell.swift */; };
 		EFB3777D20C8E5C5000044FE /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB3777B20C8E5C5000044FE /* MenuCell.xib */; };
 		EFB81E4720C7863A00CA7EEA /* ReviewBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB81E4620C7863A00CA7EEA /* ReviewBar.swift */; };
@@ -84,7 +83,6 @@
 		EFAEAEFC20DA6D6C00186B4C /* BookingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingHeaderView.swift; sourceTree = "<group>"; };
 		EFB3776E20C8E381000044FE /* MenuHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuHeaderView.xib; sourceTree = "<group>"; };
 		EFB3777620C8E502000044FE /* MenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderView.swift; sourceTree = "<group>"; };
-		EFB3777820C8E559000044FE /* MenuSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSectionView.swift; sourceTree = "<group>"; };
 		EFB3777A20C8E5C5000044FE /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		EFB3777B20C8E5C5000044FE /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		EFB81E4620C7863A00CA7EEA /* ReviewBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewBar.swift; sourceTree = "<group>"; };
@@ -228,7 +226,6 @@
 			children = (
 				EFB3776E20C8E381000044FE /* MenuHeaderView.xib */,
 				EFB3777620C8E502000044FE /* MenuHeaderView.swift */,
-				EFB3777820C8E559000044FE /* MenuSectionView.swift */,
 			);
 			path = HeaderView;
 			sourceTree = "<group>";
@@ -418,7 +415,6 @@
 				EF0F062F20CA6B20003087DF /* BaseNavigationBar.swift in Sources */,
 				EFAEAEFD20DA6D6C00186B4C /* BookingHeaderView.swift in Sources */,
 				EF3E5FA120C150D300F6A118 /* MenuModel.swift in Sources */,
-				EFB3777920C8E559000044FE /* MenuSectionView.swift in Sources */,
 				EF3E5F9F20C14FF100F6A118 /* MenuViewModel.swift in Sources */,
 				EF26EB9E20BE451B0064C3A7 /* PullUpViewController.swift in Sources */,
 				EF0F062A20CA40FB003087DF /* HomeTableViewController.swift in Sources */,

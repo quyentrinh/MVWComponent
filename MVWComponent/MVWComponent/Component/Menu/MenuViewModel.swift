@@ -29,43 +29,42 @@ class MenuViewModel {
     
     func numberOfSection() -> Int {
         if let sections = model.sections {
-            return sections.count + 1
-        }
-        return 1 //Big header
-    }
-    
-    func numberOfRowIn(section: Int) -> Int {
-        if section == 0 {
-            return 0
-        }
-        guard let sectionData = model.sections![section-1] else { return 0 }
-        if sectionData.isExpanded {
-            if let cellModel = sectionData.cellModel {
-                return cellModel.count
-            }
+            return sections.count
         }
         return 0
     }
     
-    func viewForHeaderIn(section: Int) -> UIView? {
-        if section == 0 {
-            return Bundle.main.loadNibNamed("MenuHeaderView", owner: nil, options: nil)?.first as? UIView
-        } else {
-            guard let sectionData = model.sections![section-1] else {
-                return nil
-            }
-            let headerView = MenuSectionView(model: sectionData)
-            headerView.section = section
-            headerView.delegate = self
-            headerView.setHeaderExpand(flag: sectionData.isExpanded)
-            return headerView
+    func numberOfRowIn(section: Int) -> Int {
+        guard let sectionData = model.sections?[section] else { return 0 }
+        if let cellModel = sectionData.cellModel {
+                return cellModel.count + 1
         }
+        return 1
+    }
+    
+    func headerViewFor(tableView: UITableView, section: Int) -> MenuHeaderCell {
+        guard let sectionData = model.sections?[section] else {
+            return MenuHeaderCell(style: .default, reuseIdentifier: MenuHeaderCell.identifier)
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: MenuHeaderCell.identifier) as! MenuHeaderCell
+        if let cellsection = cell.section, cellsection == section {
+            return cell
+        }
+        cell.updateHeader(model: sectionData)
+        cell.section = section
+        return cell
+    }
+    
+    func cellFor(tableView: UITableView, indexPath: IndexPath) -> MenuCell {
+        guard let cellModel = model.sections?[indexPath.section]?.cellModel?[indexPath.row-1] else {
+            return MenuCell(style: .default, reuseIdentifier: MenuCell.identifier)
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: MenuCell.identifier) as! MenuCell
+        cell.titleLabel.text = cellModel.title
+        return cell
     }
     
     func heightForHeaderIn(section: Int) -> CGFloat {
-        if section == 0 {
-            return topHeaderHeight
-        }
         guard let sectionData = model.sections![section-1] else {
             return 0.0
         }
@@ -76,16 +75,14 @@ class MenuViewModel {
     }
     
     func heightForRow(indexPath: IndexPath) -> CGFloat {
-        return 40
-    }
-    
-    func cellModelFor(indexPath : IndexPath) -> MenuCellModel? {
-        if let cellModel = model.sections?[indexPath.section - 1]?.cellModel {
-            return cellModel[indexPath.row]
+        guard let sectionData = model.sections![indexPath.section] else {
+            return 0.0
         }
-        return nil
+        if sectionData.type! == .blank {
+            return sectionData.height!
+        }
+        return headerHeight
     }
-    
     
     
     //MARK:- Private method
@@ -93,24 +90,24 @@ class MenuViewModel {
 }
 
 
-extension MenuViewModel: MenuSectionViewDelegate {
-    func menuSection(header: MenuSectionView, didTapAt section: Int) {
-        guard let sectionData = model.sections![section-1] else { return }
-        
-        if sectionData.isExpandable {
-            let expand = sectionData.isExpanded
-            sectionData.isExpanded = !expand
-            header.setHeaderExpand(flag: !expand)
-            reloadSections!(section)
-        } else {
-            menuDidTapAtSection!(section)
-        }
-    }
-    
-    func menuSection(header: MenuSectionView, didTapImageIn section: Int, At index: Int) {
-        menuDidTapAtImage!(section, index)
-    }
-    
-}
+//extension MenuViewModel: MenuHeaderViewDelegate {
+//    func menuSection(header: MenuHeaderView, didTapAt section: Int) {
+//        guard let sectionData = model.sections![section-1] else { return }
+//        
+//        if sectionData.isExpandable {
+//            let expand = sectionData.isExpanded
+//            sectionData.isExpanded = !expand
+//            header.setHeaderExpand(flag: !expand)
+//            reloadSections!(section)
+//        } else {
+//            menuDidTapAtSection!(section)
+//        }
+//    }
+//    
+//    func menuSection(header: MenuSectionView, didTapImageIn section: Int, At index: Int) {
+//        menuDidTapAtImage!(section, index)
+//    }
+//    
+//}
 
 

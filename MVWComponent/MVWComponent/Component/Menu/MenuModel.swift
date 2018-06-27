@@ -28,7 +28,7 @@ class MenuSectionModel {
     var height : CGFloat?
     var iconName : String?
     var imagesName : [String]?
-    var type: MenuSectionType?
+    var type: MenuHeaderType?
     var cellModel: [MenuCellModel]?
     
     var isExpanded: Bool = false
@@ -39,7 +39,7 @@ class MenuSectionModel {
         return false
     }
     
-    init(title _title: String, withType _type: MenuSectionType) {
+    init(title _title: String, withType _type: MenuHeaderType) {
         type = _type
         title = _title
     }

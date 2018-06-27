@@ -29,35 +29,35 @@ class HomeTableViewController: UITableViewController {
         
         let emptyCell = MenuCellModel(title: "空の")
         
-        let schedule = MenuSectionModel(title: "映画館を探す", icon: "ic_mn_schedule")
+        let schedule = MenuSectionModel(title: "映画館を探す", icon: "ic_unlike")
         schedule.cellModel = [emptyCell]
         
-        let history = MenuSectionModel(title: "閲覧履歴", icon: "ic_mn_rekisiki")
+        let history = MenuSectionModel(title: "閲覧履歴", icon: "ic_unlike")
         history.cellModel = [emptyCell]
         
-        let setting = MenuSectionModel(title: "設定", icon: "ic_mn_setting")
+        let setting = MenuSectionModel(title: "設定", icon: "ic_unlike")
         let accountInfo = MenuSectionModel(title: "アカウント情報", withType: .textH2)
         let notificaton = MenuSectionModel(title: "プッシュ通知・お知らせの設定", withType: .textH2)
         
-        let help = MenuSectionModel(title: "ヘルプ・お問い合わせ", icon: "ic_mn_help")
+        let help = MenuSectionModel(title: "ヘルプ・お問い合わせ", icon: "ic_unlike")
         help.cellModel = [emptyCell]
         
         let mitaiRecommend = MenuSectionModel(title: "Mitaiをおすすめする", withType: .textH1)
-        let social1 = MenuSectionModel(images: ["ic_mn_twitter", "ic_mn_line", "ic_mn_facebook", "ic_mn_google"])
+        let social1 = MenuSectionModel(images: ["ic_unlike", "ic_unlike", "ic_unlike", "ic_unlike"])
         
-        let review = MenuSectionModel(title: "アプリのレビューを書く", icon: "ic_mn_review")
+        let review = MenuSectionModel(title: "アプリのレビューを書く", icon: "ic_unlike")
         review.cellModel = [emptyCell]
         
         let officalAccount = MenuSectionModel(title: "公式アカウント", withType: .textH1)
-        let social2 = MenuSectionModel(images: ["ic_mn_twitter", "ic_mn_facebook"])
+        let social2 = MenuSectionModel(images: ["ic_unlike", "ic_unlike"])
         let logout = MenuSectionModel(title: "ログアウト", withType: .textH3)
         
         let blank10 = MenuSectionModel(height: 10.0)
         let blank20 = MenuSectionModel(height: 20.0)
         
-        let menuModel = MenuModel(sections: [blank10, schedule, history, setting, accountInfo, notificaton, help, blank10,
-                                             mitaiRecommend, blank10, social1, review, blank10,
-                                             officalAccount, blank10, social2, blank20,
+        let menuModel = MenuModel(sections: [schedule, history, setting, accountInfo, notificaton, help,
+                                             mitaiRecommend, social1, review,
+                                             officalAccount, social2,
                                              logout])
         
         let viewModel = MenuViewModel(model: menuModel)
