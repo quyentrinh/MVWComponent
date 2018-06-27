@@ -50,36 +50,7 @@ class MenuViewController: BaseSideViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
-        
-        viewModel.reloadSections = { [weak self] section in
-            guard let sself = self else { return }
-            sself.tableView.beginUpdates()
-            sself.tableView.reloadSections([section], with: .automatic)
-            sself.tableView.endUpdates()
-        }
-        
-        viewModel.menuDidTapAtSection = { [weak self] section in
-            guard let sself = self else { return }
-            sself.dismiss { [weak self] in
-                guard let ssself = self else { return }
-                if let action = ssself.delegate?.menuView(ssself, didTapSectionAt: section) {
-                    action
-                }
-            }
-        }
-        
-        viewModel.menuDidTapAtImage = { [weak self] (section, index) in
-            guard let sself = self else { return }
-            sself.dismiss { [weak self] in
-                guard let ssself = self else { return }
-                if let action = ssself.delegate?.menuView(ssself, didTapIconIn: section, At: index) {
-                    action
-                }
-            }
-        }
-
     }
     
     override func viewDidLayoutSubviews() {
@@ -127,7 +98,11 @@ class MenuViewController: BaseSideViewController {
 
 extension MenuViewController: ExpyTableViewDataSource {
     func tableView(_ tableView: ExpyTableView, expandableCellForSection section: Int) -> UITableViewCell {
-        return viewModel.headerViewFor(tableView: tableView, section: section)
+        let headerCell = viewModel.headerViewFor(tableView: tableView, section: section)
+        if let cell = headerCell as? MenuHeaderCell {
+            cell.delegate = self
+        }
+        return headerCell!
     }
 }
 
@@ -164,9 +139,37 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
 extension MenuViewController: ExpyTableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        print("DID SELECT row: \(indexPath.row), section: \(indexPath.section)")
+        if !viewModel.isExpandable(section: indexPath.section) {
+            dismiss { [weak self] in
+                guard let sself = self else { return }
+                if let action = sself.delegate?.menuView(sself, didTapSectionAt: indexPath.section) {
+                    action
+                }
+            }
+        } else {
+            if indexPath.row != 0 {
+                
+                dismiss { [weak self] in
+                    guard let sself = self else { return }
+                    if let action = sself.delegate?.menuView(sself, didTapRowAt: indexPath.row) {
+                        action
+                    }
+                }
+            }
+        }
     }
 }
+
+extension MenuViewController: MenuHeaderViewDelegate {
+    func menuHeader(_ header: MenuHeaderCell, didTapImageIn section: Int, At index: Int) {
+        if let action = delegate?.menuView(self, didTapIconIn: section, At: index) {
+            action
+        }
+    }
+    
+    
+}
+
 
 
 

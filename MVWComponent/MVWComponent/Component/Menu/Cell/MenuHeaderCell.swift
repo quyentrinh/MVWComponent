@@ -52,7 +52,6 @@ enum MenuHeaderType {
 }
 
 protocol MenuHeaderViewDelegate: class {
-    func menuHeader(_ header: MenuHeaderCell,didTapAt section: Int)
     func menuHeader(_ header: MenuHeaderCell, didTapImageIn section: Int, At index: Int)
 }
 

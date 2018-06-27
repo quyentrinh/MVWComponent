@@ -17,10 +17,6 @@ class MenuViewModel {
     
     private var model : MenuModel!
     
-    var reloadSections: ((_ section: Int) -> Void)?
-    var menuDidTapAtSection: ((_ section: Int) -> Void)?
-    var menuDidTapAtImage: ((_ section: Int, _ index: Int) -> Void)?
-    
     init(model _model: MenuModel) {
         model = _model
     }
@@ -42,7 +38,7 @@ class MenuViewModel {
         return 1
     }
     
-    func headerViewFor(tableView: UITableView, section: Int) -> UITableViewCell {
+    func headerViewFor(tableView: UITableView, section: Int) -> UITableViewCell? {
         guard let sectionData = model.sections?[section] else {
             return UITableViewCell(style: .default, reuseIdentifier: "cell")
         }
@@ -78,15 +74,6 @@ class MenuViewModel {
         return cell
     }
     
-    func heightForHeaderIn(section: Int) -> CGFloat {
-        guard let sectionData = model.sections![section-1] else {
-            return 0.0
-        }
-        if sectionData.type! == .blank {
-            return sectionData.height!
-        }
-        return headerHeight
-    }
     
     func heightForRow(indexPath: IndexPath) -> CGFloat {
         guard let sectionData = model.sections![indexPath.section] else {
@@ -98,30 +85,17 @@ class MenuViewModel {
         return headerHeight
     }
     
+    func isExpandable(section: Int) -> Bool {
+        guard let sectionData = model.sections?[section] else {
+            return false
+        }
+        return sectionData.isExpandable
+    }
+    
     
     //MARK:- Private method
     
 }
 
-
-//extension MenuViewModel: MenuHeaderViewDelegate {
-//    func menuSection(header: MenuHeaderView, didTapAt section: Int) {
-//        guard let sectionData = model.sections![section-1] else { return }
-//        
-//        if sectionData.isExpandable {
-//            let expand = sectionData.isExpanded
-//            sectionData.isExpanded = !expand
-//            header.setHeaderExpand(flag: !expand)
-//            reloadSections!(section)
-//        } else {
-//            menuDidTapAtSection!(section)
-//        }
-//    }
-//    
-//    func menuSection(header: MenuSectionView, didTapImageIn section: Int, At index: Int) {
-//        menuDidTapAtImage!(section, index)
-//    }
-//    
-//}
 
 

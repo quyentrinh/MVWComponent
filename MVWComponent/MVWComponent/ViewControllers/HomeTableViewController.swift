@@ -63,12 +63,12 @@ class HomeTableViewController: UITableViewController {
         let social2 = MenuSectionModel(images: ["ic_unlike", "ic_unlike"])
         let logout = MenuSectionModel(title: "ログアウト", withType: .textH3)
         
-        let blank10 = MenuSectionModel(height: 10.0)
+//        let blank10 = MenuSectionModel(height: 10.0)
         let blank20 = MenuSectionModel(height: 20.0)
         
-        let menuModel = MenuModel(sections: [accountInfo, schedule, notificaton, help, history, setting ,
+        let menuModel = MenuModel(sections: [blank20, accountInfo, schedule, notificaton, help, history, setting ,
                                              mitaiRecommend, social1, review,
-                                             officalAccount, social2,
+                                             officalAccount, social2, blank20, blank20,
                                              logout])
         
         let viewModel = MenuViewModel(model: menuModel)
@@ -90,6 +90,7 @@ extension HomeTableViewController: MenuViewControllerDelegate {
     }
     
     func menuView(_ menu: MenuViewController, didTapRowAt index: Int) {
+        print("Row \(index) Tapped")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "DEMO")
             self.navigationController?.pushViewController(vc!, animated: true)
