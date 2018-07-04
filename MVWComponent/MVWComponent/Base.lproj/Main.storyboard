@@ -266,7 +266,7 @@
             </objects>
             <point key="canvasLocation" x="1429.5999999999999" y="-190.25487256371815"/>
         </scene>
-        <!--Navigation DemoVC-->
+        <!--Navigation-->
         <scene sceneID="SGB-HQ-0mD">
             <objects>
                 <viewController id="GZy-7H-Ktn" customClass="NavigationDemoVC" customModule="MVWComponent" customModuleProvider="target" sceneMemberID="viewController">
@@ -276,6 +276,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="AAE-X0-cwa"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Navigation" id="7SJ-Ql-pGP">
+                        <barButtonItem key="backBarButtonItem" title=" " id="FjX-mz-T2Z"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTR-xh-JiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
