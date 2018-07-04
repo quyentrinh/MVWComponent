@@ -26,6 +26,7 @@
 		EF367F8120C7C5E000FF9E64 /* ReviewBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF367F8020C7C5E000FF9E64 /* ReviewBarItem.swift */; };
 		EF3E5F9F20C14FF100F6A118 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3E5F9E20C14FF100F6A118 /* MenuViewModel.swift */; };
 		EF3E5FA120C150D300F6A118 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3E5FA020C150D300F6A118 /* MenuModel.swift */; };
+		EF43A73A20EB7EEC00BFE815 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF43A73920EB7EEC00BFE815 /* WebViewController.swift */; };
 		EF6BEF0520BFFB88007991D7 /* SegmentBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BEF0420BFFB88007991D7 /* SegmentBarView.swift */; };
 		EF73E4D520C0FB68001EB1E9 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73E4D420C0FB68001EB1E9 /* FloatRatingView.swift */; };
 		EF73E4D920C10197001EB1E9 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73E4D820C10197001EB1E9 /* RatingView.swift */; };
@@ -71,6 +72,7 @@
 		EF367F8020C7C5E000FF9E64 /* ReviewBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewBarItem.swift; sourceTree = "<group>"; };
 		EF3E5F9E20C14FF100F6A118 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		EF3E5FA020C150D300F6A118 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		EF43A73920EB7EEC00BFE815 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		EF6BEF0420BFFB88007991D7 /* SegmentBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentBarView.swift; sourceTree = "<group>"; };
 		EF73E4D420C0FB68001EB1E9 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
 		EF73E4D820C10197001EB1E9 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		EF2B21FC20BD2C7500031DA4 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				EF43A73820EB7ED800BFE815 /* WEBView */,
 				EFAEAEF220DA130F00186B4C /* PickerView */,
 				EF0F062B20CA55E8003087DF /* NavigationBar */,
 				EFB81E4120C7717700CA7EEA /* ReviewView */,
@@ -219,6 +222,14 @@
 				EFAEAEF720DA3F7500186B4C /* PickerViewDemo */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EF43A73820EB7ED800BFE815 /* WEBView */ = {
+			isa = PBXGroup;
+			children = (
+				EF43A73920EB7EEC00BFE815 /* WebViewController.swift */,
+			);
+			path = WEBView;
 			sourceTree = "<group>";
 		};
 		EF539ED120C4E6C500D8165D /* HeaderView */ = {
@@ -405,6 +416,7 @@
 				EFE0909520E1F2E300DA59F9 /* ExpyTableView.swift in Sources */,
 				EF0FE18120BF8CDE007B2FE8 /* MenuViewController.swift in Sources */,
 				EFAEAEF920DA3F9500186B4C /* PickerDemoVC.swift in Sources */,
+				EF43A73A20EB7EEC00BFE815 /* WebViewController.swift in Sources */,
 				EFB3777C20C8E5C5000044FE /* MenuCell.swift in Sources */,
 				EFB81E4720C7863A00CA7EEA /* ReviewBar.swift in Sources */,
 				EFD84F3420C0E2040040FA15 /* CustomViewDemoVC.swift in Sources */,

@@ -264,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3X-ty-oRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1431" y="-190"/>
+            <point key="canvasLocation" x="1429.5999999999999" y="-190.25487256371815"/>
         </scene>
         <!--Navigation DemoVC-->
         <scene sceneID="SGB-HQ-0mD">
@@ -276,11 +276,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="AAE-X0-cwa"/>
                     </view>
-                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTR-xh-JiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1429.5999999999999" y="609.44527736131943"/>
+            <point key="canvasLocation" x="1521" y="635"/>
         </scene>
         <!--Picker DemoVC-->
         <scene sceneID="IWk-nl-zOO">
