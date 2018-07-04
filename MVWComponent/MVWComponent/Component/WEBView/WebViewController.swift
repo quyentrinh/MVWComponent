@@ -62,9 +62,14 @@ class WebViewController: UIViewController {
     
     //Property
     
-    var URL: URL?
+    private var URL: URL?
     var loadingTime: Timer?
     var finishLoading: Bool = false
+    
+    convenience init(URL: URL) {
+        self.init()
+        self.URL = URL
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

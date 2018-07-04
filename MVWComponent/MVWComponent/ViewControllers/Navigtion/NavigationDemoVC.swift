@@ -39,8 +39,7 @@ class NavigationDemoVC: BaseViewController {
     }
     
     @objc func tapped() {
-        let webView = WebViewController()
-        webView.URL = URL(string: "https://google.com")
+        let webView = WebViewController(URL: URL(string: "https://twitter.com")!)
         navigationController?.pushViewController(webView, animated: true)
     }
 
