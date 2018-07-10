@@ -278,6 +278,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Navigation" id="7SJ-Ql-pGP">
                         <barButtonItem key="backBarButtonItem" title=" " id="FjX-mz-T2Z"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="MYb-6x-cJ3">
+                            <connections>
+                                <action selector="buttonSearchTapped:" destination="GZy-7H-Ktn" id="ymX-La-X7r"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTR-xh-JiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
