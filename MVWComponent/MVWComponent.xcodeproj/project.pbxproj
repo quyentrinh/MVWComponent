@@ -19,6 +19,7 @@
 		EF25EF2920C63BE1003B927A /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF25EF2820C63BE1003B927A /* TagView.swift */; };
 		EF26EB9E20BE451B0064C3A7 /* PullUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF26EB9D20BE451B0064C3A7 /* PullUpViewController.swift */; };
 		EF26EBA020BE45520064C3A7 /* PullUpDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF26EB9F20BE45520064C3A7 /* PullUpDemoVC.swift */; };
+		EF2A810620F8866100403AAF /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2A810520F8866100403AAF /* DatePickerView.swift */; };
 		EF2B21EB20BD2B4A00031DA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B21EA20BD2B4A00031DA4 /* AppDelegate.swift */; };
 		EF2B21F020BD2B4A00031DA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2B21EE20BD2B4A00031DA4 /* Main.storyboard */; };
 		EF2B21F220BD2B4B00031DA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2B21F120BD2B4B00031DA4 /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 		EF25EF2820C63BE1003B927A /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		EF26EB9D20BE451B0064C3A7 /* PullUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUpViewController.swift; sourceTree = "<group>"; };
 		EF26EB9F20BE45520064C3A7 /* PullUpDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUpDemoVC.swift; sourceTree = "<group>"; };
+		EF2A810520F8866100403AAF /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		EF2B21E720BD2B4A00031DA4 /* MVWComponent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVWComponent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2B21EA20BD2B4A00031DA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF2B21EF20BD2B4A00031DA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				EFAEAEF520DA13FF00186B4C /* PickerView.swift */,
 				EFAEAEFA20DA694900186B4C /* BookingHeaderView.xib */,
 				EFAEAEFC20DA6D6C00186B4C /* BookingHeaderView.swift */,
+				EF2A810520F8866100403AAF /* DatePickerView.swift */,
 			);
 			path = PickerView;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				EF26EBA020BE45520064C3A7 /* PullUpDemoVC.swift in Sources */,
 				EF367F8120C7C5E000FF9E64 /* ReviewBarItem.swift in Sources */,
 				EF0FE18B20BFCD45007B2FE8 /* BaseSideViewController.swift in Sources */,
+				EF2A810620F8866100403AAF /* DatePickerView.swift in Sources */,
 				EFCD34F020D8DF350097075D /* BaseViewController.swift in Sources */,
 				EF6BEF0520BFFB88007991D7 /* SegmentBarView.swift in Sources */,
 				EF0F063620CA82D5003087DF /* NavigationDemoVC.swift in Sources */,

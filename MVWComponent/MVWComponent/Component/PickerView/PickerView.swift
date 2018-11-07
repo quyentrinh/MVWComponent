@@ -226,15 +226,6 @@ class PickerView: UIView {
         layoutIfNeeded()
     
     }
-    
-    
-    
-    
-    
-    
- 
-    
-    
 }
 
 private extension PickerView {
@@ -261,7 +252,7 @@ private extension PickerView {
 
 extension PickerView: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return 3
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

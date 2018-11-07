@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6yd-l9-vlb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6yd-l9-vlb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -287,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTR-xh-JiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1521" y="635"/>
+            <point key="canvasLocation" x="1430" y="521"/>
         </scene>
         <!--Picker DemoVC-->
         <scene sceneID="IWk-nl-zOO">
@@ -298,21 +298,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptS-xu-XYG">
-                                <rect key="frame" x="162" y="173" width="50" height="30"/>
+                                <rect key="frame" x="162.5" y="173" width="50" height="30"/>
                                 <state key="normal" title="Normal"/>
                                 <connections>
                                     <action selector="showPickerTapped:" destination="YTc-6Q-iAT" eventType="touchUpInside" id="dFs-B5-MbV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2FQ-SW-uGt">
-                                <rect key="frame" x="162" y="232" width="33" height="30"/>
+                                <rect key="frame" x="162.5" y="232" width="33" height="30"/>
                                 <state key="normal" title="Date"/>
                                 <connections>
                                     <action selector="datePicker:" destination="YTc-6Q-iAT" eventType="touchUpInside" id="3X6-qx-FDV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ta-W2-54C">
-                                <rect key="frame" x="162" y="285" width="56" height="30"/>
+                                <rect key="frame" x="162.5" y="285" width="56" height="30"/>
                                 <state key="normal" title="Booking"/>
                                 <connections>
                                     <action selector="bookingPicker:" destination="YTc-6Q-iAT" eventType="touchUpInside" id="eSg-Pg-Hww"/>
@@ -335,7 +335,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7P-30-eCX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2287" y="333"/>
+            <point key="canvasLocation" x="2356" y="133"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="fkn-3x-Umx">
@@ -880,7 +880,7 @@
             <objects>
                 <navigationController id="6yd-l9-vlb" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QgE-x0-VdJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QgE-x0-VdJ" customClass="TTNavigationBar" customModule="MVWComponent" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -899,7 +899,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_like" width="32" height="32"/>
-        <image name="ic_unlike" width="32" height="32"/>
+        <image name="ic_like" width="40.069564819335938" height="40.069564819335938"/>
+        <image name="ic_unlike" width="51.200000762939453" height="51.200000762939453"/>
     </resources>
 </document>
