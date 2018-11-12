@@ -12,6 +12,7 @@ class NavigationDemoVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nav_title = "Navigation Test"
     }
 
     override func didReceiveMemoryWarning() {

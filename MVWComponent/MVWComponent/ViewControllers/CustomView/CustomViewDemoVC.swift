@@ -27,10 +27,10 @@ class CustomViewDemoVC: BaseViewController {
         nav_title = "映画館を探す"
         nav_subTitle = "132分"
         
-        let segment = SegmentBarView(frame: CGRect(x: 20, y: 100, width: view.frame.width - 40, height: 30))
-        segment.delegate = self
-        segment.datasource = self
-        view.addSubview(segment)
+//        let segment = SegmentBarView(frame: CGRect(x: 20, y: 100, width: view.frame.width - 40, height: 30))
+//        segment.delegate = self
+//        segment.datasource = self
+//        view.addSubview(segment)
         
         ratingViewWithoutSlideer.ratingValue = 4.7
         print("rating : \(ratingView.ratingValue)")

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6yd-l9-vlb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6yd-l9-vlb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +17,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="pK1-Dd-1Li">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection headerTitle="View" id="KUE-ri-WB3">
                                 <cells>
@@ -236,7 +237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Vv-49-QKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="520.79999999999995" y="1022.3388305847077"/>
+            <point key="canvasLocation" x="521" y="877"/>
         </scene>
         <!--Pull Up DemoVC-->
         <scene sceneID="Rqi-lU-C9V">
@@ -253,11 +254,24 @@
                                     <action selector="showMeButtonTapped:" destination="IIu-dD-5Ci" eventType="touchUpInside" id="8ip-Ov-3Av"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ds1-k8-PJL">
+                                <rect key="frame" x="0.0" y="64" width="375" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="OEd-9f-lJz"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="D6q-nP-u0E" firstAttribute="trailing" secondItem="Ds1-k8-PJL" secondAttribute="trailing" id="0mg-gL-VXt"/>
                             <constraint firstItem="2sR-qM-6wM" firstAttribute="centerX" secondItem="S6E-C8-9wt" secondAttribute="centerX" id="EgP-8q-smH"/>
+                            <constraint firstItem="Ds1-k8-PJL" firstAttribute="leading" secondItem="D6q-nP-u0E" secondAttribute="leading" id="I7c-G6-KcU"/>
                             <constraint firstItem="2sR-qM-6wM" firstAttribute="centerY" secondItem="S6E-C8-9wt" secondAttribute="centerY" id="XyN-rj-ezw"/>
+                            <constraint firstItem="Ds1-k8-PJL" firstAttribute="top" secondItem="D6q-nP-u0E" secondAttribute="top" id="mrJ-Lk-Oat"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="D6q-nP-u0E"/>
                     </view>
@@ -273,7 +287,21 @@
                     <view key="view" contentMode="scaleToFill" id="U4A-Lf-a8V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="Xab-PC-TwJ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="vEt-G3-GnZ"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xab-PC-TwJ" firstAttribute="top" secondItem="AAE-X0-cwa" secondAttribute="top" id="7eN-NK-oc1"/>
+                            <constraint firstItem="Xab-PC-TwJ" firstAttribute="leading" secondItem="AAE-X0-cwa" secondAttribute="leading" id="Asj-4B-2sV"/>
+                            <constraint firstItem="Xab-PC-TwJ" firstAttribute="trailing" secondItem="AAE-X0-cwa" secondAttribute="trailing" id="UWh-Ys-f1V"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="AAE-X0-cwa"/>
                     </view>
                     <navigationItem key="navigationItem" title="Navigation" id="7SJ-Ql-pGP">
@@ -287,7 +315,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTR-xh-JiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430" y="521"/>
+            <point key="canvasLocation" x="1430" y="877"/>
         </scene>
         <!--Picker DemoVC-->
         <scene sceneID="IWk-nl-zOO">
@@ -318,14 +346,24 @@
                                     <action selector="bookingPicker:" destination="YTc-6Q-iAT" eventType="touchUpInside" id="eSg-Pg-Hww"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdX-Mj-qUC">
+                                <rect key="frame" x="162.5" y="345" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="GZy-7H-Ktn" kind="show" id="Nwy-ZO-qza"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ptS-xu-XYG" firstAttribute="top" secondItem="UJj-jp-cRu" secondAttribute="top" constant="109" id="4Pz-Gg-Dva"/>
                             <constraint firstItem="2FQ-SW-uGt" firstAttribute="leading" secondItem="ptS-xu-XYG" secondAttribute="leading" id="7JW-Mj-1pf"/>
+                            <constraint firstItem="kdX-Mj-qUC" firstAttribute="leading" secondItem="ptS-xu-XYG" secondAttribute="leading" id="D58-kA-jek"/>
+                            <constraint firstItem="kdX-Mj-qUC" firstAttribute="top" secondItem="9Ta-W2-54C" secondAttribute="bottom" constant="30" id="F1q-V8-FS8"/>
                             <constraint firstItem="9Ta-W2-54C" firstAttribute="top" secondItem="2FQ-SW-uGt" secondAttribute="bottom" constant="23" id="FbB-MK-Hh0"/>
                             <constraint firstItem="ptS-xu-XYG" firstAttribute="centerX" secondItem="UJj-jp-cRu" secondAttribute="centerX" id="dcr-is-LUH"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2FQ-SW-uGt" secondAttribute="trailing" constant="20" symbolic="YES" id="fBa-ma-5Iy"/>
+                            <constraint firstItem="UJj-jp-cRu" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kdX-Mj-qUC" secondAttribute="trailing" symbolic="YES" id="ffW-eX-jW6"/>
                             <constraint firstItem="2FQ-SW-uGt" firstAttribute="top" secondItem="ptS-xu-XYG" secondAttribute="bottom" constant="29" id="j0h-LB-3B0"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9Ta-W2-54C" secondAttribute="trailing" constant="20" symbolic="YES" id="tKZ-e1-uyX"/>
                             <constraint firstItem="2FQ-SW-uGt" firstAttribute="leading" secondItem="9Ta-W2-54C" secondAttribute="leading" id="vyo-kf-kDg"/>
@@ -335,7 +373,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7P-30-eCX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2356" y="133"/>
+            <point key="canvasLocation" x="2316" y="133"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="fkn-3x-Umx">
@@ -879,10 +917,10 @@
         <scene sceneID="Etq-Cu-X9n">
             <objects>
                 <navigationController id="6yd-l9-vlb" sceneMemberID="viewController">
-                    <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QgE-x0-VdJ" customClass="TTNavigationBar" customModule="MVWComponent" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QgE-x0-VdJ" customClass="ZZNavigationBar" customModule="MVWComponent" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
@@ -902,4 +940,7 @@
         <image name="ic_like" width="40.069564819335938" height="40.069564819335938"/>
         <image name="ic_unlike" width="51.200000762939453" height="51.200000762939453"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="mT6-hX-gdI"/>
+    </inferredMetricsTieBreakers>
 </document>

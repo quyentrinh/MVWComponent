@@ -12,7 +12,7 @@ class PickerDemoVC: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nav_title = "Picker Test"
         // Do any additional setup after loading the view.
     }
 
